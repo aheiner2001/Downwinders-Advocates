@@ -18,9 +18,7 @@ exports.render = function (data) {
   return `
 <section class="sec">
   <div class="wrap stack">
-    <p class="eyebrow">${condition.Category}</p>
     <h1>${condition.Name}</h1>
-    <p class="lede">${condition["Meta Description"]}</p>
     <div class="rich-text body-content" data-cms-body>
       ${condition.body || ""}
     </div>

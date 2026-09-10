@@ -18,10 +18,7 @@ exports.render = function (data) {
   return `
 <section class="sec">
   <div class="wrap stack">
-    <p class="eyebrow">${area.State} · ${area["Coverage Status"]}</p>
     <h1>${area.Name}</h1>
-    <p class="lede">${area["Meta Description"]}</p>
-    <p class="muted">Key towns: ${area["Key Towns"]}</p>
     <div class="rich-text body-content" data-cms-body>
       ${area.body || ""}
     </div>
