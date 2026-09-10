@@ -1,24 +1,29 @@
-<a class="skip" href="#main">Skip to content</a>
+{% set L = locale or 'en' %}
+{% set t = ui[L] %}
+{% set homeHref = '/es/' if L == 'es' else '/' %}
+{% set prefix = '/es' if L == 'es' else '' %}
+<a class="skip" href="#main">{{ t.skip }}</a>
 <header>
   <div class="bar">
-    <a class="brand" href="/">
+    <a class="brand" href="{{ homeHref }}">
       <svg class="shield" viewBox="0 0 60 72" aria-hidden="true">
         <path d="M30 2 56 12v28c0 16-11 25-26 30C15 65 4 56 4 40V12z" fill="#08244A"/>
         <path d="M30 24a9 9 0 0 1 9 9H21a9 9 0 0 1 9-9z" fill="#DEA244"/>
         <path d="M14 40c8-4 12 2 18 0s10-4 14-1" stroke="#fff" stroke-width="3.4" fill="none" stroke-linecap="round"/>
         <path d="M14 49c8-4 12 2 18 0s10-4 14-1" stroke="#fff" stroke-width="3.4" fill="none" stroke-linecap="round"/>
       </svg>
-      <span>Downwinders Advocates<small>RECA Claim Help</small></span>
+      <span>Downwinders Advocates<small>{{ t.brandSubtitle }}</small></span>
     </a>
     <nav>
-      <a href="/check/">Check eligibility</a>
-      <a class="nav-secondary" href="/free-help/">Free help</a>
-      <a class="nav-secondary" href="/standards/">Our standards</a>
-      <a class="nav-secondary" href="/what-it-costs/">What it costs</a>
-      <a class="nav-secondary" href="/#who">Who we are</a>
-      <a class="nav-secondary" href="/#faq">Questions</a>
-      <a href="/contact/">Contact</a>
+      <a href="{{ prefix }}/check/">{{ t.check }}</a>
+      <a class="nav-secondary" href="{{ prefix }}/free-help/">{{ t.freeHelp }}</a>
+      <a class="nav-secondary" href="{{ prefix }}/standards/">{{ t.standards }}</a>
+      <a class="nav-secondary" href="{{ prefix }}/what-it-costs/">{{ t.whatItCosts }}</a>
+      <a class="nav-secondary" href="{{ homeHref }}#who">{{ t.who }}</a>
+      <a class="nav-secondary" href="{{ homeHref }}#faq">{{ t.faq }}</a>
+      <a href="{{ prefix }}/contact/">{{ t.contact }}</a>
       <a class="tel" href="tel:{{ site.phoneTel }}">{{ site.phoneDisplay }}</a>
+      <a class="lang-switch" href="{{ paths.alternatePath(page.url) }}" hreflang="{% if L == 'es' %}en{% else %}es{% endif %}">{{ t.langSwitchLabel }}</a>
     </nav>
   </div>
 </header>

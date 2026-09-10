@@ -1,0 +1,66 @@
+---
+layout: layouts/base.njk
+locale: es
+title: "Contacto | Downwinders Advocates"
+description: ""
+permalink: /es/contact/
+extraScripts: '<script src="/js/screener.js" defer></script>'
+---
+<section class="sec" id="contact">
+  <div class="wrap stack">
+    <p class="eyebrow">Cómo contactarnos</p>
+    <h2>Cuatro formas, y usted elige la que prefiera</h2>
+    <p class="lede">Algunas personas quieren llamar ahora. Otras prefieren que las llamemos. Otras prefieren un mensaje de texto. Y algunas no quieren hacer esto en una pantalla. Las cuatro están bien.</p>
+
+    <div class="cb">
+      <h3>Empiece el expediente de su familia</h3>
+      <p class="muted">Tres datos. Eso es todo el formulario. Llamamos en un día hábil, y si no lo alcanzamos seguimos intentando. En esa llamada anotamos dónde vivió la familia, cuál fue el trabajo y el diagnóstico. Luego hacemos la búsqueda de registros sin costo para usted.</p>
+      <form id="cb" class="stack-sm" data-locale="es" novalidate>
+        <div class="field">
+          <label for="n">Su nombre</label>
+          <input id="n" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="ph">Número de teléfono</label>
+          <input id="ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
+        </div>
+        <div class="field">
+          <label for="wt">Mejor momento para contactarlo</label>
+          <select id="wt" name="when">
+            <option>Cualquier momento</option>
+            <option>Mañana</option>
+            <option>Tarde</option>
+            <option>Noche</option>
+            <option>Fin de semana</option>
+          </select>
+        </div>
+        <button class="btn" type="submit">Que alguien me llame</button>
+        <div class="result" id="cbout" role="status" aria-live="polite"></div>
+        <p class="legal">Usamos su número para llamarlo sobre esto y nada más. No lo vendemos ni lo compartimos. Pídanos borrarlo en cualquier momento y lo haremos.</p>
+      </form>
+    </div>
+
+    <div class="ways">
+      <div class="way">
+        <h3>Llame ahora</h3>
+        <a class="big" href="tel:+18014008270">(801) 400-8270</a>
+        <p class="muted">Atiende una persona. No un menú.</p>
+      </div>
+      <div class="way">
+        <h3>Envíenos un texto</h3>
+        <a class="big" href="sms:+18014008270">(801) 400-8270</a>
+        <p class="muted">Más fácil si está en el trabajo o ayudando a un padre. El mismo número.</p>
+      </div>
+      <div class="way">
+        <h3>Recíbalo por correo</h3>
+        <a class="big" href="tel:+18014008270">Pida el paquete</a>
+        <p class="muted">Gratis, sin obligación, y no hacemos seguimiento a menos que usted lo pida.</p>
+      </div>
+    </div>
+    <p class="legal">El destino del formulario de devolución de llamada está pendiente. Vea <a href="/es/#who">con quién está tratando</a>.</p>
+    <div class="btns">
+      <a class="btn" href="/es/check/">Verificar elegibilidad</a>
+      <a class="btn btn--ghost" href="/es/free-help/">Ayuda gratuita</a>
+    </div>
+  </div>
+</section>

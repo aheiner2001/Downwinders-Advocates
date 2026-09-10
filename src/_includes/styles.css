@@ -144,9 +144,13 @@ footer a{color:#CBD8E6}
   /* Keep logo + primary links on one row; drop secondary before wrap */
   nav a.nav-secondary{display:none}
 }
+.draft-banner{background:#3A2A12;color:#F8F5EF;font-size:16px;line-height:1.45;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.draft-banner .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--sp3)}
+.lang-switch{font-weight:600;color:var(--accent)!important;border:1px solid rgba(222,162,68,.55);padding:6px 10px;border-radius:6px}
 @media(max-width:760px){
-  /* Match reference: on small screens keep brand + phone (and check) */
-  nav a:not(.tel):not([href="/check/"]){display:none}
+  /* Match reference: on small screens keep brand + phone (and check) + language */
+  nav a:not(.tel):not([href="/check/"]):not([href="/es/check/"]):not(.lang-switch){display:none}
+  nav a.lang-switch{display:inline-flex!important}
   nav{margin-left:auto;gap:12px}
   .bar{padding:10px var(--sp3)}
   .brand{font-size:17px}

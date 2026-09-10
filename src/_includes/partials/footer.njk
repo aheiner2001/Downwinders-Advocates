@@ -1,3 +1,6 @@
+{% set L = locale or 'en' %}
+{% set t = ui[L] %}
+{% set prefix = '/es' if L == 'es' else '' %}
 <footer>
   <div class="wrap stack">
     <div class="brand" style="color:#EAF0F7">
@@ -7,13 +10,13 @@
         <path d="M14 40c8-4 12 2 18 0s10-4 14-1" stroke="#fff" stroke-width="3.4" fill="none" stroke-linecap="round"/>
         <path d="M14 49c8-4 12 2 18 0s10-4 14-1" stroke="#fff" stroke-width="3.4" fill="none" stroke-linecap="round"/>
       </svg>
-      <span>Downwinders Advocates<small>You do not have to figure this out alone.</small></span>
+      <span>Downwinders Advocates<small>{{ t.footerTagline }}</small></span>
     </div>
-    <p class="legal" style="max-width:78ch">Downwinders Advocates is an independent, privately owned company. It is not affiliated with the United States government or the Department of Justice and is not a law firm. We do not provide legal advice. Submitting information does not create an attorney-client relationship and does not guarantee eligibility, approval, or compensation. Eligibility and compensation decisions are made solely by the U.S. Department of Justice. Free assistance with these claims is available from RESEP clinics.</p>
+    <p class="legal" style="max-width:78ch">{{ t.footerLegal }}</p>
     <p class="legal">
-      <a href="/check/">Check eligibility</a> &nbsp;·&nbsp;
-      <a href="/free-help/">Free help (RESEP)</a> &nbsp;·&nbsp;
-      <a href="/standards/">Our public standards</a>
+      <a href="{{ prefix }}/check/">{{ t.check }}</a> &nbsp;·&nbsp;
+      <a href="{{ prefix }}/free-help/">{{ t.footerFreeHelp }}</a> &nbsp;·&nbsp;
+      <a href="{{ prefix }}/standards/">{{ t.footerStandards }}</a>
     </p>
     <p class="legal">{{ site.phoneDisplay }} &nbsp;·&nbsp; {{ site.email }}</p>
   </div>

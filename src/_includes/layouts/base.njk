@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="{% if locale == 'es' %}es{% else %}en-US{% endif %}">
 <head>
 {% include "partials/head.njk" %}
 </head>
 <body>
 {% include "partials/header.njk" %}
+{% include "partials/draft-banner.njk" %}
 <main id="main">
 {{ content | safe }}
 </main>
