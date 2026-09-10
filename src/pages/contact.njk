@@ -1,39 +1,65 @@
 ---
 layout: layouts/base.njk
 title: "Contact | Downwinders Advocates"
-description: "Request a callback. Name, phone, and best time to reach you."
+description: ""
 permalink: /contact/
 ---
-<section class="sec">
+<section class="sec" id="contact">
   <div class="wrap stack">
-    <h1>Request a callback</h1>
-    <p class="lede">Three fields. We aim to call within one business day. Lawmatics embed pending — this form does not submit yet.</p>
-    <form class="tool" id="callback" onsubmit="return false;">
-      <div class="field">
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text" required autocomplete="name">
+    <p class="eyebrow">Getting in touch</p>
+    <h2>Four ways, and you pick the one you like</h2>
+    <p class="lede">Some people want to call right now. Some would rather we call them. Some would rather text. And some do not want to do this on a screen at all. All four are fine.</p>
+
+    <div class="cb">
+      <h3>Start your family&rsquo;s file</h3>
+      <p class="muted">Three things. That is the whole form. We call within one business day, and if we miss you we keep trying. On that call we take down where the family lived, what the work was, and the diagnosis. Then we go do the records hunt at no cost to you.</p>
+      <form id="cb" class="stack-sm" novalidate>
+        <div class="field">
+          <label for="n">Your name</label>
+          <input id="n" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="ph">Phone number</label>
+          <input id="ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
+        </div>
+        <div class="field">
+          <label for="wt">Best time to reach you</label>
+          <select id="wt" name="when">
+            <option>Any time</option>
+            <option>Morning</option>
+            <option>Afternoon</option>
+            <option>Evening</option>
+            <option>Weekend</option>
+          </select>
+        </div>
+        <button class="btn" type="submit">Have someone call me</button>
+        <div class="result" id="cbout" role="status" aria-live="polite"></div>
+        <p class="legal">We use your number to call you about this and nothing else. We do not sell or share it. Ask us to delete it any time and we will.</p>
+      </form>
+    </div>
+
+    <div class="ways">
+      <div class="way">
+        <h3>Call now</h3>
+        <a class="big" href="tel:+18014008270">(801) 400-8270</a>
+        <p class="muted">A person picks up. Not a menu.</p>
       </div>
-      <div class="field">
-        <label for="phone">Phone</label>
-        <input id="phone" name="phone" type="tel" required autocomplete="tel">
+      <div class="way">
+        <h3>Text us</h3>
+        <a class="big" href="sms:+18014008270">(801) 400-8270</a>
+        <p class="muted">Easier if you are at work or helping a parent. Same number.</p>
       </div>
-      <div class="field">
-        <label for="best-time">Best time to reach you</label>
-        <select id="best-time" name="best_time">
-          <option value="">Select…</option>
-          <option>Any time</option>
-          <option>Morning</option>
-          <option>Afternoon</option>
-          <option>Evening</option>
-          <option>Weekend</option>
-        </select>
+      <div class="way">
+        <h3>Get it in the mail</h3>
+        <a class="big" href="tel:+18014008270">Ask for the packet</a>
+        <p class="muted">Free, no obligation, and we do not follow up unless you ask.</p>
       </div>
-      <button class="btn" type="submit" disabled>Callback form coming soon</button>
-    </form>
-    <p class="legal">Or call {{ site.phoneDisplay }} now. Do not add fields beyond name, phone, and best time when the Lawmatics embed is wired.</p>
+    </div>
+    <p class="legal">Callback form endpoint pending. See <a href="/#who">who you are dealing with</a> above.</p>
     <div class="btns">
-      <a class="btn" href="/check/">Check eligibility first</a>
-      <a class="btn btn--ghost" href="/free-help/">Free RESEP help</a>
+      <a class="btn" href="/check/">Check eligibility</a>
+      <a class="btn btn--ghost" href="/free-help/">Free help</a>
     </div>
   </div>
 </section>
+
