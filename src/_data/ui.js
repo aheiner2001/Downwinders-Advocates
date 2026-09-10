@@ -1,0 +1,43 @@
+module.exports = {
+  en: {
+    skip: "Skip to content",
+    check: "Check eligibility",
+    freeHelp: "Free help",
+    standards: "Our standards",
+    whatItCosts: "What it costs",
+    who: "Who we are",
+    faq: "Questions",
+    contact: "Contact",
+    langSwitchLabel: "Español",
+    footerTagline: "You do not have to figure this out alone.",
+    footerLegal:
+      "Downwinders Advocates is an independent, privately owned company. It is not affiliated with the United States government or the Department of Justice and is not a law firm. We do not provide legal advice. Submitting information does not create an attorney-client relationship and does not guarantee eligibility, approval, or compensation. Eligibility and compensation decisions are made solely by the U.S. Department of Justice. Free assistance with these claims is available from RESEP clinics.",
+    footerStandards: "Our public standards",
+    footerFreeHelp: "Free help (RESEP)",
+    ctaCheck: "Check eligibility",
+    ctaFreeHelp: "Free help",
+    draftBanner: "",
+    brandSubtitle: "RECA Claim Help",
+  },
+  es: {
+    skip: "Saltar al contenido",
+    check: "Verificar elegibilidad",
+    freeHelp: "Ayuda gratuita",
+    standards: "Nuestros estándares",
+    whatItCosts: "Cuánto cuesta",
+    who: "Quiénes somos",
+    faq: "Preguntas",
+    contact: "Contacto",
+    langSwitchLabel: "English",
+    footerTagline: "No tiene que resolver esto solo.",
+    footerLegal:
+      "Downwinders Advocates es una empresa independiente de propiedad privada. No está afiliada al gobierno de los Estados Unidos ni al Departamento de Justicia y no es un bufete de abogados. No ofrecemos asesoría legal. Enviar información no crea una relación abogado-cliente y no garantiza elegibilidad, aprobación ni compensación. Las decisiones de elegibilidad y compensación las toma únicamente el Departamento de Justicia de EE. UU. Hay asistencia gratuita con estos reclamos en las clínicas RESEP.",
+    footerStandards: "Nuestros estándares públicos",
+    footerFreeHelp: "Ayuda gratuita (RESEP)",
+    ctaCheck: "Verificar elegibilidad",
+    ctaFreeHelp: "Ayuda gratuita",
+    draftBanner:
+      "Borrador de traducción automática para revisión — no es texto aprobado por el abogado. Para ayuda en español, llame al (801) 400-8270.",
+    brandSubtitle: "Ayuda con reclamos RECA",
+  },
+};

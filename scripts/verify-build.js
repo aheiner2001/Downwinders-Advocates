@@ -32,7 +32,30 @@ function countIndexHtml(dir) {
 }
 
 const pages = countIndexHtml(site);
-if (pages !== 48) throw new Error("expected 48 index.html pages, got " + pages);
+if (pages !== 96) throw new Error("expected 96 index.html pages, got " + pages);
+
+mustExist("es/index.html");
+mustExist("es/check/index.html");
+mustExist("es/covered-areas/arizona-coconino-county/index.html");
+mustExist("es/conditions/leukemia/index.html");
+
+function assertSpanishDraft(rel) {
+  const html = fs.readFileSync(path.join(site, rel), "utf8");
+  if (!html.includes('lang="es"')) throw new Error(rel + " missing lang=es");
+  if (!/noindex/i.test(html)) throw new Error(rel + " missing noindex");
+  if (!html.includes("Borrador de traducción automática para revisión")) {
+    throw new Error(rel + " missing draft banner");
+  }
+  if (!html.includes('hreflang="en"') || !html.includes('hreflang="es"')) {
+    throw new Error(rel + " missing hreflang");
+  }
+}
+
+assertSpanishDraft("es/index.html");
+assertSpanishDraft("es/covered-areas/arizona-coconino-county/index.html");
+
+const sitemap = fs.readFileSync(path.join(site, "sitemap.xml"), "utf8");
+if (sitemap.includes("/es/")) throw new Error("sitemap must not list /es/ while draft");
 
 const robots = fs.readFileSync(path.join(site, "robots.txt"), "utf8");
 for (const bot of ["GPTBot", "ClaudeBot", "PerplexityBot", "Google-Extended"]) {
@@ -79,6 +102,20 @@ for (const rel of shellPaths) {
   }
 }
 
+const esShellPaths = shellPaths.map((p) => "es/" + p);
+for (const rel of esShellPaths) {
+  const html = fs.readFileSync(path.join(site, rel), "utf8");
+  for (const re of forbidden) {
+    if (re.test(html)) throw new Error("invented shell copy in " + rel);
+  }
+  if (!html.includes('href="/es/check/"') || !html.includes('href="/es/free-help/"')) {
+    throw new Error(rel + " missing /es/check or /es/free-help link");
+  }
+  if ((html.match(/<h1[\s>]/g) || []).length !== 1) {
+    throw new Error(rel + " must have exactly one h1");
+  }
+}
+
 function assertCmsMinimal(rel) {
   const html = fs.readFileSync(path.join(site, rel), "utf8");
   if ((html.match(/<h1[\s>]/g) || []).length !== 1) {
@@ -98,6 +135,20 @@ assertCmsMinimal("covered-areas/not-covered/index.html");
 assertCmsMinimal("covered-areas/arizona-coconino-county/index.html");
 assertCmsMinimal("conditions/leukemia/index.html");
 
+function assertCmsMinimalEs(rel) {
+  const html = fs.readFileSync(path.join(site, rel), "utf8");
+  if ((html.match(/<h1[\s>]/g) || []).length !== 1) {
+    throw new Error(rel + " must have exactly one h1");
+  }
+  if (!html.includes('href="/es/check/"') || !html.includes('href="/es/free-help/"')) {
+    throw new Error(rel + " missing ES CTA links");
+  }
+  if (!html.includes("data-cms-body")) throw new Error(rel + " missing empty Body container");
+}
+
+assertCmsMinimalEs("es/covered-areas/not-covered/index.html");
+assertCmsMinimalEs("es/conditions/leukemia/index.html");
+
 const contentPages = ["index.html", "check/index.html", "standards/index.html", "what-it-costs/index.html", "contact/index.html"];
 for (const rel of contentPages) {
   const html = fs.readFileSync(path.join(site, rel), "utf8");
@@ -106,4 +157,4 @@ for (const rel of contentPages) {
   }
 }
 
-console.log("PASS verify-build (48 pages + SEO + strict copy + a11y CSS)");
+console.log("PASS verify-build (96 pages + SEO + strict copy + ES draft + a11y CSS)");
