@@ -1,4 +1,6 @@
 module.exports = function (eleventyConfig) {
+  const pathPrefix = process.env.ELEVENTY_PATH_PREFIX || "/";
+
   eleventyConfig.addPassthroughCopy({ "src/assets/robots.txt": "robots.txt" });
   eleventyConfig.addPassthroughCopy({ "src/assets/llms.txt": "llms.txt" });
   eleventyConfig.addPassthroughCopy({ "src/assets/js": "js" });
@@ -12,6 +14,15 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("jsonLd", (obj) => JSON.stringify(obj));
 
+  // Hardcoded root-absolute href/src need rewriting for GitHub project Pages (/repo/...)
+  if (pathPrefix && pathPrefix !== "/") {
+    const prefix = pathPrefix.replace(/\/$/, "");
+    eleventyConfig.addTransform("prefixRootPaths", (content, outputPath) => {
+      if (!outputPath || !outputPath.endsWith(".html")) return content;
+      return content.replace(/(href|src)="\/(?!\/)/g, `$1="${prefix}/`);
+    });
+  }
+
   return {
     dir: {
       input: "src",
@@ -21,6 +32,6 @@ module.exports = function (eleventyConfig) {
     },
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
-    pathPrefix: process.env.ELEVENTY_PATH_PREFIX || "/",
+    pathPrefix,
   };
 };
