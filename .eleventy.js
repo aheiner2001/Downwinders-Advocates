@@ -2,6 +2,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/robots.txt": "robots.txt" });
   eleventyConfig.addPassthroughCopy({ "src/assets/llms.txt": "llms.txt" });
   eleventyConfig.addPassthroughCopy({ "src/assets/js": "js" });
+  eleventyConfig.addPassthroughCopy({ "src/assets/.nojekyll": ".nojekyll" });
 
   eleventyConfig.addFilter("absoluteUrl", (path, base) => {
     const root = (base || "https://downwindersadvocates.com").replace(/\/$/, "");
@@ -20,6 +21,6 @@ module.exports = function (eleventyConfig) {
     },
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
-    pathPrefix: "/",
+    pathPrefix: process.env.ELEVENTY_PATH_PREFIX || "/",
   };
 };
