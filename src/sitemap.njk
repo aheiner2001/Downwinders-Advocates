@@ -1,0 +1,30 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- set staticPaths = [
+  "/",
+  "/check/",
+  "/standards/",
+  "/what-it-costs/",
+  "/contact/",
+  "/is-this-real/",
+  "/siblings/",
+  "/someone-told-me-about-this/",
+  "/documents/",
+  "/free-help/",
+  "/deadline/",
+  "/survivors/"
+] -%}
+{%- for path in staticPaths %}
+  <url><loc>{{ path | absoluteUrl(site.url) }}</loc></url>
+{%- endfor %}
+{%- for area in counties %}
+  <url><loc>{{ ("/covered-areas/" + area.slug + "/") | absoluteUrl(site.url) }}</loc></url>
+{%- endfor %}
+{%- for condition in conditions %}
+  <url><loc>{{ ("/conditions/" + condition.slug + "/") | absoluteUrl(site.url) }}</loc></url>
+{%- endfor %}
+</urlset>

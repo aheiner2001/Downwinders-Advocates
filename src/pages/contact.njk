@@ -1,0 +1,39 @@
+---
+layout: layouts/base.njk
+title: "Contact | Downwinders Advocates"
+description: "Request a callback. Name, phone, and best time to reach you."
+permalink: /contact/
+---
+<section class="sec">
+  <div class="wrap stack">
+    <h1>Request a callback</h1>
+    <p class="lede">Three fields. We aim to call within one business day. Lawmatics embed pending — this form does not submit yet.</p>
+    <form class="tool" id="callback" onsubmit="return false;">
+      <div class="field">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="phone">Phone</label>
+        <input id="phone" name="phone" type="tel" required autocomplete="tel">
+      </div>
+      <div class="field">
+        <label for="best-time">Best time to reach you</label>
+        <select id="best-time" name="best_time">
+          <option value="">Select…</option>
+          <option>Any time</option>
+          <option>Morning</option>
+          <option>Afternoon</option>
+          <option>Evening</option>
+          <option>Weekend</option>
+        </select>
+      </div>
+      <button class="btn" type="submit" disabled>Callback form coming soon</button>
+    </form>
+    <p class="legal">Or call {{ site.phoneDisplay }} now. Do not add fields beyond name, phone, and best time when the Lawmatics embed is wired.</p>
+    <div class="btns">
+      <a class="btn" href="/check/">Check eligibility first</a>
+      <a class="btn btn--ghost" href="/free-help/">Free RESEP help</a>
+    </div>
+  </div>
+</section>

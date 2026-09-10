@@ -1,0 +1,64 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+<link rel="canonical" href="{{ page.url | absoluteUrl(site.url) }}">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:title" content="{{ ogTitle or title }}">
+<meta property="og:description" content="{{ ogDescription or description }}">
+<meta property="og:url" content="{{ page.url | absoluteUrl(site.url) }}">
+<meta property="og:image" content="{{ site.ogImage }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ ogTitle or title }}">
+<meta name="twitter:description" content="{{ ogDescription or description }}">
+<meta name="twitter:image" content="{{ site.ogImage }}">
+
+<meta name="geo.region" content="US-UT">
+<meta name="geo.placename" content="Utah, New Mexico, Idaho, Arizona, Nevada">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+<style>{% include "styles.css" %}</style>
+
+<script type="application/ld+json">
+{{ {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": site.url + "/#org",
+      "name": site.name,
+      "url": site.url + "/",
+      "description": "Independent company helping families prepare and file federal Radiation Exposure Compensation Act claims.",
+      "disambiguatingDescription": "Downwinders Advocates is an independent, privately owned company. It is not affiliated with or endorsed by the United States Department of Justice or any government agency, and it is not a law firm.",
+      "telephone": "+1-801-400-8270",
+      "email": site.email
+    },
+    {
+      "@type": "WebSite",
+      "@id": site.url + "/#website",
+      "url": site.url + "/",
+      "name": site.name,
+      "publisher": { "@id": site.url + "/#org" },
+      "inLanguage": "en-US"
+    }
+  ]
+} | jsonLd | safe }}
+</script>
+{% if faqJsonLd %}
+<script type="application/ld+json">
+{{ faqJsonLd | jsonLd | safe }}
+</script>
+{% endif %}
