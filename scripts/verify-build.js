@@ -1,7 +1,9 @@
 const fs = require("fs");
 const path = require("path");
 
-const site = path.join(__dirname, "..", "_site");
+const root = path.join(__dirname, "..");
+const site = path.join(root, "_site");
+
 function mustExist(rel) {
   const p = path.join(site, rel);
   if (!fs.existsSync(p)) throw new Error("missing " + rel);
@@ -13,6 +15,8 @@ mustExist("llms.txt");
 mustExist("sitemap.xml");
 mustExist("check/index.html");
 mustExist("contact/index.html");
+mustExist("standards/index.html");
+mustExist("what-it-costs/index.html");
 mustExist("covered-areas/arizona-coconino-county/index.html");
 mustExist("covered-areas/not-covered/index.html");
 mustExist("conditions/leukemia/index.html");
@@ -35,27 +39,71 @@ for (const bot of ["GPTBot", "ClaudeBot", "PerplexityBot", "Google-Extended"]) {
   if (!robots.includes(bot)) throw new Error("robots.txt missing " + bot);
 }
 
-const css = fs.readFileSync(path.join(__dirname, "..", "src/_includes/styles.css"), "utf8");
+const css = fs.readFileSync(path.join(root, "src/_includes/styles.css"), "utf8");
 if (!/font-size:\s*18px/.test(css)) throw new Error("body 18px rule missing");
 if (!/:focus-visible/.test(css)) throw new Error("focus-visible rule missing");
 if (!css.includes(".scroll") || !css.includes("overflow-x:auto")) {
   throw new Error("scroll overflow wrapper missing");
 }
+if (/outline:\s*none/.test(css) && !/:focus-visible/.test(css)) {
+  throw new Error("outline:none without focus-visible replacement");
+}
 
-const report = path.join(__dirname, "..", "slug-flatten-report.txt");
+const report = path.join(root, "slug-flatten-report.txt");
 if (!fs.existsSync(report)) throw new Error("slug-flatten-report.txt missing — run build first");
 const reportText = fs.readFileSync(report, "utf8");
 if (!reportText.includes("arizona/coconino-county -> arizona-coconino-county")) {
   throw new Error("flatten report missing coconino mapping");
 }
 
-const sample = fs.readFileSync(path.join(site, "covered-areas/not-covered/index.html"), "utf8");
-if (!sample.includes("<h1>") || (sample.match(/<h1>/g) || []).length !== 1) {
-  throw new Error("not-covered page must have exactly one h1");
+const forbidden = [/content for this page is coming/i, /copy coming/i, /checklist copy coming/i];
+const shellPaths = [
+  "is-this-real/index.html",
+  "siblings/index.html",
+  "someone-told-me-about-this/index.html",
+  "documents/index.html",
+  "free-help/index.html",
+  "deadline/index.html",
+  "survivors/index.html",
+];
+for (const rel of shellPaths) {
+  const html = fs.readFileSync(path.join(site, rel), "utf8");
+  for (const re of forbidden) {
+    if (re.test(html)) throw new Error("invented shell copy in " + rel + " matched " + re);
+  }
+  if (!html.includes('href="/check/"') || !html.includes('href="/free-help/"')) {
+    throw new Error(rel + " missing /check or /free-help link");
+  }
+  if ((html.match(/<h1[\s>]/g) || []).length !== 1) {
+    throw new Error(rel + " must have exactly one h1");
+  }
 }
-if (!sample.includes('rel="canonical"')) throw new Error("canonical missing");
-if (!sample.includes("/check/")) throw new Error("missing /check link");
-if (!sample.includes("/free-help/")) throw new Error("missing /free-help link");
-if (!sample.includes("application/ld+json")) throw new Error("JSON-LD missing");
 
-console.log("PASS verify-build (48 pages + SEO + a11y CSS checks)");
+function assertCmsMinimal(rel) {
+  const html = fs.readFileSync(path.join(site, rel), "utf8");
+  if ((html.match(/<h1[\s>]/g) || []).length !== 1) {
+    throw new Error(rel + " must have exactly one h1");
+  }
+  if (!html.includes('rel="canonical"')) throw new Error(rel + " canonical missing");
+  if (!html.includes('href="/check/"') || !html.includes('href="/free-help/"')) {
+    throw new Error(rel + " missing CTA links");
+  }
+  if (!html.includes("application/ld+json")) throw new Error(rel + " JSON-LD missing");
+  if (!html.includes("data-cms-body")) throw new Error(rel + " missing empty Body container");
+  if (/Key towns:/i.test(html)) throw new Error(rel + " must not show Key Towns as prose");
+  if (/class="lede"/.test(html)) throw new Error(rel + " must not show meta as lede prose");
+}
+
+assertCmsMinimal("covered-areas/not-covered/index.html");
+assertCmsMinimal("covered-areas/arizona-coconino-county/index.html");
+assertCmsMinimal("conditions/leukemia/index.html");
+
+const contentPages = ["index.html", "check/index.html", "standards/index.html", "what-it-costs/index.html", "contact/index.html"];
+for (const rel of contentPages) {
+  const html = fs.readFileSync(path.join(site, rel), "utf8");
+  for (const re of forbidden) {
+    if (re.test(html)) throw new Error("invented placeholder in " + rel);
+  }
+}
+
+console.log("PASS verify-build (48 pages + SEO + strict copy + a11y CSS)");
