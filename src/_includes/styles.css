@@ -41,10 +41,10 @@ a{color:inherit}
 /* header */
 header{position:sticky;top:0;z-index:40;background:var(--deep);color:var(--on-deep);border-bottom:1px solid rgba(255,255,255,.09)}
 .bar{display:flex;align-items:center;gap:var(--sp3);padding:12px var(--sp3);max-width:var(--wrap);margin:0 auto;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:12px;font-family:var(--f-head);font-weight:700;font-size:19px;color:var(--on-deep);text-decoration:none;letter-spacing:-.01em}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--f-head);font-weight:700;font-size:19px;color:var(--on-deep);text-decoration:none;letter-spacing:-.01em;flex:1 0 100%}
 .brand small{display:block;font-weight:500;font-size:13px;letter-spacing:.05em;opacity:.8}
 .shield{width:34px;height:40px;flex:none}
-nav{margin-left:auto;display:flex;gap:var(--sp3);align-items:center;flex-wrap:wrap}
+nav{margin-left:auto;display:flex;gap:var(--sp3);align-items:center;justify-content:flex-end;flex-wrap:wrap;width:100%}
 nav a{color:#CBD8E6;text-decoration:none;font-size:16px}
 nav a:hover{color:var(--accent)}
 .tel{font-family:var(--f-head);font-weight:600;color:var(--on-deep);text-decoration:none;white-space:nowrap}
@@ -140,8 +140,13 @@ footer a{color:#CBD8E6}
 .pill{display:inline-block;background:var(--accent);color:#3A2606;font-family:var(--f-head);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:99px}
 .covered{font-size:16px;line-height:1.6}
 .covered strong{font-family:var(--f-head)}
+@media(max-width:1100px){
+  /* Keep logo + primary links on one row; drop secondary before wrap */
+  nav a.nav-secondary{display:none}
+}
 @media(max-width:760px){
-  nav a[href^="#"]{display:none}
+  /* Match reference: on small screens keep brand + phone (and check) */
+  nav a:not(.tel):not([href="/check/"]){display:none}
   nav{margin-left:auto;gap:12px}
   .bar{padding:10px var(--sp3)}
   .brand{font-size:17px}
