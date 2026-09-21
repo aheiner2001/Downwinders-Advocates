@@ -4,6 +4,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/robots.txt": "robots.txt" });
   eleventyConfig.addPassthroughCopy({ "src/assets/llms.txt": "llms.txt" });
   eleventyConfig.addPassthroughCopy({ "src/assets/js": "js" });
+  eleventyConfig.addPassthroughCopy({ "src/assets/img": "img" });
   eleventyConfig.addPassthroughCopy({ "src/assets/.nojekyll": ".nojekyll" });
 
   eleventyConfig.addFilter("absoluteUrl", (path, base) => {

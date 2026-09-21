@@ -1,6 +1,7 @@
 module.exports = {
   en: {
     skip: "Skip to content",
+    home: "Home",
     check: "Check eligibility",
     freeHelp: "Free help",
     standards: "Our standards",
@@ -21,6 +22,7 @@ module.exports = {
   },
   es: {
     skip: "Saltar al contenido",
+    home: "Inicio",
     check: "Verificar elegibilidad",
     freeHelp: "Ayuda gratuita",
     standards: "Nuestros estándares",

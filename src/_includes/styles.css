@@ -11,6 +11,10 @@
   --wrap:1080px; --read:68ch;
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+}
 body{margin:0;color-scheme:light;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
 h1,h2,h3,h4{font-family:var(--f-head);color:var(--ink);text-wrap:balance;margin:0}
 h1{font-size:clamp(30px,5vw,50px);font-weight:700;line-height:1.15;letter-spacing:-.015em}
@@ -117,8 +121,9 @@ footer a{color:#CBD8E6}
 .skip{position:absolute;left:-9999px;top:0;background:var(--accent);color:#3A2606;padding:12px 20px;font-family:var(--f-head);font-weight:600;z-index:100}
 .skip:focus{left:12px;top:12px}
 [data-es]{display:none}
-.es-line{background:var(--band);border-radius:8px;padding:14px 18px;font-size:17px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
-.es-line strong{font-family:var(--f-head)}
+.es-line{background:var(--band);color:var(--ink);border-radius:8px;padding:14px 18px;font-size:17px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.es-line strong{font-family:var(--f-head);color:var(--ink)}
+.es-line a{color:var(--ink);text-decoration:underline}
 .cb{background:var(--surface);border:2px solid var(--accent);border-radius:12px;padding:var(--sp4);display:flex;flex-direction:column;gap:var(--sp2)}
 .field{display:flex;flex-direction:column;gap:6px}
 .field label{font-family:var(--f-head);font-weight:600;font-size:17px}
@@ -132,7 +137,8 @@ footer a{color:#CBD8E6}
 .people{display:grid;gap:var(--sp3)}
 @media(min-width:720px){.people{grid-template-columns:repeat(3,1fr)}}
 .person{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:var(--sp3);display:flex;flex-direction:column;gap:8px;align-items:flex-start}
-.avatar{width:72px;height:72px;border-radius:50%;background:var(--band);display:grid;place-items:center;font-family:var(--f-head);font-weight:700;font-size:24px;color:var(--ink);flex:none}
+.avatar{width:112px;height:112px;border-radius:50%;background:var(--band);display:grid;place-items:center;font-family:var(--f-head);font-weight:700;font-size:24px;color:var(--ink);flex:none;overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 .person h3{font-size:19px;margin-top:4px}
 .role{font-family:var(--f-head);font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
 .notice{background:var(--band);border-radius:10px;padding:var(--sp3);display:flex;flex-direction:column;gap:10px}
@@ -149,7 +155,7 @@ footer a{color:#CBD8E6}
 .lang-switch{font-weight:600;color:var(--accent)!important;border:1px solid rgba(222,162,68,.55);padding:6px 10px;border-radius:6px}
 @media(max-width:760px){
   /* Match reference: on small screens keep brand + phone (and check) + language */
-  nav a:not(.tel):not([href="/check/"]):not([href="/es/check/"]):not(.lang-switch){display:none}
+  nav a:not(.tel):not([href="/"]):not([href="/es/"]):not([href="/check/"]):not([href="/es/check/"]):not(.lang-switch){display:none}
   nav a.lang-switch{display:inline-flex!important}
   nav{margin-left:auto;gap:12px}
   .bar{padding:10px var(--sp3)}
