@@ -5,4 +5,6 @@ module.exports = {
   phoneTel: "+18014008270",
   email: "info@downwindersadvocates.com",
   ogImage: "https://downwindersadvocates.com/og-image.jpg",
+  // Home “Families of the West” story cards — set true when real interviews are ready
+  showStories: false,
 };

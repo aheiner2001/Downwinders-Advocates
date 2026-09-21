@@ -5,6 +5,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/llms.txt": "llms.txt" });
   eleventyConfig.addPassthroughCopy({ "src/assets/js": "js" });
   eleventyConfig.addPassthroughCopy({ "src/assets/img": "img" });
+  // Also at site root so https://…/og-image.jpg matches meta tags / Phase 7
+  eleventyConfig.addPassthroughCopy({ "src/assets/img/og-image.jpg": "og-image.jpg" });
   eleventyConfig.addPassthroughCopy({ "src/assets/.nojekyll": ".nojekyll" });
 
   eleventyConfig.addFilter("absoluteUrl", (path, base) => {
