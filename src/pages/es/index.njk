@@ -6,7 +6,6 @@ description: "Verificación gratuita de elegibilidad para la Ley federal de Comp
 ogTitle: "Ayuda con reclamos RECA para downwinders y trabajadores del uranio"
 ogDescription: "Verificación gratuita de elegibilidad. Condados cubiertos, condiciones que califican y la fecha límite del 31 de diciembre de 2027. Independientes. No somos una agencia del gobierno. No somos un bufete."
 permalink: /es/
-extraScripts: '<script src="/js/screener.js" defer></script>'
 ---
 <section class="hero" id="top">
   <div class="wrap stack">
@@ -218,29 +217,8 @@ extraScripts: '<script src="/js/screener.js" defer></script>'
     <div class="cb">
       <h3>Empiece el expediente de su familia</h3>
       <p class="muted">Tres datos. Eso es todo el formulario. Llamamos en un día hábil, y si no lo alcanzamos seguimos intentando. En esa llamada anotamos dónde vivió la familia, cuál fue el trabajo y el diagnóstico. Luego hacemos la búsqueda de registros sin costo para usted.</p>
-      <form id="cb" class="stack-sm" data-locale="es" novalidate>
-        <div class="field">
-          <label for="n">Su nombre</label>
-          <input id="n" name="name" type="text" autocomplete="name" required>
-        </div>
-        <div class="field">
-          <label for="ph">Número de teléfono</label>
-          <input id="ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
-        </div>
-        <div class="field">
-          <label for="wt">Mejor momento para contactarlo</label>
-          <select id="wt" name="when">
-            <option>Cualquier momento</option>
-            <option>Mañana</option>
-            <option>Tarde</option>
-            <option>Noche</option>
-            <option>Fin de semana</option>
-          </select>
-        </div>
-        <button class="btn" type="submit">Que alguien me llame</button>
-        <div class="result" id="cbout" role="status" aria-live="polite"></div>
-        <p class="legal">Usamos su número para llamarlo sobre esto y nada más. No lo vendemos ni lo compartimos. Pídanos borrarlo en cualquier momento y lo haremos.</p>
-      </form>
+      {% include "partials/lawmatics-callback.njk" %}
+      <p class="legal">Usamos su número para llamarlo sobre esto y nada más. No lo vendemos ni lo compartimos. Pídanos borrarlo en cualquier momento y lo haremos.</p>
     </div>
 
     <div class="ways">
@@ -260,6 +238,6 @@ extraScripts: '<script src="/js/screener.js" defer></script>'
         <p class="muted">Gratis, sin obligación, y no hacemos seguimiento a menos que usted lo pida.</p>
       </div>
     </div>
-    <p class="legal">El destino del formulario de devolución de llamada está pendiente. Vea <a href="/es/#who">con quién está tratando</a>.</p>
+    <p class="legal">Vea <a href="/es/#who">con quién está tratando</a>.</p>
   </div>
 </section>

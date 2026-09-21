@@ -4,7 +4,6 @@ locale: en
 title: "Contact | Downwinders Advocates"
 description: ""
 permalink: /contact/
-extraScripts: '<script src="/js/screener.js" defer></script>'
 ---
 <section class="sec" id="contact">
   <div class="wrap stack">
@@ -15,29 +14,8 @@ extraScripts: '<script src="/js/screener.js" defer></script>'
     <div class="cb">
       <h3>Start your family&rsquo;s file</h3>
       <p class="muted">Three things. That is the whole form. We call within one business day, and if we miss you we keep trying. On that call we take down where the family lived, what the work was, and the diagnosis. Then we go do the records hunt at no cost to you.</p>
-      <form id="cb" class="stack-sm" novalidate>
-        <div class="field">
-          <label for="n">Your name</label>
-          <input id="n" name="name" type="text" autocomplete="name" required>
-        </div>
-        <div class="field">
-          <label for="ph">Phone number</label>
-          <input id="ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
-        </div>
-        <div class="field">
-          <label for="wt">Best time to reach you</label>
-          <select id="wt" name="when">
-            <option>Any time</option>
-            <option>Morning</option>
-            <option>Afternoon</option>
-            <option>Evening</option>
-            <option>Weekend</option>
-          </select>
-        </div>
-        <button class="btn" type="submit">Have someone call me</button>
-        <div class="result" id="cbout" role="status" aria-live="polite"></div>
-        <p class="legal">We use your number to call you about this and nothing else. We do not sell or share it. Ask us to delete it any time and we will.</p>
-      </form>
+      {% include "partials/lawmatics-callback.njk" %}
+      <p class="legal">We use your number to call you about this and nothing else. We do not sell or share it. Ask us to delete it any time and we will.</p>
     </div>
 
     <div class="ways">
@@ -57,7 +35,7 @@ extraScripts: '<script src="/js/screener.js" defer></script>'
         <p class="muted">Free, no obligation, and we do not follow up unless you ask.</p>
       </div>
     </div>
-    <p class="legal">Callback form endpoint pending. See <a href="/#who">who you are dealing with</a> above.</p>
+    <p class="legal">See <a href="/#who">who you are dealing with</a>.</p>
     <div class="btns">
       <a class="btn" href="/check/">Check eligibility</a>
       <a class="btn btn--ghost" href="/free-help/">Free help</a>
