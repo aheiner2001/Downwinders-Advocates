@@ -212,34 +212,28 @@ permalink: /es/
 
 <section class="sec" id="contact">
   <div class="wrap stack">
-    <p class="eyebrow">Cómo contactarnos</p>
-    <h2>Cuatro formas, y usted elige la que prefiera</h2>
-    <p class="lede">Algunas personas quieren llamar ahora. Otras prefieren que las llamemos. Otras prefieren un mensaje de texto. Y algunas no quieren hacer esto en una pantalla. Las cuatro están bien.</p>
-
-    <div class="cb">
-      <h3>Empiece el expediente de su familia</h3>
-      <p class="muted">Tres datos. Eso es todo el formulario. Llamamos en un día hábil, y si no lo alcanzamos seguimos intentando. En esa llamada anotamos dónde vivió la familia, cuál fue el trabajo y el diagnóstico. Luego hacemos la búsqueda de registros sin costo para usted.</p>
-      {% include "partials/lawmatics-callback.njk" %}
-      <p class="legal">Usamos su número para llamarlo sobre esto y nada más. No lo vendemos ni lo compartimos. Pídanos borrarlo en cualquier momento y lo haremos.</p>
+    <div style="text-align:center;max-width:760px;margin:0 auto">
+      <p class="eyebrow">Cómo contactarnos</p>
+      <h2>¿Listo para empezar? Conéctese con un especialista</h2>
+      <p class="muted">Llámenos o envíenos un mensaje. Respondemos con prontitud.</p>
     </div>
 
     <div class="ways">
       <div class="way">
         <h3>Llame ahora</h3>
-        <a class="big" href="tel:+18014008270">(801) 400-8270</a>
+        <a class="big" href="tel:{{ site.phoneTel }}">{{ site.phoneDisplay }}</a>
         <p class="muted">Atiende una persona. No un menú.</p>
       </div>
       <div class="way">
         <h3>Envíenos un texto</h3>
-        <a class="big" href="sms:+18014008270">(801) 400-8270</a>
-        <p class="muted">Más fácil si está en el trabajo o ayudando a un padre. El mismo número.</p>
+        <a class="big" href="sms:{{ site.phoneTel }}">{{ site.phoneDisplay }}</a>
+        <p class="muted">El mismo número.</p>
       </div>
       <div class="way">
-        <h3>Recíbalo por correo</h3>
-        <a class="big" href="tel:+18014008270">Pida el paquete</a>
-        <p class="muted">Gratis, sin obligación, y no hacemos seguimiento a menos que usted lo pida.</p>
+        <h3>Agende en línea</h3>
+        <a class="big" href="/es/contact/#form">Hacer una cita</a>
+        <p class="muted">Consulta de 30 minutos por teléfono o Zoom.</p>
       </div>
     </div>
-    <p class="legal">Vea <a href="/es/#who">con quién está tratando</a>.</p>
   </div>
 </section>
