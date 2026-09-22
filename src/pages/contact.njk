@@ -1,45 +1,95 @@
 ---
 layout: layouts/base.njk
 locale: en
-title: "Contact | Downwinders Advocates"
-description: ""
+title: "Contact Us & Start Your File | Downwinders Advocates"
+description: "Contact our dedicated team of RECA advocates by phone, text, or online form to begin your family's claim review."
 permalink: /contact/
 ---
 <section class="sec" id="contact">
   <div class="wrap stack">
-    <p class="eyebrow">Getting in touch</p>
-    <h2>Four ways, and you pick the one you like</h2>
-    <p class="lede">Some people want to call right now. Some would rather we call them. Some would rather text. And some do not want to do this on a screen at all. All four are fine.</p>
-
-    <div class="cb">
-      <h3>Start your family&rsquo;s file</h3>
-      <p class="muted">Three things. That is the whole form. We call within one business day, and if we miss you we keep trying. On that call we take down where the family lived, what the work was, and the diagnosis. Then we go do the records hunt at no cost to you.</p>
-      {% include "partials/lawmatics-callback.njk" %}
-      <p class="legal">We use your number to call you about this and nothing else. We do not sell or share it. Ask us to delete it any time and we will.</p>
+    <div style="text-align:center;max-width:800px;margin:0 auto">
+      <p class="eyebrow">Direct Advocate Access</p>
+      <h1>Get In Touch With Our Team</h1>
+      <p class="lede">Whether you are ready to file or just have a few questions about your family's history, we are here to provide clear, honest guidance.</p>
     </div>
 
-    <div class="ways">
+    <!-- Direct Contact Ways (No Mail Packet) -->
+    <div class="ways" style="max-width:860px;margin:var(--sp2) auto 0;width:100%">
       <div class="way">
-        <h3>Call now</h3>
-        <a class="big" href="tel:+18014008270">(801) 400-8270</a>
-        <p class="muted">A person picks up. Not a menu.</p>
+        <h3>Call Us Directly</h3>
+        <a class="big" href="tel:{{ site.phoneTel }}">{{ site.phoneDisplay }}</a>
+        <p class="muted">Speak with an intake specialist. Available Monday through Friday, 8am – 6pm MT.</p>
       </div>
       <div class="way">
-        <h3>Text us</h3>
-        <a class="big" href="sms:+18014008270">(801) 400-8270</a>
-        <p class="muted">Easier if you are at work or helping a parent. Same number.</p>
+        <h3>Text Us Anytime</h3>
+        <a class="big" href="sms:{{ site.phoneTel }}">{{ site.phoneDisplay }}</a>
+        <p class="muted">Fast and convenient. Text us your questions and we will respond promptly.</p>
       </div>
-      <div class="way">
-        <h3>Get it in the mail</h3>
-        <a class="big" href="tel:+18014008270">Ask for the packet</a>
-        <p class="muted">Free, no obligation, and we do not follow up unless you ask.</p>
+      <div class="way" id="booking">
+        <h3>Book A Discovery Call</h3>
+        <a class="big" href="/contact/#form">Schedule Online</a>
+        <p class="muted">Schedule a dedicated 30-minute phone or Zoom consultation with an account specialist.</p>
       </div>
     </div>
-    <p class="legal">See <a href="/#who">who you are dealing with</a>.</p>
-    <div class="btns">
-      <a class="btn" href="/check/">Check eligibility</a>
-      <a class="btn btn--ghost" href="/free-help/">Free help</a>
+
+    <!-- New Form with Autofill -->
+    <div class="form-card" id="form" style="max-width:860px;margin:var(--sp3) auto 0;width:100%">
+      <h2 style="font-size:24px;color:var(--navy)">Start Your Family's File or Send a Message</h2>
+      <p class="muted">Leave your information below. We will call you within one business day to discuss where your family lived, their work history, and qualifying medical documentation.</p>
+
+      <form action="/contact/" method="POST" class="stack" style="margin-top:var(--sp2)">
+        <div class="form-grid-2">
+          <div class="field">
+            <label for="c_fname">First Name *</label>
+            <input type="text" id="c_fname" name="first_name" required autocomplete="given-name" placeholder="First Name">
+          </div>
+          <div class="field">
+            <label for="c_lname">Last Name *</label>
+            <input type="text" id="c_lname" name="last_name" required autocomplete="family-name" placeholder="Last Name">
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="field">
+            <label for="c_email">Email Address *</label>
+            <input type="email" id="c_email" name="email" required autocomplete="email" placeholder="name@example.com">
+          </div>
+          <div class="field">
+            <label for="c_phone">Phone Number *</label>
+            <input type="tel" id="c_phone" name="phone" required autocomplete="tel" placeholder="(801) 555-0123">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="c_time">Best Time to Call</label>
+          <select id="c_time" name="best_time">
+            <option value="morning">Morning (9am - 12pm MT)</option>
+            <option value="afternoon" selected>Afternoon (12pm - 5pm MT)</option>
+            <option value="evening">Early Evening (5pm - 7pm MT)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="c_message">Brief Description of Your Situation (Optional)</label>
+          <textarea id="c_message" name="message" rows="4" placeholder="Mention the state/county where the family lived and any diagnosed condition..."></textarea>
+        </div>
+
+        <button class="btn" type="submit" style="align-self:flex-start;font-size:18px;padding:14px 32px">Submit Request &rarr;</button>
+      </form>
+
+      <div style="margin-top:var(--sp2);padding-top:var(--sp2);border-top:1px solid var(--rule-light)">
+        <h3 style="font-size:17px;color:var(--navy);margin-bottom:8px">Lawmatics Direct Intake</h3>
+        {% include "partials/lawmatics-callback.njk" %}
+        <p class="legal" style="margin-top:8px">We use your phone number and details solely to contact you regarding your RECA file. We never sell or share your private information.</p>
+      </div>
+    </div>
+
+    <!-- Office & Legal Partner Info -->
+    <div style="text-align:center;max-width:760px;margin:var(--sp3) auto 0">
+      <p class="muted">
+        <strong>Office Location:</strong> {{ site.partnerLawFirm }} &middot; {{ site.address }}<br>
+        Direct Phone: <a href="tel:{{ site.phoneTel }}">{{ site.phoneDisplay }}</a> &middot; Fax: {{ site.faxDisplay }} &middot; Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </p>
     </div>
   </div>
 </section>
-

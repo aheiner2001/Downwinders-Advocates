@@ -1,102 +1,169 @@
 ---
 layout: layouts/base.njk
 locale: en
-title: "Eligibility Check | Downwinders Advocates"
-description: ""
+title: "Check RECA Eligibility | Downwinders Advocates"
+description: "Check your family's eligibility for federal Radiation Exposure Compensation Act (RECA) programs. Covered counties, qualifying conditions, and claim filing support."
 permalink: /check/
 extraScripts: '<script src="/js/screener.js" defer></script>'
 ---
 <section class="sec" id="check">
   <div class="wrap stack">
-    <p class="eyebrow">Free, ungated, nothing sent anywhere</p>
-    <h2>See whether this is worth pursuing</h2>
-    <p class="lede">Five questions. No name, no email, no phone number. This runs entirely in your browser and nothing you select is sent to us or to anyone else.</p>
-    <div class="notice">
-      <span class="pill">Covered areas, as the law stands today</span>
-      <div class="scroll"><table><caption class="muted" style="text-align:left;padding:0 12px 10px">Covered areas under the 2025 RECA reauthorization</caption>
-        <tr><th scope="row">Statewide</th><td class="covered">Utah &nbsp;·&nbsp; New Mexico &nbsp;·&nbsp; Idaho</td></tr>
-        <tr><th scope="row">Arizona, these counties only</th><td class="covered">Coconino, Yavapai, Navajo, Apache, Gila, Mohave. <strong>Phoenix and Tucson are not covered.</strong></td></tr>
-        <tr><th scope="row">Nevada, these counties only</th><td class="covered">Eureka, Lander, Lincoln, Nye, White Pine, and part of Clark. <strong>Las Vegas is not covered.</strong></td></tr>
-        <tr><th scope="row">Manhattan Project waste</th><td class="covered">Parts of Missouri, Tennessee, Kentucky, Alaska</td></tr>
-        <tr><th scope="row">Not covered</th><td class="covered"><strong>Montana, Colorado, and Guam are not in the current law.</strong> A bill to add them was introduced in July 2026 but has not passed. We will not tell you otherwise.</td></tr>
-      </table></div>
-      <p class="muted">Uranium miners, millers, and ore transporters are a separate category with its own rules, and are covered for lung and kidney conditions as well as cancer.</p>
+    <div style="text-align:center;max-width:800px;margin:0 auto">
+      <p class="eyebrow">Quick &amp; Confidential Eligibility Check</p>
+      <h1>See If Your Family Qualifies For Federal Compensation</h1>
+      <p class="lede">Answer a few questions below. An advocate will review your information against official Department of Justice guidelines.</p>
     </div>
-    <form class="tool" id="screener">
-      <fieldset>
-        <legend>1. Where did the family live during the testing years?</legend>
-        <label class="opt"><input type="radio" name="place" value="state"><span><strong>Anywhere in Utah, New Mexico, or Idaho.</strong> The whole state counts.</span></label>
-        <label class="opt"><input type="radio" name="place" value="az"><span><strong>Arizona:</strong> Coconino, Yavapai, Navajo, Apache, Gila, or Mohave county</span></label>
-        <label class="opt"><input type="radio" name="place" value="nv"><span><strong>Nevada:</strong> Eureka, Lander, Lincoln, Nye, White Pine, or the covered part of Clark county</span></label>
-        <label class="opt"><input type="radio" name="place" value="mpw"><span>Near a <strong>Manhattan Project waste site</strong> in Missouri, Tennessee, Kentucky, or Alaska</span></label>
-        <label class="opt"><input type="radio" name="place" value="onsite"><span>Was <strong>present at a test site</strong>, including as a service member</span></label>
-        <label class="opt"><input type="radio" name="place" value="notcov"><span>Arizona or Nevada, but <strong>not</strong> one of the counties listed above</span></label>
-        <label class="opt"><input type="radio" name="place" value="mtco"><span><strong>Montana, Colorado, or Guam</strong></span></label>
-        <label class="opt"><input type="radio" name="place" value="dunno"><span>I am not sure which county, or I would have to check</span></label>
-        <label class="opt"><input type="radio" name="place" value="none"><span>None of these</span></label>
-      </fieldset>
-      <fieldset>
-        <legend>2. What years were they living there, and for how long?</legend>
-        <p class="muted" style="margin:0 0 10px">This is the question almost every other screener
-        leaves out, and it decides more claims than the county does.</p>
-        <label class="opt"><input type="radio" name="years" value="ok"><span><strong>At least one year</strong> at some point between January 1951 and November 1962</span></label>
-        <label class="opt"><input type="radio" name="years" value="oknm"><span><strong>New Mexico only:</strong> at least one year at some point between September 1944 and November 1962</span></label>
-        <label class="opt"><input type="radio" name="years" value="okjuly"><span>There for the <strong>whole month of July 1962</strong>, even if it was not a full year</span></label>
-        <label class="opt"><input type="radio" name="years" value="after"><span>They were there, but <strong>only after November 1962</strong></span></label>
-        <label class="opt"><input type="radio" name="years" value="short"><span>Less than one year total, and not that July</span></label>
-        <label class="opt"><input type="radio" name="years" value="dunno"><span>I am not sure of the exact years</span></label>
-      </fieldset>
-      <fieldset>
-        <legend>3. Was there uranium work in the family?</legend>
-        <label class="opt"><input type="radio" name="uranium" value="yes"><span>Yes, mining, milling, or hauling ore</span></label>
-        <label class="opt"><input type="radio" name="uranium" value="no"><span>No</span></label>
-        <label class="opt"><input type="radio" name="uranium" value="dunno"><span>I am not sure</span></label>
-      </fieldset>
-      <fieldset>
-        <legend>4. What kind of illness?</legend>
-        <p class="muted" style="margin:0 0 10px">The covered lists are specific and short. Anyone who
-        tells you "any cancer counts" is wrong. Open the list below if you are not sure.</p>
-        <details style="margin:0 0 12px">
-          <summary>The 19 cancers covered for downwinders</summary>
-          <p>Leukemia other than chronic lymphocytic leukemia, multiple myeloma, lymphomas other than
-          Hodgkin's disease, and primary cancer of the thyroid, male or female breast, esophagus,
-          stomach, pharynx, small intestine, pancreas, bile ducts, gall bladder, salivary gland,
-          urinary bladder, brain, colon, ovary, liver (except where cirrhosis or hepatitis B is
-          indicated), or lung.</p>
-          <p><strong>Uranium miners, millers and ore transporters</strong> have a different list of
-          seven: lung cancer, pulmonary fibrosis, cor pulmonale related to fibrosis of the lung,
-          silicosis, pneumoconiosis, renal cancer, and other chronic renal disease including
-          nephritis and kidney tubal tissue injury. Four of those seven are not cancer.</p>
-          <p><strong>Manhattan Project waste claims</strong> use a third list of 21, which adds bone
-          cancer and renal cancer, and the illness must have begun at least two years after
-          exposure.</p>
-        </details>
-        <label class="opt"><input type="radio" name="illness" value="listed"><span>A cancer <strong>on one of those lists</strong></span></label>
-        <label class="opt"><input type="radio" name="illness" value="lung"><span>A <strong>lung or kidney condition</strong> that is not cancer, such as silicosis, pulmonary fibrosis, pneumoconiosis, or nephritis</span></label>
-        <label class="opt"><input type="radio" name="illness" value="notlisted"><span><strong>Prostate, cervical, testicular, uterine, or Hodgkin's disease</strong></span></label>
-        <label class="opt"><input type="radio" name="illness" value="melanoma"><span><strong>Melanoma</strong></span></label>
-        <label class="opt"><input type="radio" name="illness" value="other"><span>Something else, or I am not sure which it is</span></label>
-      </fieldset>
-      <fieldset>
-        <legend>5. Who would be filing?</legend>
-        <label class="opt"><input type="radio" name="who" value="self"><span>The person who was exposed</span></label>
-        <label class="opt"><input type="radio" name="who" value="survivor"><span>A spouse, child, parent, or grandchild of someone who has passed</span></label>
-        <label class="opt"><input type="radio" name="who" value="dunno"><span>I am not sure who would file</span></label>
-      </fieldset>
-      <fieldset>
-        <legend>6. Have you filed before?</legend>
-        <label class="opt"><input type="radio" name="prior" value="no"><span>No, this would be the first time</span></label>
-        <label class="opt"><input type="radio" name="prior" value="denied"><span>Yes, and it was denied</span></label>
-        <label class="opt"><input type="radio" name="prior" value="dunno"><span>I am not sure</span></label>
-      </fieldset>
-      <button class="btn" type="submit">Show me what this means</button>
-      <div class="result" id="out" role="status" aria-live="polite"></div>
-    </form>
-    <p class="legal">This tool gives you a general read only. It is not a determination of eligibility. Only the U.S. Department of Justice decides who qualifies, and nobody, including us, can tell you that you are approved.</p>
-    <div class="btns">
-      <a class="btn" href="/check/">Check eligibility</a>
-      <a class="btn btn--ghost" href="/free-help/">Free help</a>
+
+    <!-- Ready to File Callout -->
+    <div class="callout-box" style="max-width:860px;margin:0 auto;width:100%">
+      <strong>Already know you qualify?</strong>
+      <p>Checking eligibility is the exact same quick first step required if you already know you are ready to file a claim. Submitting your details allows our team to begin pulling county records and assembling your family's official file immediately.</p>
     </div>
+
+    <!-- Screener & Intake Form -->
+    <div class="form-card" style="max-width:860px;margin:0 auto;width:100%">
+      <h2 style="font-size:24px;color:var(--navy)">1. Your Contact Information</h2>
+      <p class="muted">We use this to reach you with your file evaluation. We never share or sell your information.</p>
+
+      <form id="screener" class="stack">
+        <div class="form-grid-2">
+          <div class="field">
+            <label for="fname">First Name *</label>
+            <input type="text" id="fname" name="fname" autocomplete="given-name" required placeholder="Jane">
+          </div>
+          <div class="field">
+            <label for="lname">Last Name *</label>
+            <input type="text" id="lname" name="lname" autocomplete="family-name" required placeholder="Doe">
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="field">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" autocomplete="email" required placeholder="jane.doe@example.com">
+          </div>
+          <div class="field">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" required placeholder="(801) 555-0123">
+          </div>
+        </div>
+
+        <hr style="border:0;border-top:1px solid var(--rule);margin:var(--sp2) 0">
+
+        <h2 style="font-size:24px;color:var(--navy)">2. Exposure &amp; Location Details</h2>
+
+        <fieldset>
+          <legend>Where did the affected family member live or work?</legend>
+          <label class="opt"><input type="radio" name="place" value="state" required><span><strong>Utah, New Mexico, or Idaho:</strong> Lived anywhere in the state</span></label>
+          <label class="opt"><input type="radio" name="place" value="az"><span><strong>Arizona:</strong> Coconino, Yavapai, Navajo, Apache, Gila, or Mohave County</span></label>
+          <label class="opt"><input type="radio" name="place" value="nv"><span><strong>Nevada:</strong> Eureka, Lander, Lincoln, Nye, White Pine, or designated Clark County</span></label>
+          <label class="opt"><input type="radio" name="place" value="uranium"><span><strong>Uranium Industry:</strong> Mined, milled, or transported uranium ore</span></label>
+          <label class="opt"><input type="radio" name="place" value="onsite"><span><strong>On-Site Participant:</strong> Present at atmospheric nuclear tests or test sites</span></label>
+          <label class="opt"><input type="radio" name="place" value="mpw"><span><strong>Manhattan Project Waste:</strong> Qualifying communities in MO, TN, KY, or AK</span></label>
+          <label class="opt"><input type="radio" name="place" value="dunno"><span>I am not sure of the exact county / need help checking</span></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Estimated timeframe of residency or employment:</legend>
+          <label class="opt"><input type="radio" name="years" value="ok" required><span>At least one year between <strong>January 1951 and November 1962</strong></span></label>
+          <label class="opt"><input type="radio" name="years" value="oknm"><span><strong>New Mexico:</strong> At least one year between September 1944 and November 1962</span></label>
+          <label class="opt"><input type="radio" name="years" value="okjuly"><span>Present for the <strong>entire month of July 1962</strong></span></label>
+          <label class="opt"><input type="radio" name="years" value="uranium"><span>Uranium employment between 1942 and 1971</span></label>
+          <label class="opt"><input type="radio" name="years" value="dunno"><span>I am not sure of the exact dates</span></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Who is filing this claim?</legend>
+          <label class="opt"><input type="radio" name="who" value="self" required><span><strong>The person who was exposed</strong> (filing for myself)</span></label>
+          <label class="opt"><input type="radio" name="who" value="survivor"><span><strong>Surviving family member:</strong> Spouse, child, grandchild, or parent of deceased</span></label>
+        </fieldset>
+
+        <div class="field">
+          <label for="notes">Briefly describe the illness / diagnosis or family notes (Optional):</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="E.g., My father was diagnosed with lung cancer in 1988 after living in Washington County, UT..."></textarea>
+        </div>
+
+        <button class="btn" type="submit" style="align-self:flex-start;font-size:18px;padding:16px 36px">Submit My Eligibility Request &rarr;</button>
+        <div class="result" id="out" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+
+    <!-- Clean 3-Column / 3-Bullet List of Covered Cancers & Conditions (No Dropdowns) -->
+    <div class="cancers-overview" style="max-width:860px;margin:var(--sp4) auto 0;width:100%">
+      <div class="cancers-overview-header">
+        <span class="eyebrow">Medical Eligibility Criteria</span>
+        <h2>Covered Conditions by Program</h2>
+        <p class="muted">RECA explicitly covers specific primary cancers and chronic respiratory/renal conditions established by federal law:</p>
+      </div>
+
+      <div class="cancers-cols">
+        <!-- Col 1: Downwinders -->
+        <div class="cancer-col-card">
+          <h4>Downwinders (19 Primary Cancers)</h4>
+          <ul>
+            <li>Leukemia (non-chronic lymphocytic)</li>
+            <li>Multiple Myeloma</li>
+            <li>Lymphomas (other than Hodgkin's)</li>
+            <li>Thyroid &amp; Female/Male Breast</li>
+            <li>Lung, Colon &amp; Stomach</li>
+            <li>Pancreas &amp; Liver (non-cirrhotic)</li>
+            <li>Brain &amp; Salivary Gland</li>
+            <li>Urinary Bladder &amp; Kidney</li>
+            <li>Ovary &amp; Esophagus</li>
+            <li>Pharynx, Small Intestine, Bile Ducts &amp; Gall Bladder</li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Uranium Workers -->
+        <div class="cancer-col-card">
+          <h4>Uranium Workers (7 Conditions)</h4>
+          <ul>
+            <li>Primary Lung Cancer</li>
+            <li>Pulmonary Fibrosis</li>
+            <li>Cor Pulmonale (related to fibrosis)</li>
+            <li>Silicosis</li>
+            <li>Pneumoconiosis</li>
+            <li>Renal (Kidney) Cancer</li>
+            <li>Chronic Renal Disease (including nephritis and tubal tissue injury)</li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Manhattan Project Waste -->
+        <div class="cancer-col-card">
+          <h4>Manhattan Waste &amp; On-Site</h4>
+          <ul>
+            <li>Bone Cancer &amp; Renal Cancer</li>
+            <li>Leukemia &amp; Lymphomas</li>
+            <li>Primary Thyroid &amp; Breast Cancer</li>
+            <li>GI Tract &amp; Respiratory Cancers</li>
+            <li>On-Site Atmospheric Exposure Conditions</li>
+            <li>Reimbursement of Related Medical Expenses</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Explainer Video Section -->
+    <div class="consultation-card" style="max-width:860px;margin:var(--sp4) auto 0;width:100%;text-align:left;align-items:flex-start">
+      <h3 style="color:#FFFFFF;font-size:24px">Why We Need You To Fill Out This Form</h3>
+      <p style="max-width:100%">
+        Preparing an approved RECA claim requires satisfying three strict statutory pillars: <strong>qualifying location</strong>, <strong>verified dates of presence</strong>, and a <strong>qualifying medical pathology or death certificate</strong>.
+      </p>
+      <div style="background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.2);border-radius:8px;padding:16px;width:100%;margin:8px 0">
+        <div style="display:flex;gap:14px;align-items:center">
+          <div style="width:48px;height:48px;border-radius:50%;background:var(--accent);display:grid;place-items:center;flex-shrink:0;color:#3A2606">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div>
+            <strong style="color:#FFFFFF;font-size:17px;display:block">Watch: The Claims Assembly Process Explained</strong>
+            <span style="color:#CBD8E6;font-size:14px">Our intake team explains how your form information enables us to track down decades-old historical records.</span>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:15px;color:#CBD8E6">
+        When you submit your details, an advocate pulls county property records, historical school yearbooks, census files, and medical records on your family's behalf so you don't have to navigate federal bureaucracy alone.
+      </p>
+    </div>
+
   </div>
 </section>
-
