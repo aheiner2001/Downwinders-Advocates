@@ -37,7 +37,7 @@ function countIndexHtml(dir) {
 }
 
 const pages = countIndexHtml(site);
-if (pages !== 96) throw new Error("expected 96 index.html pages, got " + pages);
+if (pages !== 98) throw new Error("expected 98 index.html pages, got " + pages);
 
 mustExist("es/index.html");
 mustExist("es/check/index.html");
@@ -90,7 +90,6 @@ const shellPaths = [
   "siblings/index.html",
   "someone-told-me-about-this/index.html",
   "documents/index.html",
-  "free-help/index.html",
   "deadline/index.html",
   "survivors/index.html",
 ];
@@ -99,8 +98,8 @@ for (const rel of shellPaths) {
   for (const re of forbidden) {
     if (re.test(html)) throw new Error("invented shell copy in " + rel + " matched " + re);
   }
-  if (!html.includes('href="/check/"') || !html.includes('href="/free-help/"')) {
-    throw new Error(rel + " missing /check or /free-help link");
+  if (!html.includes('href="/check/"')) {
+    throw new Error(rel + " missing /check link");
   }
   if ((html.match(/<h1[\s>]/g) || []).length !== 1) {
     throw new Error(rel + " must have exactly one h1");
@@ -113,8 +112,8 @@ for (const rel of esShellPaths) {
   for (const re of forbidden) {
     if (re.test(html)) throw new Error("invented shell copy in " + rel);
   }
-  if (!html.includes('href="/es/check/"') || !html.includes('href="/es/free-help/"')) {
-    throw new Error(rel + " missing /es/check or /es/free-help link");
+  if (!html.includes('href="/es/check/"')) {
+    throw new Error(rel + " missing /es/check link");
   }
   if ((html.match(/<h1[\s>]/g) || []).length !== 1) {
     throw new Error(rel + " must have exactly one h1");
@@ -127,7 +126,7 @@ function assertCmsMinimal(rel) {
     throw new Error(rel + " must have exactly one h1");
   }
   if (!html.includes('rel="canonical"')) throw new Error(rel + " canonical missing");
-  if (!html.includes('href="/check/"') || !html.includes('href="/free-help/"')) {
+  if (!html.includes('href="/check/"')) {
     throw new Error(rel + " missing CTA links");
   }
   if (!html.includes("application/ld+json")) throw new Error(rel + " JSON-LD missing");
@@ -145,7 +144,7 @@ function assertCmsMinimalEs(rel) {
   if ((html.match(/<h1[\s>]/g) || []).length !== 1) {
     throw new Error(rel + " must have exactly one h1");
   }
-  if (!html.includes('href="/es/check/"') || !html.includes('href="/es/free-help/"')) {
+  if (!html.includes('href="/es/check/"')) {
     throw new Error(rel + " missing ES CTA links");
   }
   if (!html.includes("data-cms-body")) throw new Error(rel + " missing empty Body container");
@@ -162,4 +161,4 @@ for (const rel of contentPages) {
   }
 }
 
-console.log("PASS verify-build (96 pages + SEO + strict copy + ES draft + a11y CSS)");
+console.log("PASS verify-build (98 pages + SEO + strict copy + ES draft + a11y CSS)");

@@ -5,40 +5,34 @@ title: "About Us, Our Founders & Partners | Downwinders Advocates"
 description: "Learn about the mission, founders, legal partnership with Laura Taylor Turner, and company commitments behind Downwinders Advocates."
 permalink: /about/
 ---
-<!-- Founder's Story at Top -->
-<section class="sec" id="story">
-  <div class="wrap stack">
-    <div style="max-width:860px;margin:0 auto;text-align:center">
+<!-- Founder's Story at Top — reel + story; team photos live in Meet the Team below -->
+<section class="sec founders-story" id="story">
+  <div class="wrap">
+    <div class="founders-story-intro stack">
       <p class="eyebrow">Our Origins</p>
       <h1>The Founders' Story</h1>
       <p class="lede">Downwinders Advocates was born out of personal family loss and a determination to ensure families affected by federal nuclear testing receive the recognition they deserve.</p>
     </div>
 
-    <!-- Founders Video Card with Instagram Reel Link -->
-    <div class="consultation-card" style="max-width:860px;margin:var(--sp2) auto 0;width:100%;text-align:left;align-items:flex-start">
-      <div style="display:flex;justify-content:space-between;align-items:center;width:100%;flex-wrap:wrap;gap:12px">
-        <span class="pill">Watch the Founders' Story</span>
-        <a class="btn btn--sm" href="https://www.instagram.com/reel/DdffHupNZsP/" target="_blank" rel="noopener noreferrer" style="font-size:14px">
-          Watch on Instagram &rarr;
-        </a>
+    <div class="founders-story-hero">
+      <p class="founders-reel-label">Watch their story</p>
+      <div class="founders-reel">
+        <blockquote
+          class="instagram-media"
+          data-instgrm-permalink="{{ site.foundersInstagramReel }}?utm_source=ig_embed&amp;utm_campaign=loading"
+          data-instgrm-version="14">
+          <a href="{{ site.foundersInstagramReel }}" target="_blank" rel="noopener noreferrer">Watch the founders story on Instagram</a>
+        </blockquote>
+        <script async src="https://www.instagram.com/embed.js"></script>
+        <p class="founders-reel-fallback">
+          <a class="btn btn--ghost btn--sm" href="{{ site.foundersInstagramReel }}" target="_blank" rel="noopener noreferrer">Open on Instagram</a>
+        </p>
       </div>
+    </div>
 
-      <div style="background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.25);border-radius:10px;overflow:hidden;width:100%;margin-top:8px">
-        <div style="position:relative;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;background:#061D33">
-          <img src="/img/medical-research-bg.jpg" alt="Founders interview" style="width:100%;height:100%;object-fit:cover;opacity:0.6">
-          <a href="https://www.instagram.com/reel/DdffHupNZsP/" target="_blank" rel="noopener noreferrer" class="hero-play-badge" aria-label="Play founders story on Instagram">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </a>
-          <div style="position:absolute;bottom:12px;left:16px;right:16px;color:#FFFFFF">
-            <strong style="font-size:17px;display:block">Watch: Why We Started Downwinders Advocates</strong>
-            <span style="font-size:13px;color:#CBD8E6">An intimate conversation with co-founders Jaxon Cummings and Jonny Schmidt on how radiation exposure impacted their families.</span>
-          </div>
-        </div>
-      </div>
-
-      <p style="font-size:17px;line-height:1.7;color:#FFFFFF;margin-top:12px">
-        For co-founders Jaxon Cummings and Jonny Schmidt, this work isn't abstract history. Jaxon's grandfather and both grandmothers lived directly in the path of the Nevada nuclear tests, and his father passed away from cancer in 2023. Jonny discovered the RECA program while searching for resources to help his mother following a terminal cancer diagnosis. Experiencing first-hand how daunting and confusing it is to track down decades-old historical records from county archives, school districts, and hospitals, they founded Downwinders Advocates to provide families with dedicated, knowledgeable support from initial file review through federal approval.
-      </p>
+    <div class="founders-story-body">
+      <p>For co-founders Jaxon Cummings and Jonny Schmidt, this work isn't abstract history. Jaxon's grandfather and both grandmothers lived directly in the path of the Nevada nuclear tests, and his father passed away from cancer in 2023. Jonny discovered the RECA program while searching for resources to help his mother following a terminal cancer diagnosis.</p>
+      <p>Experiencing first-hand how daunting it is to track down decades-old records from county archives, school districts, and hospitals, they founded Downwinders Advocates to give families dedicated support from first review through federal approval.</p>
     </div>
   </div>
 </section>
@@ -58,21 +52,12 @@ permalink: /about/
 <section class="sec" id="team">
   <div class="wrap stack">
     <div style="text-align:center;max-width:760px;margin:0 auto">
-      <p class="eyebrow">Dedicated Leadership</p>
+      <p class="eyebrow">Who You'll Work With</p>
       <h2>Meet the Team &amp; Account Specialists</h2>
-      <p class="muted">You will always work with real people who know your name and are personally invested in your file.</p>
+      <p class="muted">What each person does for your file day to day.</p>
     </div>
 
     <div class="people">
-      <!-- Partner Attorney Laura -->
-      <div class="person">
-        <div class="avatar"><img src="/img/people/laura.jpg" width="112" height="112" alt="Ms. Laura Taylor Turner"></div>
-        <span class="role">Partner Attorney</span>
-        <h3>Ms. Laura Taylor Turner</h3>
-        <p class="muted">A recognized RECA advocate since 2002. Leading the Law Offices of Laura J. Taylor, P.L.L.C., Ms. Turner brings more than two decades of dedicated legal experience representing radiation victims before the Department of Justice.</p>
-      </div>
-
-      <!-- Co-Founder Jaxon -->
       <div class="person">
         <div class="avatar"><img src="/img/people/jaxon.jpg" width="112" height="112" alt="Jaxon Cummings"></div>
         <span class="role">Co-Founder</span>
@@ -80,12 +65,18 @@ permalink: /about/
         <p class="muted">Leading outreach, affiliate partnerships, and community engagement. Jaxon travels across Utah, Arizona, and Nevada conducting in-person town halls and assisting families with their initial intake.</p>
       </div>
 
-      <!-- Co-Founder Jonny -->
       <div class="person">
         <div class="avatar"><img src="/img/people/jonny.jpg" width="112" height="112" alt="Jonny Schmidt"></div>
         <span class="role">Co-Founder</span>
         <h3>Jonny Schmidt</h3>
         <p class="muted">Managing operations, records retrieval, and document verification. Jonny oversees the case management team ensuring that every historical document and medical report satisfies DOJ criteria.</p>
+      </div>
+
+      <div class="person">
+        <div class="avatar"><img src="/img/people/laura.jpg" width="112" height="112" alt="Ms. Laura Taylor Turner"></div>
+        <span class="role">Partner Attorney</span>
+        <h3>Ms. Laura Taylor Turner</h3>
+        <p class="muted">A recognized RECA advocate since 2002. Leading the Law Offices of Laura J. Taylor, P.L.L.C., Ms. Turner brings more than two decades of dedicated legal experience representing radiation victims before the Department of Justice.</p>
       </div>
     </div>
   </div>
@@ -106,9 +97,8 @@ permalink: /about/
         </p>
         <div class="grid g2" style="font-size:15px;color:var(--ink-2)">
           <div>
-            <strong>Office Location:</strong><br>
-            325 West Gurley Street, Suite 201<br>
-            Prescott, AZ 86301
+            <strong>Partner office:</strong><br>
+            {{ site.partnerAddress }}
           </div>
           <div>
             <strong>Direct Advocate Line:</strong><br>

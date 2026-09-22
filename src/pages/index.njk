@@ -21,7 +21,7 @@ permalink: /
         <p class="lede">If your family lived downwind of nuclear test sites or worked in affected industries, federal compensation of up to $100,000 may be available to you or surviving family members.</p>
         <div class="btns">
           <a class="btn" href="/check/">Check Eligibility Now!</a>
-          <a class="btn btn--ghost" href="#consultation">Book Discovery Call</a>
+          <a class="btn btn--ghost" href="#consultation">File A Claim</a>
         </div>
       </div>
       <div class="hero-visual">
@@ -51,16 +51,24 @@ permalink: /
   </div>
 </section>
 
-<!-- 3. Book a Call with a Specialist (Modeled after example_1.png) -->
+<!-- 3. Have You Been Exposed + Book Appointment (example_1.png) -->
 <section class="consultation-section" id="consultation">
   <div class="wrap">
+    <div class="exposed-intro">
+      <h2>Have You Been Exposed?</h2>
+      <p>Compensation for cancer from government-created radiation exposure</p>
+      <a class="btn" href="/check/">File A Claim</a>
+    </div>
     <div class="consultation-card">
-      <h2>Book A 30-Minute Consultation</h2>
-      <p>Schedule a 30-minute discovery consultation with a specialist on our team for individuals interested in discussing a potential Radiation Exposure Compensation Act (RECA) claim. Appointments are available by phone or Zoom, based on your preference. We look forward to helping you understand your options and guiding you through the RECA claim process.</p>
+      <h3>Book A 30-Minute Appointment</h3>
+      <p>Schedule a 30-minute consultation with a specialist on our team for individuals interested in discussing a potential Radiation Exposure Compensation Act (RECA) claim. Appointments are available by phone or Zoom, based on your preference. We look forward to helping you understand your options and guiding you through the RECA claim process.</p>
       <div class="btns" style="justify-content:center">
-        <a class="btn" href="/contact/#booking">Make Appointment</a>
+        <a class="btn" href="{{ site.discoveryBookingUrl or '/contact/#form' }}">Make Appointment</a>
         <a class="btn btn--white-ghost" href="tel:{{ site.phoneTel }}">Call Us Now: {{ site.phoneDisplay }}</a>
       </div>
+      {% if not site.discoveryBookingUrl %}
+      <p class="legal" style="color:#CBD8E6;font-size:13px;margin:0">PLACEHOLDER — Andy: Lawmatics discovery-call booking URL (leads tagged before full intake).</p>
+      {% endif %}
     </div>
   </div>
 </section>
@@ -317,7 +325,7 @@ permalink: /
       </div>
       <div class="way">
         <h3>Schedule Online</h3>
-        <a class="big" href="#consultation">Book Discovery Call</a>
+        <a class="big" href="#consultation">Make Appointment</a>
         <p class="muted">Pick a 30-minute phone or Zoom window that fits your schedule.</p>
       </div>
     </div>

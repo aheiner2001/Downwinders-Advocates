@@ -40,7 +40,7 @@ module.exports = {
     ctaCheck: "Verificar elegibilidad",
     ctaDiscovery: "Reservar consulta de 30 minutos",
     draftBanner:
-      "Para ayuda en español con reclamos RECA, llámenos directamente al (801) 400-8270.",
+      "Borrador de traducción automática para revisión — no es texto aprobado por el abogado. Para ayuda en español con reclamos RECA, llámenos al (801) 400-8270.",
     brandSubtitle: "Especialistas en reclamos RECA",
   },
 };

@@ -13,7 +13,6 @@ permalink: /contact/
       <p class="lede">Whether you are ready to file or just have a few questions about your family's history, we are here to provide clear, honest guidance.</p>
     </div>
 
-    <!-- Direct Contact Ways (No Mail Packet) -->
     <div class="ways" style="max-width:860px;margin:var(--sp2) auto 0;width:100%">
       <div class="way">
         <h3>Call Us Directly</h3>
@@ -26,33 +25,33 @@ permalink: /contact/
         <p class="muted">Fast and convenient. Text us your questions and we will respond promptly.</p>
       </div>
       <div class="way" id="booking">
-        <h3>Book A Discovery Call</h3>
-        <a class="big" href="/contact/#form">Schedule Online</a>
-        <p class="muted">Schedule a dedicated 30-minute phone or Zoom consultation with an account specialist.</p>
+        <h3>Make An Appointment</h3>
+        <a class="big" href="{{ site.discoveryBookingUrl or '#form' }}">Schedule Online</a>
+        <p class="muted">30-minute phone or Zoom consultation with an account specialist.{% if not site.discoveryBookingUrl %} (PLACEHOLDER — Andy discovery booking URL.){% endif %}</p>
       </div>
     </div>
 
-    <!-- New Form with Autofill -->
+    {# Same First / Last / Email / Phone fields as Check Eligibility (manager notes). #}
     <div class="form-card" id="form" style="max-width:860px;margin:var(--sp3) auto 0;width:100%">
       <h2 style="font-size:24px;color:var(--navy)">Start Your Family's File or Send a Message</h2>
-      <p class="muted">Leave your information below. We will call you within one business day to discuss where your family lived, their work history, and qualifying medical documentation.</p>
+      <p class="muted">Same contact fields as Check Eligibility. We will call you within one business day.</p>
 
-      <form action="/contact/" method="POST" class="stack" style="margin-top:var(--sp2)">
+      <form action="/contact/" method="POST" class="stack" style="margin-top:var(--sp2)" id="contact-lead-form">
         <div class="form-grid-2">
           <div class="field">
             <label for="c_fname">First Name *</label>
-            <input type="text" id="c_fname" name="first_name" required autocomplete="given-name" placeholder="First Name">
+            <input type="text" id="c_fname" name="fname" required autocomplete="given-name" placeholder="Jane">
           </div>
           <div class="field">
             <label for="c_lname">Last Name *</label>
-            <input type="text" id="c_lname" name="last_name" required autocomplete="family-name" placeholder="Last Name">
+            <input type="text" id="c_lname" name="lname" required autocomplete="family-name" placeholder="Doe">
           </div>
         </div>
 
         <div class="form-grid-2">
           <div class="field">
             <label for="c_email">Email Address *</label>
-            <input type="email" id="c_email" name="email" required autocomplete="email" placeholder="name@example.com">
+            <input type="email" id="c_email" name="email" required autocomplete="email" placeholder="jane.doe@example.com">
           </div>
           <div class="field">
             <label for="c_phone">Phone Number *</label>
@@ -60,35 +59,22 @@ permalink: /contact/
           </div>
         </div>
 
-        <div class="field">
-          <label for="c_time">Best Time to Call</label>
-          <select id="c_time" name="best_time">
-            <option value="morning">Morning (9am - 12pm MT)</option>
-            <option value="afternoon" selected>Afternoon (12pm - 5pm MT)</option>
-            <option value="evening">Early Evening (5pm - 7pm MT)</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="c_message">Brief Description of Your Situation (Optional)</label>
-          <textarea id="c_message" name="message" rows="4" placeholder="Mention the state/county where the family lived and any diagnosed condition..."></textarea>
-        </div>
-
         <button class="btn" type="submit" style="align-self:flex-start;font-size:18px;padding:14px 32px">Submit Request &rarr;</button>
+        <p class="legal placeholder" role="status">PLACEHOLDER — Andy: wire Contact leads (First / Last / Email / Phone). Do not duplicate Subscribe list members. Current Lawmatics website callback is name / phone / best-time only and is kept below as a temporary option.</p>
       </form>
 
-      <div style="margin-top:var(--sp2);padding-top:var(--sp2);border-top:1px solid var(--rule-light)">
-        <h3 style="font-size:17px;color:var(--navy);margin-bottom:8px">Lawmatics Direct Intake</h3>
+      <div style="margin-top:var(--sp3);padding-top:var(--sp2);border-top:1px solid var(--rule)">
+        <h3 style="font-size:17px;color:var(--navy);margin-bottom:8px">Or request a quick callback</h3>
+        <p class="muted">Temporary Lawmatics embed (name, phone, best time) until the 4-field Contact form is wired.</p>
         {% include "partials/lawmatics-callback.njk" %}
-        <p class="legal" style="margin-top:8px">We use your phone number and details solely to contact you regarding your RECA file. We never sell or share your private information.</p>
       </div>
     </div>
 
-    <!-- Office & Legal Partner Info -->
     <div style="text-align:center;max-width:760px;margin:var(--sp3) auto 0">
       <p class="muted">
-        <strong>Office Location:</strong> {{ site.partnerLawFirm }} &middot; {{ site.address }}<br>
-        Direct Phone: <a href="tel:{{ site.phoneTel }}">{{ site.phoneDisplay }}</a> &middot; Fax: {{ site.faxDisplay }} &middot; Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        <strong>Phone:</strong> <a href="tel:{{ site.phoneTel }}">{{ site.phoneDisplay }}</a>
+        &middot; <strong>Email:</strong> <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
+        <strong>Address:</strong> {{ site.address }}
       </p>
     </div>
   </div>

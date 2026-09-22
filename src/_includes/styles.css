@@ -513,19 +513,56 @@ nav a:hover, nav a:focus-visible {
   text-decoration: underline;
 }
 
-/* Book A 30-Minute Consultation Section (example_1.png) */
+/* Book / Have You Been Exposed (example_1.png) */
 .consultation-section {
   position: relative;
   background-color: #07263C;
-  background-image: linear-gradient(135deg, rgba(7, 38, 60, 0.88), rgba(9, 49, 78, 0.92)), url('/img/medical-research-bg.jpg');
+  background-image: linear-gradient(160deg, rgba(7, 38, 60, 0.82), rgba(9, 49, 78, 0.9)), url('/img/medical-research-bg.jpg');
   background-size: cover;
   background-position: center;
-  padding: var(--sp6) 0;
+  padding: clamp(48px, 8vh, 96px) 0;
   color: #FFFFFF;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 640px) {
+  .consultation-section {
+    min-height: 0;
+    padding: var(--sp5) 0;
+  }
+}
+
+.consultation-section .wrap {
+  width: 100%;
+}
+
+.exposed-intro {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto var(--sp4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp3);
+}
+
+.exposed-intro h2 {
+  font-size: clamp(32px, 4.5vw, 48px);
+  color: #FFFFFF;
+  font-weight: 700;
+  margin: 0;
+}
+
+.exposed-intro p {
+  font-size: clamp(17px, 2vw, 20px);
+  color: #E2EDF7;
+  margin: 0;
+  max-width: 40ch;
 }
 
 .consultation-card {
-  max-width: 680px;
+  max-width: 720px;
   margin: 0 auto;
   background: rgba(14, 46, 70, 0.55);
   backdrop-filter: blur(8px);
@@ -541,11 +578,12 @@ nav a:hover, nav a:focus-visible {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-.consultation-card h2 {
-  font-size: clamp(26px, 3.2vw, 36px);
+.consultation-card h3 {
+  font-size: clamp(24px, 3vw, 32px);
   font-family: var(--f-head);
   color: #FFFFFF;
   font-weight: 600;
+  margin: 0;
 }
 
 .consultation-card p {
@@ -553,6 +591,7 @@ nav a:hover, nav a:focus-visible {
   line-height: 1.65;
   color: #E2EDF7;
   max-width: 58ch;
+  margin: 0;
 }
 
 /* Programs 4-Column Grid (options.png) */
@@ -742,7 +781,7 @@ nav a:hover, nav a:focus-visible {
   font-size: 18px;
 }
 
-/* CTA Banner (image_2.png) */
+/* CTA Banner (image_2.png) — tall lifestyle band */
 .cta-banner {
   position: relative;
   background-color: #0B334B;
@@ -753,6 +792,20 @@ nav a:hover, nav a:focus-visible {
   color: #FFFFFF;
   text-align: center;
   overflow: hidden;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 640px) {
+  .cta-banner {
+    min-height: 62vh;
+    padding: var(--sp5) 0;
+  }
+}
+
+.cta-banner .wrap {
+  width: 100%;
 }
 
 .cta-banner-content {
@@ -772,52 +825,80 @@ nav a:hover, nav a:focus-visible {
 }
 
 .cta-banner h2 {
-  font-size: clamp(30px, 4vw, 44px);
+  font-size: clamp(36px, 5vw, 52px);
   color: #FFFFFF;
   font-weight: 700;
 }
 
 .cta-banner p {
-  font-size: 18px;
+  font-size: clamp(17px, 2.2vw, 20px);
   color: #E1EDF7;
-  max-width: 50ch;
-  line-height: 1.6;
+  max-width: 42ch;
+  line-height: 1.65;
 }
 
-/* Subscribe Section (image_3.png) */
+.cta-banner .btn {
+  font-size: 18px;
+  padding: 16px 36px;
+}
+
+/* Subscribe Section (image_3.png) — tall + soft triangle pattern */
 .subscribe-section {
-  background: #F7F7F7;
+  background-color: #F7F7F7;
+  background-image: url('/img/subscribe-triangle-pattern.png');
+  background-size: 480px auto;
+  background-repeat: repeat;
   padding: var(--sp6) 0;
   border-top: 1px solid #EAEAEA;
   border-bottom: 1px solid #EAEAEA;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 640px) {
+  .subscribe-section {
+    min-height: 58vh;
+    padding: var(--sp5) 0;
+  }
+}
+
+.subscribe-section .wrap {
+  width: 100%;
 }
 
 .subscribe-box {
-  max-width: 720px;
+  max-width: 760px;
   margin: 0 auto;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--sp3);
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(8, 36, 74, 0.08);
+  border-radius: 12px;
+  padding: clamp(28px, 5vw, 48px) clamp(20px, 4vw, 40px);
+  box-shadow: 0 8px 28px rgba(8, 36, 74, 0.06);
 }
 
 .subscribe-title {
-  font-size: clamp(26px, 3.2vw, 36px);
+  font-size: clamp(28px, 3.6vw, 40px);
   color: var(--navy);
   font-weight: 700;
+  margin: 0;
 }
 
 .subscribe-subtitle {
-  font-size: 17px;
+  font-size: clamp(16px, 2vw, 19px);
   color: var(--ink-soft);
-  max-width: 52ch;
-  line-height: 1.5;
+  max-width: 48ch;
+  line-height: 1.6;
+  margin: 0;
 }
 
 .subscribe-form-wrap {
-  background: rgba(235, 235, 235, 0.7);
-  padding: 18px;
+  background: rgba(235, 235, 235, 0.85);
+  padding: 20px;
   border-radius: 8px;
   width: 100%;
 }
@@ -834,7 +915,7 @@ nav a:hover, nav a:focus-visible {
 }
 
 .subscribe-input {
-  padding: 14px 16px;
+  padding: 16px 18px;
   font-family: var(--f-body);
   font-size: 17px;
   border: 1px solid #D0D0D0;
@@ -847,6 +928,11 @@ nav a:hover, nav a:focus-visible {
 .subscribe-input:focus {
   outline: none;
   border-color: var(--accent);
+}
+
+.subscribe-form .btn {
+  font-size: 17px;
+  padding: 16px 28px;
 }
 
 /* Cancer 3-column / 3-bullet list (Check Eligibility Page) */
@@ -1398,7 +1484,7 @@ details p {
   gap: 10px;
 }
 
-.scroll { overflow-x: auto; }
+.scroll { overflow-x:auto; }
 
 table {
   width: 100%;
@@ -1501,3 +1587,81 @@ th {
   .nav-phone { margin-left: 0; padding: 4px 8px; }
   .phone-label { display: none; }
 }
+
+/* About — founders story: white intro + centered reel + copy (photos live in Team) */
+.founders-story {
+  background: #FFFFFF;
+}
+.founders-story-intro {
+  max-width: 42rem;
+  margin: 0 auto var(--sp4);
+  text-align: center;
+  background: transparent;
+  color: inherit;
+}
+.founders-story-intro .lede {
+  margin-inline: auto;
+}
+.founders-story-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 720px;
+  margin: 0 auto var(--sp4);
+  padding: clamp(24px, 4vw, 40px) clamp(16px, 3vw, 28px);
+  background: var(--band);
+  border: 1px solid var(--rule);
+  border-radius: 24px;
+}
+.founders-reel-label {
+  text-align: center;
+  font-family: var(--f-head);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 16px;
+}
+.founders-reel {
+  width: min(100%, 340px);
+  text-align: center;
+  padding: 14px 14px 10px;
+  background: #FFFFFF;
+  border-radius: 22px;
+  border: 1px solid var(--rule);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.8) inset,
+    0 18px 50px rgba(8, 36, 74, 0.12);
+}
+.founders-reel .instagram-media,
+.founders-reel iframe {
+  min-width: 0 !important;
+  max-width: 312px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+.founders-reel-fallback {
+  margin: 10px 0 4px;
+}
+.founders-story-body {
+  max-width: 38rem;
+  margin: 0 auto;
+  text-align: left;
+}
+@media (min-width: 700px) {
+  .founders-story-body {
+    text-align: center;
+  }
+}
+.founders-story-body p {
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--ink-2);
+  margin: 0 0 1em;
+}
+.founders-story-body p:last-child {
+  margin-bottom: 0;
+}
+
