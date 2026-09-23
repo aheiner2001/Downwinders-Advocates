@@ -1665,3 +1665,70 @@ th {
   margin-bottom: 0;
 }
 
+
+/* Home sections: keep navy in the header/footer and use light surfaces for content. */
+.hero-visual {
+  background: #f4ece1;
+  border-radius: 18px;
+}
+.hero-visual-media {
+  aspect-ratio: 16 / 10;
+}
+.hero-visual-media img {
+  object-position: center center;
+}
+.consultation-section {
+  background: #fffaf3;
+  color: var(--navy);
+  min-height: 0;
+  padding: clamp(48px, 7vw, 88px) 0;
+  border-bottom: 1px solid var(--rule-light);
+}
+.exposed-intro h2,
+.consultation-card h3 {
+  color: var(--navy);
+}
+.exposed-intro p,
+.consultation-card p {
+  color: var(--ink-2);
+}
+.consultation-card {
+  max-width: 760px;
+  background: #ffffff;
+  border: 1px solid var(--rule);
+  border-radius: 18px;
+  box-shadow: var(--shadow-md);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.consultation-card .btn--white-ghost {
+  color: var(--navy);
+  border-color: var(--navy);
+}
+.consultation-card .btn--white-ghost:hover {
+  background: rgba(8, 36, 74, 0.06);
+}
+.cta-banner {
+  min-height: 0;
+  background-color: #f4ece1;
+  background-image: linear-gradient(135deg, rgba(244, 236, 225, .95), rgba(255, 250, 243, .94)), url('/img/radiation-caution-fence.jpg');
+  color: var(--navy);
+  padding: var(--sp5) 0;
+}
+.cta-banner h2,
+.cta-banner p {
+  color: var(--navy);
+}
+.subscribe-section {
+  min-height: 0;
+  padding: var(--sp5) 0;
+}
+@media (min-width: 1100px) {
+  .bar { gap: 20px; }
+  nav { gap: 12px; }
+  nav a { font-size: 14px; }
+}
+@media (max-width: 640px) {
+  .consultation-card { padding: var(--sp3); }
+  .hero-visual-media { aspect-ratio: 4 / 3; }
+}
