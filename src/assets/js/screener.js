@@ -10,7 +10,7 @@ function cbLocale() {
 var screenerMsg = {
   en: {
     blankH: 'A couple are still blank',
-    blankB: '<p>Answer all six and we will give you a read. If you are not sure about one, pick "I am not sure." That is a real answer here.</p>',
+    blankB: '<p>Answer all three and we will give you a general guide. If you are not sure about one, choose "I am not sure."</p>',
     mtcoH: 'Montana, Colorado, and Guam are not covered right now.',
     mtcoB: '<p>We would rather tell you straight. Those were taken out of the bill before it passed. A new bill to add them was introduced in July 2026, but it has not become law, and we are not going to sign you up for something that does not exist yet.</p><p>If there was <strong>uranium work</strong> in the family, that is a separate category and it may still apply no matter where you lived. Worth a call if so.</p>',
     notcovH: 'That part of Arizona or Nevada is not covered.',
