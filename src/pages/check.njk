@@ -11,47 +11,20 @@ extraScripts: '<script src="/js/screener.js" defer></script>'
     <div style="text-align:center;max-width:800px;margin:0 auto">
       <p class="eyebrow">Quick &amp; Confidential Eligibility Check</p>
       <h1>See If Your Family Qualifies For Federal Compensation</h1>
-      <p class="lede">Answer a few questions below. An advocate will review your information against official Department of Justice guidelines.</p>
+      <p class="lede">Answer a few questions for an initial guide to the relevant programs. This check stays in your browser; our team does not receive it.</p>
     </div>
 
     <!-- Ready to File Callout -->
     <div class="callout-box" style="max-width:860px;margin:0 auto;width:100%">
       <strong>Already know you qualify?</strong>
-      <p>Checking eligibility is the exact same quick first step required if you already know you are ready to file a claim. Submitting your details allows our team to begin pulling county records and assembling your family's official file immediately.</p>
+      <p>If you are ready to start a claim, you can request a call with a specialist below. The questions on this page are an informational preview and do not submit a claim.</p>
     </div>
 
     <!-- Screener & Intake Form -->
     <div class="form-card" style="max-width:860px;margin:0 auto;width:100%">
-      <h2 style="font-size:24px;color:var(--navy)">1. Your Contact Information</h2>
-      <p class="muted">We use this to reach you with your file evaluation. We never share or sell your information.</p>
-
+      <h2 style="font-size:24px;color:var(--navy)">Initial Eligibility Guide</h2>
+      <p class="muted">No name, phone number, or email is needed for this private preview. To have a specialist review your case, request a callback after the result.</p>
       <form id="screener" class="stack">
-        <div class="form-grid-2">
-          <div class="field">
-            <label for="fname">First Name *</label>
-            <input type="text" id="fname" name="fname" autocomplete="given-name" required placeholder="Jane">
-          </div>
-          <div class="field">
-            <label for="lname">Last Name *</label>
-            <input type="text" id="lname" name="lname" autocomplete="family-name" required placeholder="Doe">
-          </div>
-        </div>
-
-        <div class="form-grid-2">
-          <div class="field">
-            <label for="email">Email Address *</label>
-            <input type="email" id="email" name="email" autocomplete="email" required placeholder="jane.doe@example.com">
-          </div>
-          <div class="field">
-            <label for="phone">Phone Number *</label>
-            <input type="tel" id="phone" name="phone" autocomplete="tel" required placeholder="(801) 555-0123">
-          </div>
-        </div>
-
-        <hr style="border:0;border-top:1px solid var(--rule);margin:var(--sp2) 0">
-
-        <h2 style="font-size:24px;color:var(--navy)">2. Exposure &amp; Location Details</h2>
-
         <fieldset>
           <legend>Where did the affected family member live or work?</legend>
           <label class="opt"><input type="radio" name="place" value="state" required><span><strong>Utah, New Mexico, or Idaho:</strong> Lived anywhere in the state</span></label>
@@ -83,7 +56,7 @@ extraScripts: '<script src="/js/screener.js" defer></script>'
           <textarea id="notes" name="notes" rows="3" placeholder="E.g., My father was diagnosed with lung cancer in 1988 after living in Washington County, UT..."></textarea>
         </div>
 
-        <button class="btn" type="submit" style="align-self:flex-start;font-size:18px;padding:16px 36px">Submit My Eligibility Request &rarr;</button>
+        <button class="btn" type="submit" style="align-self:flex-start;font-size:18px;padding:16px 36px">See Initial Guidance &rarr;</button>
         <div class="result" id="out" role="status" aria-live="polite"></div>
       </form>
     </div>
@@ -149,6 +122,12 @@ extraScripts: '<script src="/js/screener.js" defer></script>'
       <h2>Why We Need Your Information</h2>
       <p>Your answers help our team identify the relevant program and explain what records may be needed. You do not need to have every date or document ready to get started.</p>
       <p class="muted">A specialist can help you work through questions about location, dates, and medical history. <a href="tel:{{ site.phoneTel }}">Call {{ site.phoneDisplay }}</a> if you would rather talk first.</p>
+    </div>
+
+    <div class="form-card" id="request-callback" style="max-width:860px;margin:var(--sp4) auto 0;width:100%">
+      <h2>Ready to Talk with a Specialist?</h2>
+      <p class="muted">Use the secure callback form below to send your name and phone number to our team. We can discuss the next steps together.</p>
+      {% include "partials/lawmatics-callback.njk" %}
     </div>
 
   </div>
