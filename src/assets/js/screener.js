@@ -89,6 +89,12 @@ if (screenerEl) {
     e.preventDefault();
     var f=new FormData(e.target), out=document.getElementById('out');
     var place=f.get('place'), years=f.get('years'), ur=f.get('uranium'), ill=f.get('illness'), who=f.get('who'), prior=f.get('prior');
+    // The English guide asks three questions; the Spanish draft still asks all six.
+    if (screenerLocale()==='en') {
+      ur = place==='uranium' ? 'yes' : 'dunno';
+      ill = 'other';
+      prior = 'dunno';
+    }
     var m = screenerMsg[screenerLocale()];
     if(!place||!years||!ur||!ill||!who||!prior){
       out.className='result on';
@@ -128,7 +134,7 @@ if (screenerEl) {
       if(ill==='other'||ur==='dunno'||who==='dunno'){b+=m.unsure;}
     }
     out.className='result on'+tone;
-    out.innerHTML='<h3>'+h+'</h3>'+b+'<p style="margin-top:16px"><a class="btn" href="tel:+18014008270">'+m.cta+'</a></p><p class="legal" style="margin-top:14px">'+m.legal+'</p>';
+    out.innerHTML='<h3>'+h+'</h3>'+b+'<p style="margin-top:16px"><a class="btn" href="tel:+18014008270">'+m.cta+'</a></p>'+(screenerLocale()==='en' ? '<p><a href="#request-callback">Request a callback to start your claim</a></p>' : '')+'<p class="legal" style="margin-top:14px">'+m.legal+'</p>';
     out.scrollIntoView({behavior:'smooth',block:'center'});
   });
 }
