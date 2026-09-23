@@ -34,37 +34,11 @@ permalink: /become-an-affiliate/
       <h2 style="font-size:24px;color:var(--navy)">Partner With Us or Send a Referral</h2>
       <p class="muted">Tell us about your organization or the individuals you would like to refer. Our partnerships director will connect with you promptly.</p>
 
-      <form action="/contact/" method="GET" class="stack" style="margin-top:var(--sp2)">
-        <input type="hidden" name="type" value="affiliate_partner">
-        <div class="form-grid-2">
-          <div class="field">
-            <label for="partner_name">Your Name *</label>
-            <input type="text" id="partner_name" name="name" required placeholder="John Smith" autocomplete="name">
-          </div>
-          <div class="field">
-            <label for="partner_org">Organization or Community Role (Optional)</label>
-            <input type="text" id="partner_org" name="organization" placeholder="E.g., St. George Community Clinic" autocomplete="organization">
-          </div>
-        </div>
-
-        <div class="form-grid-2">
-          <div class="field">
-            <label for="partner_email">Email Address *</label>
-            <input type="email" id="partner_email" name="email" required placeholder="john@example.com" autocomplete="email">
-          </div>
-          <div class="field">
-            <label for="partner_phone">Phone Number *</label>
-            <input type="tel" id="partner_phone" name="phone" required placeholder="(801) 555-0123" autocomplete="tel">
-          </div>
-        </div>
-
-        <div class="field">
-          <label for="partner_notes">How would you like to collaborate? (Or referral details)</label>
-          <textarea id="partner_notes" name="notes" rows="4" placeholder="Tell us about the community you serve or the family you'd like to refer..."></textarea>
-        </div>
-
-        <button class="btn" type="submit" style="align-self:flex-start">Submit Partnership Inquiry &rarr;</button>
-      </form>
+      <p class="muted">Tell us about your organization or a potential referral. Reach the team directly by email or phone; please avoid including someone else’s private medical details in your initial message.</p>
+      <div class="btns">
+        <a class="btn" href="mailto:{{ site.email }}?subject=Partnership%20inquiry">Email About a Partnership</a>
+        <a class="btn btn--ghost" href="tel:{{ site.phoneTel }}">Call {{ site.phoneDisplay }}</a>
+      </div>
     </div>
 
     <!-- Contact Direct -->
