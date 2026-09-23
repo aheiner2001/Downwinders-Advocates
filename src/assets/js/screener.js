@@ -35,7 +35,6 @@ var screenerMsg = {
     survivor: '<p><strong>Worth knowing.</strong> A spouse, child, parent, or in some cases grandchild can file. Many families assume the door closed when their parent did. It did not.</p>',
     denied: '<p><strong>You mentioned a denial.</strong> That is often a paperwork gap rather than an eligibility problem. Bring the denial letter to the call.</p>',
     unsure: '<p>Some of your answers were "not sure," which is completely normal. We can sort those out on the phone.</p>',
-    free: '<p><strong>You can do this yourself, for free.</strong> RESEP clinics help at no cost and plenty of families file with no company at all. If you would rather not chase forty years of records, that is what we are for.</p>',
     cta: 'Talk it through, (801) 400-8270',
     legal: 'This is a general read, not a decision. Only the Department of Justice decides who qualifies.'
   },
@@ -66,7 +65,6 @@ var screenerMsg = {
     survivor: '<p><strong>Vale saber.</strong> Un cónyuge, hijo, padre o en algunos casos nieto puede presentar. Muchas familias asumen que la puerta se cerró cuando falleció su padre. No fue así.</p>',
     denied: '<p><strong>Mencionó una denegación.</strong> A menudo es un vacío de papeleo más que un problema de elegibilidad. Traiga la carta de denegación a la llamada.</p>',
     unsure: '<p>Algunas de sus respuestas fueron "no estoy seguro," lo cual es completamente normal. Podemos aclarar eso por teléfono.</p>',
-    free: '<p><strong>Puede hacer esto usted mismo, gratis.</strong> Las clínicas RESEP ayudan sin costo y muchas familias presentan sin ninguna empresa. Si preferiría no perseguir cuarenta años de registros, para eso estamos.</p>',
     cta: 'Hablemos, (801) 400-8270',
     legal: 'Esta es una lectura general, no una decisión. Solo el Departamento de Justicia decide quién califica.'
   }
@@ -129,7 +127,6 @@ if (screenerEl) {
       if(prior==='denied'){b+=m.denied;}
       if(ill==='other'||ur==='dunno'||who==='dunno'){b+=m.unsure;}
     }
-    b+=m.free;
     out.className='result on'+tone;
     out.innerHTML='<h3>'+h+'</h3>'+b+'<p style="margin-top:16px"><a class="btn" href="tel:+18014008270">'+m.cta+'</a></p><p class="legal" style="margin-top:14px">'+m.legal+'</p>';
     out.scrollIntoView({behavior:'smooth',block:'center'});
