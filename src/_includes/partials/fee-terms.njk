@@ -1,0 +1,23 @@
+{% set L = locale or 'en' %}
+<p class="fees-intro">
+  {% if L == 'es' %}Nuestros honorarios están regulados por el Departamento de Justicia de EE. UU. y <strong>no</strong> cobramos nuestros honorarios hasta que su reclamo haya sido aprobado y pagado.{% else %}Our fees are regulated by the U.S. Department of Justice, and we do <strong>not</strong> collect our fee until your claim has been approved and paid.{% endif %}
+</p>
+<ul class="fees-list">
+  <li>
+    {% if L == 'es' %}<strong>Reclamos nuevos:</strong> Para reclamos nuevos de RECA, nuestros honorarios son el <strong>2%</strong> de la compensación total otorgada.<br>
+    <em>Ejemplo: Si se otorgan $100,000 por un reclamo de exposición a lluvia radiactiva, nuestros honorarios son $2,000.</em>{% else %}<strong>New Claims:</strong> For new RECA claims, our fee is <strong>2%</strong> of the total compensation awarded.<br>
+    <em>Example: For a Downwinder claim awarded $100,000, our fee is $2,000.</em>{% endif %}
+  </li>
+  <li>{% if L == 'es' %}<strong>Reclamos presentados de nuevo:</strong> Si presentamos de nuevo un reclamo previamente denegado, los honorarios son el <strong>10%</strong> de la compensación otorgada.{% else %}<strong>Resubmitted Claims:</strong> If we are resubmitting a previously denied claim, the fee is <strong>10%</strong> of the compensation awarded.{% endif %}</li>
+  <li>
+    <strong>{{ 'Cargos administrativos:' if L == 'es' else 'Administrative Fees:' }}</strong>
+    <ul class="fees-sublist">
+      <li>{% if L == 'es' %}Se cobra por adelantado un cargo no reembolsable de <strong>$200 por revisión del expediente</strong>. Esto cubre servicios administrativos como correo, llamadas y apoyo para tramitar el reclamo.{% else %}A non-refundable <strong>$200 file review fee</strong> is charged upfront. This covers administrative services such as postage, phone calls, and claim processing support.{% endif %}</li>
+      <li>{% if L == 'es' %}Se cobra un <strong>cargo de $400 por solicitante para la tramitación administrativa</strong> para ayudar a cubrir los costos incurridos durante el proceso del reclamo. Este cargo se paga al finalizar el reclamo.{% else %}A <strong>$400 per claimant administrative processing fee</strong> is charged to help cover costs incurred throughout the claims process. This fee is paid upon completion of the claim.{% endif %}</li>
+    </ul>
+  </li>
+  <li>
+    <strong>{{ 'Cargos por obtención de documentos:' if L == 'es' else 'Document Retrieval Fees:' }}</strong><br>
+    {% if L == 'es' %}Obtenemos en su nombre los documentos necesarios —como registros médicos, documentos de presencia y actas oficiales—. Se cobran <strong>por documento</strong>, pero el pago no vence hasta que se haya tramitado el reclamo.{% else %}We obtain necessary documentation—such as medical records, presence documents, and vital records—on your behalf. These are billed <strong>per document</strong>, but payment is not due until the claim has been processed.{% endif %}
+  </li>
+</ul>
