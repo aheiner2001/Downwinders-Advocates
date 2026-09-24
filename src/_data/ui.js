@@ -39,7 +39,7 @@ module.exports = {
     ctaCheck: "Verificar elegibilidad",
     ctaFreeHelp: "Ayuda gratuita",
     draftBanner:
-      "Borrador de traducción automática para revisión — no es texto aprobado por el abogado. Para ayuda en español, llame al (801) 400-8270.",
+      "Borrador de traducción automática para revisión — no es texto aprobado por el abogado. Para ayuda en español, llame al (801) 210-6517.",
     brandSubtitle: "Ayuda con reclamos RECA",
   },
 };
