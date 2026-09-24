@@ -1737,3 +1737,72 @@ th {
   .consultation-card { padding: var(--sp3); }
   .hero-visual-media { aspect-ratio: 4 / 3; }
 }
+
+/* Homepage trust review: clearer hierarchy and calmer, consistent surfaces. */
+.hero-white {
+  background: linear-gradient(135deg, #fff 60%, #f5f8fa 100%);
+  padding: clamp(48px, 6vw, 88px) 0;
+}
+.hero-content { gap: clamp(16px, 2vw, 24px); }
+.badge-credibility {
+  max-width: 100%;
+  border-radius: 8px;
+  background: #f9f5ec;
+  border-color: #e6d9bd;
+  color: #664913;
+  line-height: 1.45;
+}
+.badge-credibility svg { flex: none; color: #9b6a1b; }
+.hero-headline { max-width: 19ch; }
+.hero-subheadline { max-width: 48ch; color: #405874; }
+.hero-content .lede { max-width: 56ch; }
+.hero-visual {
+  border: 6px solid #fff;
+  box-shadow: 0 18px 45px rgba(8, 36, 74, .15);
+}
+.mission-banner { background: #f6f1e8; }
+.mission-box { max-width: 780px; }
+.exposed-intro { max-width: 760px; }
+.consultation-card {
+  box-shadow: 0 18px 48px rgba(2, 21, 37, .24);
+  border-color: #e5eaf0;
+}
+#programs .program-card {
+  border-color: #d7e0e8;
+  box-shadow: 0 4px 16px rgba(8, 36, 74, .06);
+}
+#programs .program-card--featured {
+  border-color: #b88129;
+  box-shadow: 0 9px 26px rgba(8, 36, 74, .10);
+}
+#programs .program-card:hover { transform: none; }
+#process .steps { gap: 0; }
+#process .step { position: relative; padding-bottom: var(--sp4); }
+#process .step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 21px;
+  top: 49px;
+  bottom: 5px;
+  width: 2px;
+  background: #d7e0e8;
+}
+#process .step:last-child { padding-bottom: 0; }
+#pricing .fees-container {
+  border-color: #d7e0e8;
+  box-shadow: 0 10px 32px rgba(8, 36, 74, .07);
+}
+#team .person { border-color: #d7e0e8; box-shadow: 0 4px 18px rgba(8, 36, 74, .06); }
+#team .avatar { border-color: #e5d6b8; }
+.cta-banner { border-top: 1px solid #24465b; border-bottom: 1px solid #24465b; }
+.subscribe-section { background-size: 600px auto; }
+.subscribe-box { background: rgba(255, 255, 255, .95); border-color: #d7e0e8; }
+.subscribe-form-wrap { background: #f5f7f9; border: 1px solid #e0e6ed; }
+#contact .way { border-color: #d7e0e8; box-shadow: 0 4px 16px rgba(8, 36, 74, .06); }
+#contact .way .big { overflow-wrap: anywhere; }
+@media (max-width: 640px) {
+  .hero-white { padding: var(--sp5) 0; }
+  .hero-content .btns .btn { width: 100%; }
+  .badge-credibility { font-size: 13px; }
+  #pricing .fees-container { padding: var(--sp3); }
+}
