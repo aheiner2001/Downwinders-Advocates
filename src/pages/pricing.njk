@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 locale: en
 title: "Pricing & Regulated Fees | Downwinders Advocates"
-description: "Learn how Downwinders Advocates charges for RECA claim assistance and when payment is due."
+description: "Review RECA claim fees, administrative charges, and document retrieval fees."
 permalink: /pricing/
 ---
 <section class="sec" id="pricing">
@@ -10,18 +10,15 @@ permalink: /pricing/
     <div style="text-align:center;max-width:800px;margin:0 auto">
       <p class="eyebrow">Fair &amp; Regulated Terms</p>
       <h1>Clear, Transparent Pricing</h1>
-      <p class="lede">Nothing up front. Nothing if the claim is not paid.</p>
+      <p class="lede">Review the fees and charges for claim assistance below.</p>
     </div>
 
     <div class="fees-container" style="max-width:900px;margin:var(--sp3) auto 0;width:100%">
       <div>
         <h2 class="fees-title" style="text-align:left">What will it cost to process my claim?</h2>
-        <p class="fees-intro" style="margin-top:12px">
-          There is no retainer, no application fee, and no document fee. If the claim is paid, our fee comes out of the award. You will see the actual number in writing before you sign anything, and you can walk away at any point before it is filed.
-        </p>
       </div>
 
-      <p class="legal">Fee figures pending counsel review before publication.</p>
+      {% include "partials/fee-terms.njk" %}
 
       <div class="btns" style="margin-top:var(--sp2)">
         <a class="btn" href="/check/">Check Your Eligibility</a>
