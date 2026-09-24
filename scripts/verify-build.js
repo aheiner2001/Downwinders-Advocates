@@ -37,7 +37,47 @@ function countIndexHtml(dir) {
 }
 
 const pages = countIndexHtml(site);
-if (pages !== 98) throw new Error("expected 98 index.html pages, got " + pages);
+if (pages !== 102) throw new Error("expected 102 index.html pages, got " + pages);
+
+// Keep the redesigned Spanish pages on the same visual structure as English.
+function mainStructure(rel) {
+  const html = fs.readFileSync(path.join(site, rel), "utf8");
+  const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i);
+  if (!main) throw new Error(rel + " missing main");
+  return (main[1].match(/<\/?[a-z][^>]*>/gi) || []).map((tag) => {
+    const name = tag.match(/^<\/?[a-z][\w-]*/i)[0].toLowerCase();
+    if (name.startsWith("</")) return name;
+    const attrs = ["class", "id", "type", "name", "value"].map((key) => {
+      const match = tag.match(new RegExp("\\b" + key + '="([^"]*)"'));
+      return match ? key + "=" + match[1] : "";
+    });
+    return name + attrs.join("|");
+  }).join("\n");
+}
+
+for (const route of ["", "check/", "contact/", "standards/", "programs/", "pricing/", "become-an-affiliate/", "about/"]) {
+  const en = route + "index.html";
+  const es = "es/" + en;
+  mustExist(es);
+  if (mainStructure(en) !== mainStructure(es)) throw new Error(es + " layout differs from English");
+}
+
+function checkSpanishLinks(dir) {
+  for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
+    const file = path.join(dir, ent.name);
+    if (ent.isDirectory()) checkSpanishLinks(file);
+    else if (ent.name === "index.html") {
+      const html = fs.readFileSync(file, "utf8");
+      for (const match of html.matchAll(/<a\b[^>]*\bhref="(\/[^"]*)"/g)) {
+        const destination = match[1].split(/[?#]/)[0];
+        if (!fs.existsSync(path.join(site, destination))) {
+          throw new Error(path.relative(site, file) + " links to missing " + destination);
+        }
+      }
+    }
+  }
+}
+checkSpanishLinks(path.join(site, "es"));
 
 mustExist("es/index.html");
 mustExist("es/check/index.html");
@@ -161,4 +201,4 @@ for (const rel of contentPages) {
   }
 }
 
-console.log("PASS verify-build (98 pages + SEO + strict copy + ES draft + a11y CSS)");
+console.log("PASS verify-build (102 pages + SEO + strict copy + ES draft + a11y CSS)");

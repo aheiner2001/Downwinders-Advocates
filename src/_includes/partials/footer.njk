@@ -19,7 +19,7 @@
           <span class="footer-brand-title">Downwinders Advocates</span>
         </a>
         <p class="footer-bio">
-          Helping individuals and surviving family members receive federal recognition and compensation for illnesses caused by government-created radiation exposure.
+          {{ 'Ayudamos a personas y familiares sobrevivientes a solicitar el reconocimiento y la compensación federal por enfermedades relacionadas con la exposición a radiación generada por el gobierno.' if L == 'es' else 'Helping individuals and surviving family members receive federal recognition and compensation for illnesses caused by government-created radiation exposure.' }}
         </p>
         <div class="footer-social" aria-label="Social media links">
           {% if site.socialFacebook %}
@@ -43,52 +43,52 @@
 
       <!-- Column 2: Programs -->
       <div class="footer-col">
-        <h4 class="footer-heading">Programs</h4>
+        <h4 class="footer-heading">{{ 'Programas' if L == 'es' else 'Programs' }}</h4>
         <ul class="footer-nav-list">
-          <li><a href="{{ prefix }}/programs/"><span class="bullet-arrow">&#9658;</span> Programs Overview</a></li>
-          <li><a href="{{ prefix }}/programs/#downwinders"><span class="bullet-arrow">&#9658;</span> Downwinders</a></li>
-          <li><a href="{{ prefix }}/programs/#onsite"><span class="bullet-arrow">&#9658;</span> On-Site Participants</a></li>
-          <li><a href="{{ prefix }}/programs/#uranium"><span class="bullet-arrow">&#9658;</span> Uranium Workers</a></li>
-          <li><a href="{{ prefix }}/programs/#manhattan"><span class="bullet-arrow">&#9658;</span> Manhattan Transfer Waste</a></li>
-          <li><a href="{{ prefix }}/check/"><span class="bullet-arrow">&#9658;</span> File A Claim</a></li>
+          <li><a href="{{ prefix }}/programs/"><span class="bullet-arrow">&#9658;</span> {{ 'Resumen de programas' if L == 'es' else 'Programs Overview' }}</a></li>
+          <li><a href="{{ prefix }}/programs/#downwinders"><span class="bullet-arrow">&#9658;</span> {{ 'Personas expuestas a lluvia radiactiva' if L == 'es' else 'Downwinders' }}</a></li>
+          <li><a href="{{ prefix }}/programs/#onsite"><span class="bullet-arrow">&#9658;</span> {{ 'Participantes en el sitio' if L == 'es' else 'On-Site Participants' }}</a></li>
+          <li><a href="{{ prefix }}/programs/#uranium"><span class="bullet-arrow">&#9658;</span> {{ 'Trabajadores del uranio' if L == 'es' else 'Uranium Workers' }}</a></li>
+          <li><a href="{{ prefix }}/programs/#manhattan"><span class="bullet-arrow">&#9658;</span> {{ 'Residuos del Proyecto Manhattan' if L == 'es' else 'Manhattan Transfer Waste' }}</a></li>
+          <li><a href="{{ prefix }}/check/"><span class="bullet-arrow">&#9658;</span> {{ 'Inicie un reclamo' if L == 'es' else 'File A Claim' }}</a></li>
         </ul>
       </div>
 
       <!-- Column 3: Menu -->
       <div class="footer-col">
-        <h4 class="footer-heading">Menu</h4>
+        <h4 class="footer-heading">{{ 'Menú' if L == 'es' else 'Menu' }}</h4>
         <ul class="footer-nav-list">
-          <li><a href="{{ homeHref }}"><span class="bullet-arrow">&#9658;</span> Home</a></li>
-          <li><a href="{{ prefix }}/about/"><span class="bullet-arrow">&#9658;</span> About</a></li>
-          <li><a href="{{ prefix }}/programs/"><span class="bullet-arrow">&#9658;</span> Programs</a></li>
-          <li><a href="{{ prefix }}/pricing/"><span class="bullet-arrow">&#9658;</span> Pricing & Fees</a></li>
-          <li><a href="{{ prefix }}/become-an-affiliate/"><span class="bullet-arrow">&#9658;</span> Become an Affiliate</a></li>
-          <li><a href="{{ prefix }}/about/#standards"><span class="bullet-arrow">&#9658;</span> Our Standards</a></li>
-          <li><a href="{{ prefix }}/about/#faq"><span class="bullet-arrow">&#9658;</span> Questions & FAQ</a></li>
-          <li><a href="{{ prefix }}/contact/"><span class="bullet-arrow">&#9658;</span> Contact</a></li>
+          <li><a href="{{ homeHref }}"><span class="bullet-arrow">&#9658;</span> {{ 'Inicio' if L == 'es' else 'Home' }}</a></li>
+          <li><a href="{{ prefix }}/about/"><span class="bullet-arrow">&#9658;</span> {{ 'Nosotros' if L == 'es' else 'About' }}</a></li>
+          <li><a href="{{ prefix }}/programs/"><span class="bullet-arrow">&#9658;</span> {{ 'Programas' if L == 'es' else 'Programs' }}</a></li>
+          <li><a href="{{ prefix }}/pricing/"><span class="bullet-arrow">&#9658;</span> {{ 'Precios y honorarios' if L == 'es' else 'Pricing & Fees' }}</a></li>
+          <li><a href="{{ prefix }}/become-an-affiliate/"><span class="bullet-arrow">&#9658;</span> {{ 'Sea aliado' if L == 'es' else 'Become an Affiliate' }}</a></li>
+          <li><a href="{{ prefix }}/about/#standards"><span class="bullet-arrow">&#9658;</span> {{ 'Nuestros estándares' if L == 'es' else 'Our Standards' }}</a></li>
+          <li><a href="{{ prefix }}/about/#faq"><span class="bullet-arrow">&#9658;</span> {{ 'Preguntas frecuentes' if L == 'es' else 'Questions & FAQ' }}</a></li>
+          <li><a href="{{ prefix }}/contact/"><span class="bullet-arrow">&#9658;</span> {{ 'Contacto' if L == 'es' else 'Contact' }}</a></li>
         </ul>
       </div>
 
       <!-- Column 4: Contact Details -->
       <div class="footer-col">
-        <h4 class="footer-heading">Contact</h4>
+        <h4 class="footer-heading">{{ 'Contacto' if L == 'es' else 'Contact' }}</h4>
         <div class="footer-contact-items">
           {% if site.address %}
-          <div class="footer-contact-group"><span class="contact-label">Address</span><p>{{ site.address }}</p></div>
+          <div class="footer-contact-group"><span class="contact-label">{{ 'Dirección' if L == 'es' else 'Address' }}</span><p>{{ site.address }}</p></div>
           {% endif %}
           <div class="footer-contact-group">
-            <span class="contact-label">Phone</span>
+            <span class="contact-label">{{ 'Teléfono' if L == 'es' else 'Phone' }}</span>
             <p><a href="tel:{{ site.phoneTel }}">{{ site.phoneDisplay }}</a></p>
           </div>
           {% if site.faxDisplay %}
-          <div class="footer-contact-group"><span class="contact-label">Fax</span><p>{{ site.faxDisplay }}</p></div>
+          <div class="footer-contact-group"><span class="contact-label">{{ 'Fax' if L == 'es' else 'Fax' }}</span><p>{{ site.faxDisplay }}</p></div>
           {% endif %}
           <div class="footer-contact-group">
-            <span class="contact-label">Email</span>
+            <span class="contact-label">{{ 'Correo' if L == 'es' else 'Email' }}</span>
             <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
           </div>
           <div class="footer-contact-group">
-            <span class="contact-label">Legal partner</span>
+            <span class="contact-label">{{ 'Colaboración legal' if L == 'es' else 'Legal partner' }}</span>
             <p>{{ site.partnerLawFirm }}<br>{{ site.partnerAddress }}</p>
           </div>
         </div>
@@ -96,13 +96,13 @@
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2026 Downwinders Advocates. All rights reserved. In partnership with {{ site.partnerLawFirm }}.</p>
+      <p>&copy; 2026 Downwinders Advocates. {{ 'Todos los derechos reservados. En colaboración con' if L == 'es' else 'All rights reserved. In partnership with' }} {{ site.partnerLawFirm }}.</p>
       <div class="footer-bottom-links">
-        <a href="{{ prefix }}/about/#standards">Standards</a>
+        <a href="{{ prefix }}/about/#standards">{{ 'Estándares' if L == 'es' else 'Standards' }}</a>
         <span class="sep">&middot;</span>
-        <a href="{{ prefix }}/contact/">Privacy</a>
+        <a href="{{ prefix }}/contact/">{{ 'Privacidad' if L == 'es' else 'Privacy' }}</a>
         <span class="sep">&middot;</span>
-        <a href="{{ prefix }}/contact/">Accessibility</a>
+        <a href="{{ prefix }}/contact/">{{ 'Accesibilidad' if L == 'es' else 'Accessibility' }}</a>
       </div>
     </div>
   </div>

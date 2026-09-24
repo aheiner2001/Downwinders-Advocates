@@ -1,8 +1,8 @@
 module.exports = {
   name: "Downwinders Advocates",
   url: "https://downwindersadvocates.com",
-  phoneDisplay: "(801) 400-8270",
-  phoneTel: "+18014008270",
+  phoneDisplay: "(801) 210-6517",
+  phoneTel: "+18012106517",
   email: "info@downwindersadvocates.com",
   faxDisplay: "",
   address: "",

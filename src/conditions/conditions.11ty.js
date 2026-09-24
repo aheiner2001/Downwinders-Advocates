@@ -28,7 +28,7 @@ exports.render = function (data) {
     </div>
     <div class="btns">
       <a class="btn" href="${prefix}/check/">${t.ctaCheck}</a>
-      <a class="btn btn--ghost" href="${prefix}/free-help/">${t.ctaFreeHelp}</a>
+      <a class="btn btn--ghost" href="${prefix}/contact/">${t.contact}</a>
     </div>
   </div>
 </section>
