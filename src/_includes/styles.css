@@ -1678,17 +1678,22 @@ th {
   object-position: center center;
 }
 .consultation-section {
-  background: #fffaf3;
-  color: var(--navy);
+  background-color: #092c48;
+  background-image: linear-gradient(160deg, rgba(7, 38, 60, .78), rgba(9, 49, 78, .86)), url('/img/medical-research-bg.jpg');
+  color: #fff;
   min-height: 0;
   padding: clamp(48px, 7vw, 88px) 0;
-  border-bottom: 1px solid var(--rule-light);
+  border-bottom: 1px solid rgba(255, 255, 255, .16);
 }
-.exposed-intro h2,
+.exposed-intro h2 {
+  color: #fff;
+}
+.exposed-intro p {
+  color: #e2edf7;
+}
 .consultation-card h3 {
   color: var(--navy);
 }
-.exposed-intro p,
 .consultation-card p {
   color: var(--ink-2);
 }
@@ -1710,14 +1715,14 @@ th {
 }
 .cta-banner {
   min-height: 0;
-  background-color: #f4ece1;
-  background-image: linear-gradient(135deg, rgba(244, 236, 225, .95), rgba(255, 250, 243, .94)), url('/img/radiation-caution-fence.jpg');
-  color: var(--navy);
+  background-color: #143b53;
+  background-image: linear-gradient(135deg, rgba(8, 42, 64, .74), rgba(11, 51, 75, .82)), url('/img/radiation-caution-fence.jpg');
+  color: #fff;
   padding: var(--sp5) 0;
 }
 .cta-banner h2,
 .cta-banner p {
-  color: var(--navy);
+  color: #fff;
 }
 .subscribe-section {
   min-height: 0;
