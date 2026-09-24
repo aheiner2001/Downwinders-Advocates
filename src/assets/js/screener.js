@@ -36,7 +36,7 @@ var screenerMsg = {
     denied: '<p><strong>You mentioned a denial.</strong> That is often a paperwork gap rather than an eligibility problem. Bring the denial letter to the call.</p>',
     unsure: '<p>Some of your answers were "not sure," which is completely normal. We can sort those out on the phone.</p>',
     free: '<p><strong>You can do this yourself, for free.</strong> RESEP clinics help at no cost and plenty of families file with no company at all. If you would rather not chase forty years of records, that is what we are for.</p>',
-    cta: 'Talk it through, (801) 400-8270',
+    cta: 'Talk it through, (801) 210-6517',
     legal: 'This is a general read, not a decision. Only the Department of Justice decides who qualifies.'
   },
   es: {
@@ -67,7 +67,7 @@ var screenerMsg = {
     denied: '<p><strong>Mencionó una denegación.</strong> A menudo es un vacío de papeleo más que un problema de elegibilidad. Traiga la carta de denegación a la llamada.</p>',
     unsure: '<p>Algunas de sus respuestas fueron "no estoy seguro," lo cual es completamente normal. Podemos aclarar eso por teléfono.</p>',
     free: '<p><strong>Puede hacer esto usted mismo, gratis.</strong> Las clínicas RESEP ayudan sin costo y muchas familias presentan sin ninguna empresa. Si preferiría no perseguir cuarenta años de registros, para eso estamos.</p>',
-    cta: 'Hablemos, (801) 400-8270',
+    cta: 'Hablemos, (801) 210-6517',
     legal: 'Esta es una lectura general, no una decisión. Solo el Departamento de Justicia decide quién califica.'
   }
 };
@@ -75,12 +75,12 @@ var screenerMsg = {
 var cbMsg = {
   en: {
     needH: 'We need a name and a phone number',
-    needB: '<p>Ten digits is enough. If you would rather just call, the number is (801) 400-8270.</p>',
+    needB: '<p>Ten digits is enough. If you would rather just call, the number is (801) 210-6517.</p>',
     got: function(first){ return '<h3>Got it, '+first+'.</h3><p>Someone will call you within one business day. If we miss you, we keep trying.</p><p>Nothing happens until you say so, and you can tell us to delete your number at any point.</p>'; }
   },
   es: {
     needH: 'Necesitamos un nombre y un número de teléfono',
-    needB: '<p>Diez dígitos bastan. Si prefiere solo llamar, el número es (801) 400-8270.</p>',
+    needB: '<p>Diez dígitos bastan. Si prefiere solo llamar, el número es (801) 210-6517.</p>',
     got: function(first){ return '<h3>Listo, '+first+'.</h3><p>Alguien le llamará en un día hábil. Si no lo alcanzamos, seguimos intentando.</p><p>No pasa nada hasta que usted lo diga, y puede pedirnos borrar su número en cualquier momento.</p>'; }
   }
 };
@@ -131,7 +131,7 @@ if (screenerEl) {
     }
     b+=m.free;
     out.className='result on'+tone;
-    out.innerHTML='<h3>'+h+'</h3>'+b+'<p style="margin-top:16px"><a class="btn" href="tel:+18014008270">'+m.cta+'</a></p><p class="legal" style="margin-top:14px">'+m.legal+'</p>';
+    out.innerHTML='<h3>'+h+'</h3>'+b+'<p style="margin-top:16px"><a class="btn" href="tel:+18012106517">'+m.cta+'</a></p><p class="legal" style="margin-top:14px">'+m.legal+'</p>';
     out.scrollIntoView({behavior:'smooth',block:'center'});
   });
 }
