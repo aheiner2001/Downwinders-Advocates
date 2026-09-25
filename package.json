@@ -5,10 +5,15 @@
   "scripts": {
     "build": "eleventy",
     "serve": "eleventy --serve",
-    "verify": "node scripts/verify-build.js"
+    "verify": "node scripts/verify-build.js",
+    "test:rules": "node --test tests/content-rules.test.js",
+    "test:csv": "node scripts/test-load-csv.js",
+    "test:e2e": "playwright test",
+    "test:ci": "npm run build && npm run verify && npm run test:rules && npm run test:csv && npm run test:e2e"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
+    "@playwright/test": "^1.63.0",
     "csv-parse": "^5.6.0"
   }
 }

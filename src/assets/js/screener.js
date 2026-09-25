@@ -10,7 +10,7 @@ function cbLocale() {
 var screenerMsg = {
   en: {
     blankH: 'A couple are still blank',
-    blankB: '<p>Answer all six and we will give you a read. If you are not sure about one, pick "I am not sure." That is a real answer here.</p>',
+    blankB: '<p>Answer all three and we will give you a general guide. If you are not sure about one, choose "I am not sure."</p>',
     mtcoH: 'Montana, Colorado, and Guam are not covered right now.',
     mtcoB: '<p>We would rather tell you straight. Those were taken out of the bill before it passed. A new bill to add them was introduced in July 2026, but it has not become law, and we are not going to sign you up for something that does not exist yet.</p><p>If there was <strong>uranium work</strong> in the family, that is a separate category and it may still apply no matter where you lived. Worth a call if so.</p>',
     notcovH: 'That part of Arizona or Nevada is not covered.',
@@ -35,13 +35,12 @@ var screenerMsg = {
     survivor: '<p><strong>Worth knowing.</strong> A spouse, child, parent, or in some cases grandchild can file. Many families assume the door closed when their parent did. It did not.</p>',
     denied: '<p><strong>You mentioned a denial.</strong> That is often a paperwork gap rather than an eligibility problem. Bring the denial letter to the call.</p>',
     unsure: '<p>Some of your answers were "not sure," which is completely normal. We can sort those out on the phone.</p>',
-    free: '<p><strong>You can do this yourself, for free.</strong> RESEP clinics help at no cost and plenty of families file with no company at all. If you would rather not chase forty years of records, that is what we are for.</p>',
-    cta: 'Talk it through, (801) 400-8270',
+    cta: 'Talk it through, (801) 210-6517',
     legal: 'This is a general read, not a decision. Only the Department of Justice decides who qualifies.'
   },
   es: {
     blankH: 'Todavía faltan algunas',
-    blankB: '<p>Responda las seis y le daremos una lectura. Si no está seguro de una, elija "No estoy seguro." Esa es una respuesta válida aquí.</p>',
+    blankB: '<p>Responda las tres preguntas y le daremos una orientación inicial. Si no está seguro de una, elija "No estoy seguro." Esa es una respuesta válida aquí.</p>',
     mtcoH: 'Montana, Colorado y Guam no están cubiertos en este momento.',
     mtcoB: '<p>Preferimos decirle la verdad. Esos se sacaron del proyecto de ley antes de que pasara. Se presentó un nuevo proyecto para añadirlos en julio de 2026, pero no se ha convertido en ley, y no lo vamos a inscribir en algo que aún no existe.</p><p>Si hubo <strong>trabajo con uranio</strong> en la familia, esa es una categoría separada y aún puede aplicar sin importar dónde vivieron. Vale una llamada si es así.</p>',
     notcovH: 'Esa parte de Arizona o Nevada no está cubierta.',
@@ -66,8 +65,7 @@ var screenerMsg = {
     survivor: '<p><strong>Vale saber.</strong> Un cónyuge, hijo, padre o en algunos casos nieto puede presentar. Muchas familias asumen que la puerta se cerró cuando falleció su padre. No fue así.</p>',
     denied: '<p><strong>Mencionó una denegación.</strong> A menudo es un vacío de papeleo más que un problema de elegibilidad. Traiga la carta de denegación a la llamada.</p>',
     unsure: '<p>Algunas de sus respuestas fueron "no estoy seguro," lo cual es completamente normal. Podemos aclarar eso por teléfono.</p>',
-    free: '<p><strong>Puede hacer esto usted mismo, gratis.</strong> Las clínicas RESEP ayudan sin costo y muchas familias presentan sin ninguna empresa. Si preferiría no perseguir cuarenta años de registros, para eso estamos.</p>',
-    cta: 'Hablemos, (801) 400-8270',
+    cta: 'Hablemos, (801) 210-6517',
     legal: 'Esta es una lectura general, no una decisión. Solo el Departamento de Justicia decide quién califica.'
   }
 };
@@ -75,12 +73,12 @@ var screenerMsg = {
 var cbMsg = {
   en: {
     needH: 'We need a name and a phone number',
-    needB: '<p>Ten digits is enough. If you would rather just call, the number is (801) 400-8270.</p>',
+    needB: '<p>Ten digits is enough. If you would rather just call, the number is (801) 210-6517.</p>',
     got: function(first){ return '<h3>Got it, '+first+'.</h3><p>Someone will call you within one business day. If we miss you, we keep trying.</p><p>Nothing happens until you say so, and you can tell us to delete your number at any point.</p>'; }
   },
   es: {
     needH: 'Necesitamos un nombre y un número de teléfono',
-    needB: '<p>Diez dígitos bastan. Si prefiere solo llamar, el número es (801) 400-8270.</p>',
+    needB: '<p>Diez dígitos bastan. Si prefiere solo llamar, el número es (801) 210-6517.</p>',
     got: function(first){ return '<h3>Listo, '+first+'.</h3><p>Alguien le llamará en un día hábil. Si no lo alcanzamos, seguimos intentando.</p><p>No pasa nada hasta que usted lo diga, y puede pedirnos borrar su número en cualquier momento.</p>'; }
   }
 };
@@ -91,6 +89,10 @@ if (screenerEl) {
     e.preventDefault();
     var f=new FormData(e.target), out=document.getElementById('out');
     var place=f.get('place'), years=f.get('years'), ur=f.get('uranium'), ill=f.get('illness'), who=f.get('who'), prior=f.get('prior');
+    // The English guide asks three questions; the Spanish draft still asks all six.
+    ur = place==='uranium' ? 'yes' : 'dunno';
+    ill = 'other';
+    prior = 'dunno';
     var m = screenerMsg[screenerLocale()];
     if(!place||!years||!ur||!ill||!who||!prior){
       out.className='result on';
@@ -129,9 +131,8 @@ if (screenerEl) {
       if(prior==='denied'){b+=m.denied;}
       if(ill==='other'||ur==='dunno'||who==='dunno'){b+=m.unsure;}
     }
-    b+=m.free;
     out.className='result on'+tone;
-    out.innerHTML='<h3>'+h+'</h3>'+b+'<p style="margin-top:16px"><a class="btn" href="tel:+18014008270">'+m.cta+'</a></p><p class="legal" style="margin-top:14px">'+m.legal+'</p>';
+    out.innerHTML='<h3>'+h+'</h3>'+b+'<p style="margin-top:16px"><a class="btn" href="tel:+18012106517">'+m.cta+'</a></p>'+'<p><a href="#request-callback">'+(screenerLocale()==='es' ? 'Solicite una llamada para iniciar su reclamo' : 'Request a callback to start your claim')+'</a></p>'+'<p class="legal" style="margin-top:14px">'+m.legal+'</p>';
     out.scrollIntoView({behavior:'smooth',block:'center'});
   });
 }

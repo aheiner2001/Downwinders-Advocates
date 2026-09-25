@@ -1,0 +1,29 @@
+---
+layout: layouts/base.njk
+locale: en
+title: "Pricing & Regulated Fees | Downwinders Advocates"
+description: "Review RECA claim fees, administrative charges, and document retrieval fees."
+permalink: /pricing/
+---
+<section class="sec" id="pricing">
+  <div class="wrap stack">
+    <div style="text-align:center;max-width:800px;margin:0 auto">
+      <p class="eyebrow">Fair &amp; Regulated Terms</p>
+      <h1>Clear, Transparent Pricing</h1>
+      <p class="lede">Review the fees and charges for claim assistance below.</p>
+    </div>
+
+    <div class="fees-container" style="max-width:900px;margin:var(--sp3) auto 0;width:100%">
+      <div>
+        <h2 class="fees-title" style="text-align:left">What will it cost to process my claim?</h2>
+      </div>
+
+      {% include "partials/fee-terms.njk" %}
+
+      <div class="btns" style="margin-top:var(--sp2)">
+        <a class="btn" href="/check/">Check Your Eligibility</a>
+        <a class="btn btn--ghost" href="/contact/">Speak With A Specialist</a>
+      </div>
+    </div>
+  </div>
+</section>

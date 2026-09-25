@@ -1,90 +1,134 @@
 ---
 layout: layouts/base.njk
 locale: es
-title: "Verificación de elegibilidad | Downwinders Advocates"
-description: ""
+title: "Verifique elegibilidad para RECA | Downwinders Advocates"
+description: "Revise si su familia podría cumplir los requisitos de los programas federales de compensación por radiación."
 permalink: /es/check/
 extraScripts: '<script src="/js/screener.js" defer></script>'
 ---
 <section class="sec" id="check">
   <div class="wrap stack">
-    <p class="eyebrow">Gratis, sin registro, no se envía nada a ningún lado</p>
-    <h2>Vea si vale la pena seguir adelante</h2>
-    <p class="lede">Cinco preguntas. Sin nombre, sin correo, sin teléfono. Esto corre solo en su navegador y nada de lo que seleccione se envía a nosotros ni a nadie más.</p>
-    <div class="notice">
-      <span class="pill">Áreas cubiertas, según la ley actual</span>
-      <div class="scroll"><table><caption class="muted" style="text-align:left;padding:0 12px 10px">Áreas cubiertas bajo la reautorización de RECA de 2025</caption>
-        <tr><th scope="row">Todo el estado</th><td class="covered">Utah &nbsp;·&nbsp; Nuevo México &nbsp;·&nbsp; Idaho</td></tr>
-        <tr><th scope="row">Arizona, solo estos condados</th><td class="covered">Coconino, Yavapai, Navajo, Apache, Gila, Mohave. <strong>Phoenix y Tucson no están cubiertos.</strong></td></tr>
-        <tr><th scope="row">Nevada, solo estos condados</th><td class="covered">Eureka, Lander, Lincoln, Nye, White Pine, y parte de Clark. <strong>Las Vegas no está cubierta.</strong></td></tr>
-        <tr><th scope="row">Desechos del Proyecto Manhattan</th><td class="covered">Partes de Missouri, Tennessee, Kentucky, Alaska</td></tr>
-        <tr><th scope="row">No cubiertos</th><td class="covered"><strong>Montana, Colorado y Guam no están en la ley actual.</strong> Se presentó un proyecto de ley para añadirlos en julio de 2026, pero no ha pasado. No le diremos lo contrario.</td></tr>
-      </table></div>
-      <p class="muted">Los mineros, molineros y transportistas de mineral de uranio son una categoría separada con sus propias reglas, y están cubiertos por enfermedades de pulmón y riñón además del cáncer.</p>
+    <div style="text-align:center;max-width:800px;margin:0 auto">
+      <p class="eyebrow">Consulta rápida y confidencial</p>
+      <h1>Vea si su familia podría recibir compensación federal</h1>
+      <p class="lede">Responda unas preguntas para obtener una orientación inicial. Sus respuestas permanecen en su navegador; nuestro equipo no las recibe.</p>
     </div>
-    <form class="tool" id="screener" data-locale="es">
-      <fieldset>
-        <legend>1. ¿Dónde vivió la familia durante los años de las pruebas?</legend>
-        <label class="opt"><input type="radio" name="place" value="state"><span><strong>En cualquier lugar de Utah, Nuevo México o Idaho.</strong> Cuenta todo el estado.</span></label>
-        <label class="opt"><input type="radio" name="place" value="az"><span><strong>Arizona:</strong> condado de Coconino, Yavapai, Navajo, Apache, Gila o Mohave</span></label>
-        <label class="opt"><input type="radio" name="place" value="nv"><span><strong>Nevada:</strong> Eureka, Lander, Lincoln, Nye, White Pine, o la parte cubierta del condado de Clark</span></label>
-        <label class="opt"><input type="radio" name="place" value="mpw"><span>Cerca de un <strong>sitio de desechos del Proyecto Manhattan</strong> en Missouri, Tennessee, Kentucky o Alaska</span></label>
-        <label class="opt"><input type="radio" name="place" value="onsite"><span>Estuvo <strong>presente en un sitio de prueba</strong>, incluso como militar</span></label>
-        <label class="opt"><input type="radio" name="place" value="notcov"><span>Arizona o Nevada, pero <strong>no</strong> uno de los condados listados arriba</span></label>
-        <label class="opt"><input type="radio" name="place" value="mtco"><span><strong>Montana, Colorado o Guam</strong></span></label>
-        <label class="opt"><input type="radio" name="place" value="dunno"><span>No estoy seguro de qué condado, o tendría que revisar</span></label>
-        <label class="opt"><input type="radio" name="place" value="none"><span>Ninguna de estas</span></label>
-      </fieldset>
-      <fieldset>
-        <legend>2. ¿En qué años vivieron allí, y por cuánto tiempo?</legend>
-        <p class="muted" style="margin:0 0 10px">Esta es la pregunta que casi todos los demás verificadores omiten, y decide más reclamos que el condado.</p>
-        <label class="opt"><input type="radio" name="years" value="ok"><span><strong>Al menos un año</strong> en algún momento entre enero de 1951 y noviembre de 1962</span></label>
-        <label class="opt"><input type="radio" name="years" value="oknm"><span><strong>Solo Nuevo México:</strong> al menos un año en algún momento entre septiembre de 1944 y noviembre de 1962</span></label>
-        <label class="opt"><input type="radio" name="years" value="okjuly"><span>Estuvo allí el <strong>mes completo de julio de 1962</strong>, aunque no fuera un año completo</span></label>
-        <label class="opt"><input type="radio" name="years" value="after"><span>Estuvieron allí, pero <strong>solo después de noviembre de 1962</strong></span></label>
-        <label class="opt"><input type="radio" name="years" value="short"><span>Menos de un año en total, y no ese julio</span></label>
-        <label class="opt"><input type="radio" name="years" value="dunno"><span>No estoy seguro de los años exactos</span></label>
-      </fieldset>
-      <fieldset>
-        <legend>3. ¿Hubo trabajo con uranio en la familia?</legend>
-        <label class="opt"><input type="radio" name="uranium" value="yes"><span>Sí, minería, molienda o transporte de mineral</span></label>
-        <label class="opt"><input type="radio" name="uranium" value="no"><span>No</span></label>
-        <label class="opt"><input type="radio" name="uranium" value="dunno"><span>No estoy seguro</span></label>
-      </fieldset>
-      <fieldset>
-        <legend>4. ¿Qué tipo de enfermedad?</legend>
-        <p class="muted" style="margin:0 0 10px">Las listas cubiertas son específicas y cortas. Quien diga que “cualquier cáncer cuenta” está equivocado. Abra la lista abajo si no está seguro.</p>
-        <details style="margin:0 0 12px">
-          <summary>Los 19 cánceres cubiertos para downwinders</summary>
-          <p>Leucemia distinta de la leucemia linfocítica crónica, mieloma múltiple, linfomas distintos de la enfermedad de Hodgkin, y cáncer primario de tiroides, mama masculina o femenina, esófago, estómago, faringe, intestino delgado, páncreas, conductos biliares, vesícula biliar, glándula salival, vejiga urinaria, cerebro, colon, ovario, hígado (excepto cuando se indica cirrosis o hepatitis B), o pulmón.</p>
-          <p><strong>Mineros, molineros y transportistas de mineral de uranio</strong> tienen una lista distinta de siete: cáncer de pulmón, fibrosis pulmonar, cor pulmonale relacionado con fibrosis del pulmón, silicosis, neumoconiosis, cáncer renal y otra enfermedad renal crónica incluida la nefritis y lesión del tejido tubular del riñón. Cuatro de esas siete no son cáncer.</p>
-          <p><strong>Los reclamos por desechos del Proyecto Manhattan</strong> usan una tercera lista de 21, que añade cáncer de hueso y cáncer renal, y la enfermedad debe haber comenzado al menos dos años después de la exposición.</p>
-        </details>
-        <label class="opt"><input type="radio" name="illness" value="listed"><span>Un cáncer <strong>en una de esas listas</strong></span></label>
-        <label class="opt"><input type="radio" name="illness" value="lung"><span>Una <strong>condición de pulmón o riñón</strong> que no es cáncer, como silicosis, fibrosis pulmonar, neumoconiosis o nefritis</span></label>
-        <label class="opt"><input type="radio" name="illness" value="notlisted"><span><strong>Próstata, cuello uterino, testicular, uterino o enfermedad de Hodgkin</strong></span></label>
-        <label class="opt"><input type="radio" name="illness" value="melanoma"><span><strong>Melanoma</strong></span></label>
-        <label class="opt"><input type="radio" name="illness" value="other"><span>Otra cosa, o no estoy seguro de cuál es</span></label>
-      </fieldset>
-      <fieldset>
-        <legend>5. ¿Quién presentaría el reclamo?</legend>
-        <label class="opt"><input type="radio" name="who" value="self"><span>La persona que estuvo expuesta</span></label>
-        <label class="opt"><input type="radio" name="who" value="survivor"><span>Cónyuge, hijo, padre o nieto de alguien que falleció</span></label>
-        <label class="opt"><input type="radio" name="who" value="dunno"><span>No estoy seguro de quién presentaría</span></label>
-      </fieldset>
-      <fieldset>
-        <legend>6. ¿Ha presentado antes?</legend>
-        <label class="opt"><input type="radio" name="prior" value="no"><span>No, sería la primera vez</span></label>
-        <label class="opt"><input type="radio" name="prior" value="denied"><span>Sí, y fue denegado</span></label>
-        <label class="opt"><input type="radio" name="prior" value="dunno"><span>No estoy seguro</span></label>
-      </fieldset>
-      <button class="btn" type="submit">Muéstreme qué significa esto</button>
-      <div class="result" id="out" role="status" aria-live="polite"></div>
-    </form>
-    <p class="legal">Esta herramienta solo le da una lectura general. No es una determinación de elegibilidad. Solo el Departamento de Justicia de EE. UU. decide quién califica, y nadie, incluidos nosotros, puede decirle que está aprobado.</p>
-    <div class="btns">
-      <a class="btn" href="/es/check/">Verificar elegibilidad</a>
-      <a class="btn btn--ghost" href="/es/free-help/">Ayuda gratuita</a>
+
+    <!-- Ready to File Llame alout -->
+    <div class="callout-box" style="max-width:860px;margin:0 auto;width:100%">
+      <strong>¿Ya sabe que podría cumplir los requisitos?</strong>
+      <p>Si desea iniciar un reclamo, solicite una llamada con un especialista más abajo. Estas preguntas solo ofrecen orientación y no presentan un reclamo.</p>
     </div>
+
+    <!-- Screener & Intake Form -->
+    <div class="form-card" style="max-width:860px;margin:0 auto;width:100%">
+      <h2 style="font-size:24px;color:var(--navy)">Guía inicial de elegibilidad</h2>
+      <p class="muted">No necesita dar su nombre, teléfono ni correo para esta consulta privada. Después del resultado, puede solicitar una llamada para que un especialista revise su caso.</p>
+      <form id="screener" class="stack" data-locale="es">
+        <fieldset>
+          <legend>¿Dónde vivió o trabajó el familiar afectado?</legend>
+          <label class="opt"><input type="radio" name="place" value="state" required><span><strong>Utah, Nuevo México o Idaho:</strong> Vivió en cualquier parte del estado</span></label>
+          <label class="opt"><input type="radio" name="place" value="az"><span><strong>Arizona:</strong> Coconino, Yavapai, Navajo, Apache, Gila, or Mohave County</span></label>
+          <label class="opt"><input type="radio" name="place" value="nv"><span><strong>Nevada:</strong> Eureka, Lander, Lincoln, Nye, White Pine, or designated Clark County</span></label>
+          <label class="opt"><input type="radio" name="place" value="uranium"><span><strong>Industria del uranio:</strong> Extrajo, procesó o transportó mineral de uranio</span></label>
+          <label class="opt"><input type="radio" name="place" value="onsite"><span><strong>Participante en el sitio:</strong> Presente en pruebas nucleares atmosféricas o sitios de prueba</span></label>
+          <label class="opt"><input type="radio" name="place" value="mpw"><span><strong>Residuos del Proyecto Manhattan:</strong> Comunidades elegibles en Misuri, Tennessee, Kentucky o Alaska</span></label>
+          <label class="opt"><input type="radio" name="place" value="dunno"><span>No sé con certeza el condado / necesito ayuda para averiguarlo</span></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Período aproximado de residencia o trabajo:</legend>
+          <label class="opt"><input type="radio" name="years" value="ok" required><span>Al menos un año entre <strong>enero de 1951 y noviembre de 1962</strong></span></label>
+          <label class="opt"><input type="radio" name="years" value="oknm"><span><strong>Nuevo México:</strong> Al menos un año entre septiembre de 1944 y noviembre de 1962</span></label>
+          <label class="opt"><input type="radio" name="years" value="okjuly"><span>Presente durante <strong>todo el mes de julio de 1962</strong></span></label>
+          <label class="opt"><input type="radio" name="years" value="uranium"><span>Trabajó con uranio entre 1942 y 1971</span></label>
+          <label class="opt"><input type="radio" name="years" value="dunno"><span>No sé las fechas exactas</span></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>¿Quién presenta el reclamo?</legend>
+          <label class="opt"><input type="radio" name="who" value="self" required><span><strong>La persona expuesta</strong> (presento mi propio reclamo)</span></label>
+          <label class="opt"><input type="radio" name="who" value="survivor"><span><strong>Familiar sobreviviente:</strong> Cónyuge, hijo, nieto o padre de la persona fallecida</span></label>
+        </fieldset>
+
+        <div class="field">
+          <label for="notes">Describa brevemente la enfermedad, el diagnóstico u otros datos familiares (opcional):</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Por ejemplo: A mi padre le diagnosticaron cáncer de pulmón en 1988 después de vivir en el condado de Washington, Utah..."></textarea>
+        </div>
+
+        <button class="btn" type="submit" style="align-self:flex-start;font-size:18px;padding:16px 36px">Ver orientación inicial &rarr;</button>
+        <div class="result" id="out" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+
+    <!-- Clean 3-Column / 3-Bullet List of Covered Cancers & Conditions (No Dropdowns) -->
+    <div class="cancers-overview" style="max-width:860px;margin:var(--sp4) auto 0;width:100%">
+      <div class="cancers-overview-header">
+        <span class="eyebrow">Criterios médicos de elegibilidad</span>
+        <h2>Enfermedades cubiertas por programa</h2>
+        <p class="muted">RECA cubre determinados cánceres primarios y enfermedades crónicas pulmonares o renales según la ley federal:</p>
+      </div>
+
+      <div class="cancers-cols">
+        <!-- Col 1: Personas expuestas a lluvia radiactiva -->
+        <div class="cancer-col-card">
+          <h4>Exposición a lluvia radiactiva (19 cánceres primarios)</h4>
+          <ul>
+            <li>Leucemia (excepto linfocítica crónica)</li>
+            <li>Mieloma múltiple</li>
+            <li>Linfomas (excepto de Hodgkin)</li>
+            <li>Tiroides y mama (mujeres y hombres)</li>
+            <li>Pulmón, colon y estómago</li>
+            <li>Páncreas e hígado (sin cirrosis)</li>
+            <li>Cerebro y glándulas salivales</li>
+            <li>Vejiga y riñón</li>
+            <li>Ovario y esófago</li>
+            <li>Faringe, intestino delgado, conductos biliares y vesícula</li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Trabajadores del uranio -->
+        <div class="cancer-col-card">
+          <h4>Trabajadores del uranio (7 enfermedades)</h4>
+          <ul>
+            <li>Cáncer primario de pulmón</li>
+            <li>Fibrosis pulmonar</li>
+            <li>Cor pulmonale (relacionado con fibrosis)</li>
+            <li>Silicosis</li>
+            <li>Neumoconiosis</li>
+            <li>Cáncer de riñón</li>
+            <li>Enfermedad renal crónica (incluidas nefritis y lesiones tubulares)</li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Manhattan Project Waste -->
+        <div class="cancer-col-card">
+          <h4>Residuos del Proyecto Manhattan y participantes en el sitio</h4>
+          <ul>
+            <li>Cáncer de hueso y riñón</li>
+            <li>Leucemia y linfomas</li>
+            <li>Cáncer primario de tiroides y mama</li>
+            <li>Cánceres digestivos y respiratorios</li>
+            <li>Enfermedades por exposición atmosférica en el sitio</li>
+            <li>Reembolso de gastos médicos relacionados</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Explanation while the team prepares a video -->
+    <div class="form-card" style="max-width:860px;margin:var(--sp4) auto 0;width:100%">
+      <p class="eyebrow">Por qué preguntamos</p>
+      <h2>Por qué necesitamos esta información</h2>
+      <p>Sus respuestas nos ayudan a identificar el programa pertinente y los documentos que podrían hacer falta. No necesita conocer todas las fechas ni tener todos los documentos para empezar.</p>
+      <p class="muted">Un especialista puede ayudarle con las dudas sobre lugares, fechas y antecedentes médicos. <a href="tel:{{ site.phoneTel }}">Llame al {{ site.phoneDisplay }}</a> si prefiere hablar primero.</p>
+    </div>
+
+    <div class="form-card" id="request-callback" style="max-width:860px;margin:var(--sp4) auto 0;width:100%">
+      <h2>¿Quiere hablar con un especialista?</h2>
+      <p class="muted">Use el formulario seguro para enviar su nombre y teléfono. Podemos hablar juntos de los siguientes pasos.</p>
+      {% include "partials/lawmatics-callback.njk" %}
+    </div>
+
   </div>
 </section>

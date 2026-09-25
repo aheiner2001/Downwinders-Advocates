@@ -1,10 +1,20 @@
 module.exports = {
   name: "Downwinders Advocates",
   url: "https://downwindersadvocates.com",
-  phoneDisplay: "(801) 400-8270",
-  phoneTel: "+18014008270",
+  phoneDisplay: "(801) 210-6517",
+  phoneTel: "+18012106517",
   email: "info@downwindersadvocates.com",
+  faxDisplay: "",
+  address: "",
+  partnerAttorney: "Laura Taylor Turner",
+  partnerLawFirm: "Law Offices of Laura J. Taylor, P.L.L.C.",
+  partnerAddress: "325 West Gurley Street, Suite 201, Prescott, AZ 86301",
+  /** Andy: Lawmatics calendar / discovery-call URL. Empty = fall back to contact form. */
+  discoveryBookingUrl: "",
+  foundersInstagramReel: "https://www.instagram.com/reel/DdffHupNZsP/",
+  socialFacebook: "",
+  socialX: "",
+  socialLinkedIn: "",
   ogImage: "https://downwindersadvocates.com/og-image.jpg",
-  // Home “Families of the West” story cards — set true when real interviews are ready
   showStories: false,
 };

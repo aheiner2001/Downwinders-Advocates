@@ -6,24 +6,31 @@
 <header>
   <div class="bar">
     <a class="brand" href="{{ homeHref }}">
-      <svg class="shield" viewBox="0 0 60 72" aria-hidden="true">
-        <path d="M30 2 56 12v28c0 16-11 25-26 30C15 65 4 56 4 40V12z" fill="#08244A"/>
-        <path d="M30 24a9 9 0 0 1 9 9H21a9 9 0 0 1 9-9z" fill="#DEA244"/>
-        <path d="M14 40c8-4 12 2 18 0s10-4 14-1" stroke="#fff" stroke-width="3.4" fill="none" stroke-linecap="round"/>
-        <path d="M14 49c8-4 12 2 18 0s10-4 14-1" stroke="#fff" stroke-width="3.4" fill="none" stroke-linecap="round"/>
-      </svg>
-      <span>Downwinders Advocates<small>{{ t.brandSubtitle }}</small></span>
+      <div class="brand-badge" aria-hidden="true">
+        <svg class="shield" viewBox="0 0 60 72">
+          <path d="M30 2 56 12v28c0 16-11 25-26 30C15 65 4 56 4 40V12z" fill="#08244A"/>
+          <path d="M30 22a9 9 0 0 1 9 9H21a9 9 0 0 1 9-9z" fill="#DEA244"/>
+          <path d="M14 40c8-4 12 2 18 0s10-4 14-1" stroke="#FFFFFF" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+          <path d="M14 49c8-4 12 2 18 0s10-4 14-1" stroke="#FFFFFF" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <span class="brand-title">Downwinders Advocates</span>
+        <small class="brand-sub">{{ t.brandSubtitle }}</small>
+      </div>
     </a>
-    <nav>
+    <nav aria-label="Main Navigation">
       <a href="{{ homeHref }}">{{ t.home }}</a>
       <a href="{{ prefix }}/check/">{{ t.check }}</a>
-      <a class="nav-secondary" href="{{ prefix }}/free-help/">{{ t.freeHelp }}</a>
-      <a class="nav-secondary" href="{{ prefix }}/standards/">{{ t.standards }}</a>
-      <a class="nav-secondary" href="{{ prefix }}/what-it-costs/">{{ t.whatItCosts }}</a>
-      <a class="nav-secondary" href="{{ homeHref }}#who">{{ t.who }}</a>
-      <a class="nav-secondary" href="{{ homeHref }}#faq">{{ t.faq }}</a>
+      <a href="{{ prefix }}/programs/">{{ t.programs }}</a>
+      <a href="{{ prefix }}/pricing/">{{ t.pricing }}</a>
+      <a href="{{ prefix }}/become-an-affiliate/">{{ t.affiliate }}</a>
+      <a href="{{ prefix }}/about/">{{ t.about }}</a>
       <a href="{{ prefix }}/contact/">{{ t.contact }}</a>
-      <a class="tel" href="tel:{{ site.phoneTel }}">{{ site.phoneDisplay }}</a>
+      <div class="nav-phone">
+        <span class="phone-label">{{ t.callUsNow }}</span>
+        <a class="tel" href="tel:{{ site.phoneTel }}">{{ site.phoneDisplay }}</a>
+      </div>
       <a class="lang-switch" href="{{ paths.alternatePath(page.url) }}" hreflang="{% if L == 'es' %}en{% else %}es{% endif %}">{{ t.langSwitchLabel }}</a>
     </nav>
   </div>

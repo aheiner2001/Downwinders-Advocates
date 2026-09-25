@@ -1,44 +1,48 @@
 ---
 layout: layouts/base.njk
 locale: es
-title: "Contacto | Downwinders Advocates"
-description: ""
+title: "Contáctenos e inicie su expediente | Downwinders Advocates"
+description: "Contáctenos por teléfono, mensaje de texto o formulario para revisar el posible reclamo de su familia."
 permalink: /es/contact/
 ---
 <section class="sec" id="contact">
   <div class="wrap stack">
-    <p class="eyebrow">Cómo contactarnos</p>
-    <h2>Cuatro formas, y usted elige la que prefiera</h2>
-    <p class="lede">Algunas personas quieren llamar ahora. Otras prefieren que las llamemos. Otras prefieren un mensaje de texto. Y algunas no quieren hacer esto en una pantalla. Las cuatro están bien.</p>
+    <div style="text-align:center;max-width:800px;margin:0 auto">
+      <p class="eyebrow">Contacto directo con nuestro equipo</p>
+      <h1>Comuníquese con nuestro equipo</h1>
+      <p class="lede">Ya sea que esté listo para presentar un reclamo o solo tenga preguntas sobre los antecedentes de su familia, le ofrecemos orientación clara y honesta.</p>
+    </div>
 
-    <div class="cb">
-      <h3>Empiece el expediente de su familia</h3>
-      <p class="muted">Tres datos. Eso es todo el formulario. Llamamos en un día hábil, y si no lo alcanzamos seguimos intentando. En esa llamada anotamos dónde vivió la familia, cuál fue el trabajo y el diagnóstico. Luego hacemos la búsqueda de registros sin costo para usted.</p>
+    <div class="ways" style="max-width:860px;margin:var(--sp2) auto 0;width:100%">
+      <div class="way">
+        <h3>Llámenos directamente</h3>
+        <a class="big" href="tel:{{ site.phoneTel }}">{{ site.phoneDisplay }}</a>
+        <p class="muted">Hable con un especialista de admisión de lunes a viernes, de 8:00 a. m. a 6:00 p. m. (hora de la montaña).</p>
+      </div>
+      <div class="way">
+        <h3>Escríbanos en cualquier momento</h3>
+        <a class="big" href="sms:{{ site.phoneTel }}">{{ site.phoneDisplay }}</a>
+        <p class="muted">Envíenos sus preguntas por mensaje de texto y le responderemos lo antes posible.</p>
+      </div>
+      <div class="way" id="booking">
+        <h3>Solicite una cita</h3>
+        <a class="big" href="{{ site.discoveryBookingUrl or '#form' }}">{% if site.discoveryBookingUrl %}Reserve en línea{% else %}Solicite que le llamemos{% endif %}</a>
+        <p class="muted">{% if site.discoveryBookingUrl %}Elija una cita de 30 minutos por teléfono o Zoom.{% else %}Envíenos sus datos y nos comunicaremos con usted para coordinar una llamada.{% endif %}</p>
+      </div>
+    </div>
+
+    <div class="form-card" id="form" style="max-width:860px;margin:var(--sp3) auto 0;width:100%">
+      <p class="eyebrow">Hable con un especialista</p>
+      <h2>Solicite que le llamemos</h2>
+      <p class="muted">Deje su nombre y teléfono en el formulario seguro para que podamos comunicarnos con usted. Si está listo para compartir los detalles de elegibilidad, <a href="/es/check/">comience la verificación de elegibilidad</a>.</p>
       {% include "partials/lawmatics-callback.njk" %}
-      <p class="legal">Usamos su número para llamarlo sobre esto y nada más. No lo vendemos ni lo compartimos. Pídanos borrarlo en cualquier momento y lo haremos.</p>
     </div>
 
-    <div class="ways">
-      <div class="way">
-        <h3>Llame ahora</h3>
-        <a class="big" href="tel:+18014008270">(801) 400-8270</a>
-        <p class="muted">Atiende una persona. No un menú.</p>
-      </div>
-      <div class="way">
-        <h3>Envíenos un texto</h3>
-        <a class="big" href="sms:+18014008270">(801) 400-8270</a>
-        <p class="muted">Más fácil si está en el trabajo o ayudando a un padre. El mismo número.</p>
-      </div>
-      <div class="way">
-        <h3>Recíbalo por correo</h3>
-        <a class="big" href="tel:+18014008270">Pida el paquete</a>
-        <p class="muted">Gratis, sin obligación, y no hacemos seguimiento a menos que usted lo pida.</p>
-      </div>
-    </div>
-    <p class="legal">Vea <a href="/es/#who">con quién está tratando</a>.</p>
-    <div class="btns">
-      <a class="btn" href="/es/check/">Verificar elegibilidad</a>
-      <a class="btn btn--ghost" href="/es/free-help/">Ayuda gratuita</a>
+    <div style="text-align:center;max-width:760px;margin:var(--sp3) auto 0">
+      <p class="muted">
+        <strong>Teléfono:</strong> <a href="tel:{{ site.phoneTel }}">{{ site.phoneDisplay }}</a>
+        &middot; <strong>Correo:</strong> <a href="mailto:{{ site.email }}">{{ site.email }}</a>{% if site.address %}<br><strong>Dirección:</strong> {{ site.address }}{% endif %}
+      </p>
     </div>
   </div>
 </section>
