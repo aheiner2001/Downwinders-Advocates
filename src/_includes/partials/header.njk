@@ -3,7 +3,7 @@
 {% set homeHref = '/es/' if L == 'es' else '/' %}
 {% set prefix = '/es' if L == 'es' else '' %}
 <a class="skip" href="#main">{{ t.skip }}</a>
-<header>
+<header class="site-header">
   <div class="bar">
     <a class="brand" href="{{ homeHref }}">
       <div class="brand-badge" aria-hidden="true">
@@ -19,7 +19,15 @@
         <small class="brand-sub">{{ t.brandSubtitle }}</small>
       </div>
     </a>
-    <nav aria-label="Main Navigation">
+    <div class="header-tools">
+      <a class="header-call" href="tel:{{ site.phoneTel }}">{{ site.phoneDisplay }}</a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" data-label-open="{% if L == 'es' %}Cerrar{% else %}Close{% endif %}">
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+        <span class="nav-toggle-label">{% if L == 'es' %}Menú{% else %}Menu{% endif %}</span>
+      </button>
+    </div>
+    <p class="header-claim">{% if L == 'es' %}Más de 3,000 reclamos presentados y más de 20 años de experiencia{% else %}Filed over 3,000 claims with over 20 years of experience{% endif %}</p>
+    <nav id="site-nav" aria-label="Main Navigation">
       <a href="{{ homeHref }}">{{ t.home }}</a>
       <a href="{{ prefix }}/check/">{{ t.check }}</a>
       <a href="{{ prefix }}/programs/">{{ t.programs }}</a>
@@ -27,11 +35,50 @@
       <a href="{{ prefix }}/become-an-affiliate/">{{ t.affiliate }}</a>
       <a href="{{ prefix }}/about/">{{ t.about }}</a>
       <a href="{{ prefix }}/contact/">{{ t.contact }}</a>
-      <div class="nav-phone">
-        <span class="phone-label">{{ t.callUsNow }}</span>
-        <a class="tel" href="tel:{{ site.phoneTel }}">{{ site.phoneDisplay }}</a>
+      <div class="nav-actions">
+        <div class="nav-phone">
+          <span class="phone-label">{{ t.callUsNow }}</span>
+          <a class="tel" href="tel:{{ site.phoneTel }}">{{ site.phoneDisplay }}</a>
+        </div>
+        <a class="lang-switch" href="{{ paths.alternatePath(page.url) }}" hreflang="{% if L == 'es' %}en{% else %}es{% endif %}">{{ t.langSwitchLabel }}</a>
       </div>
-      <a class="lang-switch" href="{{ paths.alternatePath(page.url) }}" hreflang="{% if L == 'es' %}en{% else %}es{% endif %}">{{ t.langSwitchLabel }}</a>
     </nav>
   </div>
 </header>
+<noscript>
+  <style>
+    @media (max-width: 1260px) {
+      .site-header nav { display: flex !important; }
+      .nav-toggle { display: none !important; }
+    }
+  </style>
+</noscript>
+<script>
+(function () {
+  var header = document.querySelector(".site-header");
+  var button = header && header.querySelector(".nav-toggle");
+  var nav = document.getElementById("site-nav");
+  if (!header || !button || !nav) return;
+  var label = button.querySelector(".nav-toggle-label");
+  var openLabel = button.getAttribute("data-label-open");
+  var closedLabel = label ? label.textContent : "";
+  function setOpen(open) {
+    header.classList.toggle("is-open", open);
+    button.setAttribute("aria-expanded", open ? "true" : "false");
+    if (label) label.textContent = open ? openLabel : closedLabel;
+  }
+  button.addEventListener("click", function () {
+    setOpen(button.getAttribute("aria-expanded") !== "true");
+  });
+  nav.addEventListener("click", function (event) {
+    if (!event.target.closest("a")) return;
+    window.setTimeout(function () { setOpen(false); }, 0);
+  });
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") setOpen(false);
+  });
+  window.addEventListener("resize", function () {
+    if (window.matchMedia("(min-width: 1261px)").matches) setOpen(false);
+  });
+})();
+</script>

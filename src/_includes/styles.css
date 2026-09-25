@@ -152,16 +152,49 @@ header {
 }
 
 .bar {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas:
+    "brand nav"
+    "claim claim";
   align-items: center;
-  justify-content: space-between;
-  gap: var(--sp3);
-  padding: 12px var(--sp3);
-  max-width: var(--wrap);
+  column-gap: 28px;
+  row-gap: 8px;
+  padding: 16px var(--sp3) 14px;
+  max-width: 1240px;
   margin: 0 auto;
 }
 
+.header-claim,
+.footer-claim {
+  margin: 0;
+  display: inline-block;
+  max-width: 100%;
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: #f4ead8;
+  color: #5c4312;
+  border: 1px solid rgba(176, 132, 62, 0.45);
+  font-family: var(--f-head);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+}
+
+.header-claim {
+  grid-area: claim;
+  justify-self: start;
+  margin-left: 58px;
+  white-space: nowrap;
+}
+
+.footer-claim {
+  white-space: normal;
+}
+
 .brand {
+  grid-area: brand;
   display: flex;
   align-items: center;
   gap: 14px;
@@ -217,10 +250,13 @@ header {
 }
 
 nav {
+  grid-area: nav;
   display: flex;
-  gap: 18px;
+  gap: 10px;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  min-width: 0;
 }
 
 nav a {
@@ -245,12 +281,15 @@ nav a:hover, nav a:focus-visible {
   border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   margin-left: 6px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .phone-label {
   font-size: 13px;
   color: #CBD8E6;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .tel {
@@ -273,11 +312,78 @@ nav a:hover, nav a:focus-visible {
   padding: 5px 12px;
   border-radius: 6px;
   font-size: 14px;
+  flex-shrink: 0;
 }
 
 .lang-switch:hover {
   background: var(--accent);
   color: var(--accent-ink) !important;
+}
+
+.nav-actions {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  gap: 8px;
+  margin-left: 2px;
+}
+
+.header-tools {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.header-call {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--accent);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.header-call:hover {
+  text-decoration: underline;
+}
+
+.nav-toggle {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid rgba(222, 162, 68, 0.6);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-family: var(--f-head);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--on-deep);
+  outline-offset: 2px;
+}
+
+.nav-toggle-icon {
+  width: 16px;
+  height: 12px;
+  background:
+    linear-gradient(currentColor, currentColor) 0 0 / 100% 2px,
+    linear-gradient(currentColor, currentColor) 0 50% / 100% 2px,
+    linear-gradient(currentColor, currentColor) 0 100% / 100% 2px;
+  background-repeat: no-repeat;
 }
 
 /* Buttons */
@@ -1566,16 +1672,55 @@ th {
 .way .big:hover { color: var(--accent); }
 
 /* Responsive navigation adjustments */
-@media (max-width: 1080px) {
+@media (max-width: 1260px) {
   .bar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "brand tools"
+      "claim claim"
+      "nav nav";
+    align-items: center;
+    column-gap: 12px;
+    row-gap: 10px;
   }
-  nav {
-    width: 100%;
+  .header-tools {
+    grid-area: tools;
+    display: flex;
+  }
+  .nav-toggle {
+    display: inline-flex;
+  }
+  .header-claim {
+    justify-self: center;
+    margin-left: 0;
+    text-align: center;
+    white-space: normal;
+  }
+  .site-header nav {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
     justify-content: flex-start;
-    gap: 12px 16px;
+    gap: 0;
+    width: 100%;
+    max-height: min(70vh, 520px);
+    overflow: auto;
+    padding: 4px 0 8px;
+  }
+  .site-header.is-open nav {
+    display: flex;
+  }
+  .site-header nav > a {
+    padding: 12px 2px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    font-size: 17px;
+  }
+  .nav-actions {
+    margin-left: 0;
+    padding-top: 10px;
+  }
+  .nav-phone {
+    display: none;
   }
 }
 
@@ -1583,7 +1728,12 @@ th {
   body { font-size: 17px; }
   .sec { padding: var(--sp5) 0; }
   .bar { padding: 10px var(--sp2); }
-  .brand-title { font-size: 17px; }
+  .brand { gap: 8px; }
+  .brand-badge { width: 36px; height: 40px; }
+  .brand-title { font-size: 15px; white-space: nowrap; }
+  .brand-sub { font-size: 11px; letter-spacing: 0.02em; }
+  .header-tools { flex-direction: column; align-items: flex-end; gap: 6px; }
+  .header-call { font-size: 13px; }
   .nav-phone { margin-left: 0; padding: 4px 8px; }
   .phone-label { display: none; }
 }
@@ -1729,8 +1879,7 @@ th {
   padding: var(--sp5) 0;
 }
 @media (min-width: 1100px) {
-  .bar { gap: 20px; }
-  nav { gap: 12px; }
+  nav { gap: 8px; }
   nav a { font-size: 14px; }
 }
 @media (max-width: 640px) {
