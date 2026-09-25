@@ -1,7 +1,7 @@
 {
   "phone": {
-    "tel": "+18012106517",
-    "display": "(801) 210-6517"
+    "tel": "+18017045629",
+    "display": "(801) 704-5629"
   },
   "navigation": {
     "hrefs": [
@@ -44,14 +44,12 @@
     "englishPhrases": [
       "Our fees are regulated by the U.S. Department of Justice, and we do not collect our fee until your claim has been approved and paid.",
       "For new RECA claims, our fee is 2% of the total compensation awarded.",
-      "A non-refundable $200 file review fee is charged upfront.",
       "A $400 per claimant administrative processing fee is charged to help cover costs incurred throughout the claims process.",
       "These are billed per document"
     ],
     "spanishPhrases": [
       "2%",
       "10%",
-      "$200",
       "$400",
       "por documento"
     ],

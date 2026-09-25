@@ -1835,20 +1835,30 @@ th {
   padding: clamp(48px, 7vw, 88px) 0;
   border-bottom: 1px solid rgba(255, 255, 255, .16);
 }
+.exposed-intro {
+  gap: 8px;
+  margin-bottom: 18px;
+}
 .exposed-intro h2 {
   color: #fff;
 }
 .exposed-intro p {
   color: #e2edf7;
+  font-size: clamp(20px, 2.2vw, 24px);
 }
 .consultation-card h3 {
   color: var(--navy);
+  font-size: clamp(28px, 3.2vw, 36px);
 }
 .consultation-card p {
   color: var(--ink-2);
+  font-size: 20px;
+  line-height: 1.4;
 }
 .consultation-card {
   max-width: 760px;
+  gap: 10px;
+  padding: 28px 40px 32px;
   background: #ffffff;
   border: 1px solid var(--rule);
   border-radius: 18px;
@@ -1856,9 +1866,29 @@ th {
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
 }
+.consultation-card .btn {
+  margin-top: 6px;
+}
 .consultation-card .btn--white-ghost {
   color: var(--navy);
   border-color: var(--navy);
+}
+.consultation-card .consultation-cost,
+.consultation-card .consultation-call {
+  margin: 0;
+}
+.consultation-card .consultation-deadline {
+  margin: 0;
+  color: #b42318;
+  font-weight: 700;
+}
+.consultation-card .consultation-call a {
+  color: var(--navy);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
 }
 .consultation-card .btn--white-ghost:hover {
   background: rgba(8, 36, 74, 0.06);
