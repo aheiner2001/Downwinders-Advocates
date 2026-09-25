@@ -29,6 +29,7 @@ var screenerMsg = {
     urB: '<p>The location does not qualify on its own, but uranium work is a separate route in. If anyone in the family mined, milled, or hauled ore, this could still apply. Ask the family, then call us.</p>',
     goodH: 'This looks worth a conversation.',
     goodB: '<p>You have the two things that matter most: a place or work history the program covers, and a health condition in a category it recognizes.</p>',
+    goodNoIllness: '<p>You have a place or work history the program can cover. The diagnosis still has to be one the program recognizes, and that is the part to go through on a call.</p>',
     datesPin: '<p><strong>The years are the one thing left to pin down.</strong> Presence has to fall between January 1951 and November 1962, or September 1944 in New Mexico. If you are not certain, do not guess. Old tax, school, church and voting records settle it, and finding them is the part we do.</p>',
     mpw: '<p><strong>Manhattan Project waste claims work differently.</strong> They pay $50,000 or $25,000 rather than $100,000, they use a longer condition list that includes bone and kidney cancer, and the illness has to have begun at least two years after exposure.</p>',
     urYes: '<p><strong>Worth knowing.</strong> Uranium workers are covered for lung and kidney conditions, not only cancer. Silicosis, pulmonary fibrosis, nephritis. A lot of families rule themselves out right here by mistake.</p>',
@@ -59,6 +60,7 @@ var screenerMsg = {
     urB: '<p>La ubicación no califica por sí sola, pero el trabajo con uranio es otra vía. Si alguien en la familia minó, molió o transportó mineral, esto aún podría aplicar. Pregunte a la familia y luego llámenos.</p>',
     goodH: 'Esto parece valer una conversación.',
     goodB: '<p>Tiene las dos cosas que más importan: un lugar o historial laboral que el programa cubre, y una condición de salud en una categoría que reconoce.</p>',
+    goodNoIllness: '<p>Tiene un lugar o historial laboral que el programa puede cubrir. El diagnóstico todavía tiene que ser uno que el programa reconozca, y esa es la parte que se revisa en una llamada.</p>',
     datesPin: '<p><strong>Los años son lo único que falta por precisar.</strong> La presencia debe caer entre enero de 1951 y noviembre de 1962, o septiembre de 1944 en Nuevo México. Si no está seguro, no adivine. Los registros viejos de impuestos, escuela, iglesia y votos lo resuelven, y encontrarlos es la parte que hacemos nosotros.</p>',
     mpw: '<p><strong>Los reclamos por desechos del Proyecto Manhattan funcionan distinto.</strong> Pagan $50,000 o $25,000 en lugar de $100,000, usan una lista de condiciones más larga que incluye cáncer de hueso y de riñón, y la enfermedad debe haber comenzado al menos dos años después de la exposición.</p>',
     urYes: '<p><strong>Vale saber.</strong> Los trabajadores del uranio están cubiertos por enfermedades de pulmón y riñón, no solo cáncer. Silicosis, fibrosis pulmonar, nefritis. Muchas familias se descartan aquí por error.</p>',
@@ -88,13 +90,16 @@ if (screenerEl) {
   screenerEl.addEventListener('submit', function(e){
     e.preventDefault();
     var f=new FormData(e.target), out=document.getElementById('out');
-    var place=f.get('place'), years=f.get('years'), ur=f.get('uranium'), ill=f.get('illness'), who=f.get('who'), prior=f.get('prior');
-    // The English guide asks three questions; the Spanish draft still asks all six.
-    ur = place==='uranium' ? 'yes' : 'dunno';
-    ill = 'other';
-    prior = 'dunno';
+    var place=f.get('place'), years=f.get('years'), who=f.get('who');
+    var ur=f.get('uranium'), ill=f.get('illness'), prior=f.get('prior');
+    var asksUranium=!!e.target.querySelector('input[name="uranium"]');
+    var asksIllness=!!e.target.querySelector('input[name="illness"]');
+    var asksPrior=!!e.target.querySelector('input[name="prior"]');
+    if(!asksUranium){ ur = (place==='uranium' || years==='uranium') ? 'yes' : 'dunno'; }
+    if(!asksIllness){ ill = 'other'; }
+    if(!asksPrior){ prior = 'dunno'; }
     var m = screenerMsg[screenerLocale()];
-    if(!place||!years||!ur||!ill||!who||!prior){
+    if(!place||!years||!who||(asksUranium&&!ur)||(asksIllness&&!ill)||(asksPrior&&!prior)){
       out.className='result on';
       out.innerHTML='<h3>'+m.blankH+'</h3>'+m.blankB;
       out.scrollIntoView({behavior:'smooth',block:'center'});return;
@@ -123,13 +128,16 @@ if (screenerEl) {
       h=m.urH; b=m.urB;
     } else {
       tone=' good';
-      h=m.goodH; b=m.goodB;
+      h=m.goodH; b=asksIllness ? m.goodB : m.goodNoIllness;
       if(datesUnsure&&dwPlace){b+=m.datesPin;}
       if(place==='mpw'){b+=m.mpw;}
-      if(ur==='yes'&&(ill==='lung'||ill==='listed')){b+=m.urYes;}
+      if(ur==='yes'&&(!asksIllness||ill==='lung'||ill==='listed')){b+=m.urYes;}
       if(who==='survivor'){b+=m.survivor;}
       if(prior==='denied'){b+=m.denied;}
-      if(ill==='other'||ur==='dunno'||who==='dunno'){b+=m.unsure;}
+      var userUnsure=(years==='dunno'||who==='dunno');
+      if(asksUranium&&ur==='dunno'){ userUnsure=true; }
+      if(asksIllness&&ill==='other'){ userUnsure=true; }
+      if(userUnsure){b+=m.unsure;}
     }
     out.className='result on'+tone;
     out.innerHTML='<h3>'+h+'</h3>'+b+'<p style="margin-top:16px"><a class="btn" href="tel:+18012106517">'+m.cta+'</a></p>'+'<p><a href="#request-callback">'+(screenerLocale()==='es' ? 'Solicite una llamada para iniciar su reclamo' : 'Request a callback to start your claim')+'</a></p>'+'<p class="legal" style="margin-top:14px">'+m.legal+'</p>';
