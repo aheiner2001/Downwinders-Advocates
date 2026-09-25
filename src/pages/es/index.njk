@@ -12,16 +12,11 @@ permalink: /es/
   <div class="wrap">
     <div class="hero-layout">
       <div class="hero-content">
-        <div class="badge-credibility">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <span>Más de 3,000 reclamos presentados y más de 20 años de experiencia</span>
-        </div>
-        <h1 class="hero-headline">Ayudamos a presentar reclamos en todos los programas de compensación por radiación disponibles.</h1>
-        <p class="hero-subheadline">Incluye a personas expuestas a lluvia radiactiva, residuos del Proyecto Manhattan, trabajadores del uranio y participantes en pruebas nucleares.</p>
-        <p class="lede">Si su familia vivió cerca de sitios de pruebas nucleares o trabajó en industrias afectadas, usted o sus familiares sobrevivientes podrían recibir hasta $100,000 de compensación federal.</p>
+        <h1 class="hero-headline">Obtenga la compensación que merece</h1>
+        <p class="lede">La mayoría de las familias afectadas por el cáncer no saben que podrían calificar para una compensación federal. En Downwinders Advocates ayudamos a las familias a tramitar la Ley de Compensación por Exposición a la Radiación para obtener hasta $100,000 y, por fin, recibir el reconocimiento y el alivio que merecen.</p>
+        <p class="hero-close">¿Usted o un ser querido es una persona expuesta a la lluvia radiactiva y afectada por el cáncer?</p>
         <div class="btns">
-          <a class="btn" href="/es/check/">¡Verifique su elegibilidad!</a>
-          <a class="btn btn--ghost" href="#consultation">Inicie un reclamo</a>
+          <a class="btn" href="{{ site.discoveryBookingUrl or '/es/contact/#form' }}">Programe una llamada</a>
         </div>
       </div>
       <div class="hero-visual">
@@ -33,35 +28,57 @@ permalink: /es/
   </div>
 </section>
 
-<!-- 2. Mission Goal Banner -->
-<section class="mission-banner">
-  <div class="wrap">
-    <div class="mission-box">
-      <span class="mission-tag">Nuestra misión</span>
-      <p class="mission-text">Nuestra misión es ayudar a 100,000 personas a obtener su compensación de $100,000.</p>
-      <p class="mission-referral">Si conoce a alguien cuya familia fue afectada o desea recomendar a alguien, <a href="/es/become-an-affiliate/">contáctenos aquí</a> o llame al <a href="tel:{{ site.phoneTel }}">{{ site.phoneDisplay }}</a>.</p>
+<!-- 2. Equipo, más cerca del inicio -->
+<section class="sec" id="team">
+  <div class="wrap stack">
+    <div style="text-align:center;max-width:760px;margin:0 auto">
+      <p class="eyebrow">Experiencia y liderazgo</p>
+      <h2>Conozca al equipo y a nuestros socios legales</h2>
+      <p class="muted">Atención personal y más de 20 años de experiencia con reclamos federales de RECA.</p>
+    </div>
+
+    <div class="people">
+      <div class="person">
+        <div class="avatar"><img src="/img/people/laura.jpg" width="112" height="112" alt="Laura Taylor Turner"></div>
+        <span class="role">Abogada asociada</span>
+        <h3>Ms. Laura Taylor Turner</h3>
+        <p class="muted">La Sra. Turner y su firma ayudan a solicitantes de RECA desde 2002 y han apoyado a miles de personas afectadas por la radiación.</p>
+      </div>
+
+      <div class="person">
+        <div class="avatar"><img src="/img/people/jaxon.jpg" width="112" height="112" alt="Jaxon Cummings"></div>
+        <span class="role">Cofundador</span>
+        <h3>Jaxon Cummings</h3>
+        <p class="muted">Con vínculos familiares con las áreas afectadas, Jaxon dirige las alianzas y el contacto con comunidades y familias.</p>
+      </div>
+
+      <div class="person">
+        <div class="avatar"><img src="/img/people/jonny.jpg" width="112" height="112" alt="Jonny Schmidt"></div>
+        <span class="role">Cofundador</span>
+        <h3>Jonny Schmidt</h3>
+        <p class="muted">Jonny coordina las operaciones, el ingreso de casos y los registros para preparar cada expediente para la revisión federal.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:var(--sp2)">
+      <a class="btn btn--ghost" href="/es/about/">Conozca a los fundadores y nuestra misión &rarr;</a>
     </div>
   </div>
 </section>
 
-<!-- 3. Have You Been Exposed + Book Appointment (example_1.png) -->
+<!-- 3. Programe una llamada -->
 <section class="consultation-section" id="consultation">
   <div class="wrap">
     <div class="exposed-intro">
       <h2>¿Estuvo expuesto a la radiación?</h2>
       <p>Compensación por cáncer relacionado con exposición a radiación generada por el gobierno</p>
-      <a class="btn" href="/es/check/">Inicie un reclamo</a>
     </div>
     <div class="consultation-card">
       <h3>Reserve una cita de 30 minutos</h3>
       <p>Converse con un especialista sobre la situación de su familia. Le explicaremos los siguientes pasos y responderemos sus preguntas para ayudarle a decidir si desea iniciar un reclamo.</p>
       <div class="btns" style="justify-content:center">
-        <a class="btn" href="{{ site.discoveryBookingUrl or '/es/contact/#form' }}">Solicitar una cita</a>
-        <a class="btn btn--white-ghost" href="tel:{{ site.phoneTel }}">Llámenos ahora: {{ site.phoneDisplay }}</a>
+        <a class="btn" href="{{ site.discoveryBookingUrl or '/es/contact/#form' }}">Programe una llamada</a>
       </div>
-      {% if not site.discoveryBookingUrl %}
-      <p class="legal">Pronto podrá reservar en línea. Por ahora, envíenos sus datos o llámenos.</p>
-      {% endif %}
     </div>
   </div>
 </section>
@@ -140,9 +157,8 @@ permalink: /es/
 <section class="sec" id="process">
   <div class="wrap stack">
     <div style="text-align:center;max-width:760px;margin:0 auto">
-      <p class="eyebrow">Un proceso claro y honesto</p>
-      <h2>Cómo trabajamos juntos</h2>
-      <p class="muted">Reunir documentos de hace décadas puede ser abrumador. Nos encargamos de la búsqueda y le informamos en cada paso.</p>
+      <h2>Qué esperar al trabajar con nosotros</h2>
+      <p class="lede">No necesita tener sus papeles listos, ni saber si califica. Queremos conversarlo con usted de cualquier manera. Esto es lo que ocurre después de que se comunica con nosotros.</p>
     </div>
 
     <div class="steps" style="max-width:880px;margin:0 auto">
@@ -150,28 +166,28 @@ permalink: /es/
         <div class="step-n"></div>
         <div class="stack-sm">
           <h3>1. Consulta inicial</h3>
-          <p>Una consulta de 15 a 30 minutos con un especialista. Conoceremos dónde vivió su familia, sus trabajos y los diagnósticos documentados.</p>
+          <p>Una llamada tranquila con alguien que hace esto todos los días. Conversaremos sobre algunas preguntas sencillas, como quién fue afectado, dónde vivió y cuál fue el diagnóstico. A la mayoría de las personas les sorprende cuánto podemos aclarar en una sola conversación.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-n"></div>
         <div class="stack-sm">
-          <h3>2. Evaluación honesta e inmediata</h3>
-          <p>Revisamos lugares cubiertos, fechas de diagnóstico y requisitos legales. Si creemos que no cumple los requisitos, se lo diremos con prontitud y claridad.</p>
+          <h3>2. Evaluación honesta inmediata</h3>
+          <p>Le decimos de inmediato cómo está su caso. Si su historia califica para el programa de personas expuestas, se lo decimos y le explicamos por qué. Si no, también se lo decimos, para que tenga respuestas claras de cualquier manera.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-n"></div>
         <div class="stack-sm">
-          <h3>3. Búsqueda de registros y preparación del expediente</h3>
-          <p>Buscamos y reunimos pruebas de residencia, censos, registros escolares y laborales, informes médicos y actas de defunción.</p>
+          <h3>3. Preparación de su reclamo</h3>
+          <p>Tendrá un gestor de cuenta dedicado que le explicará exactamente lo que se necesita, paso a paso. Juntos revisarán todos los documentos requeridos y, si necesita ayuda para localizar alguno, nosotros nos encargamos.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-n"></div>
         <div class="stack-sm">
-          <h3>4. Presentación y seguimiento del reclamo</h3>
-          <p>Preparamos y presentamos el expediente al Departamento de Justicia antes del plazo legal y seguimos su progreso hasta el pago.</p>
+          <h3>4. Presentación del reclamo y seguimiento ante el Departamento de Justicia</h3>
+          <p>Cuando su reclamo esté listo, revisamos cada documento y lo presentamos en su nombre para que quede correcto desde la primera vez. Después nos encargamos de toda la comunicación con el Departamento de Justicia y sabemos exactamente a quién contactar si algo debe ajustarse.</p>
         </div>
       </div>
     </div>
@@ -193,44 +209,6 @@ permalink: /es/
         <a class="btn" href="/es/pricing/">Vea la información de precios</a>
         <a class="btn btn--ghost" href="/es/check/">Verifique su elegibilidad</a>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- 7. Meet the Team & Partners -->
-<section class="sec" id="team">
-  <div class="wrap stack">
-    <div style="text-align:center;max-width:760px;margin:0 auto">
-      <p class="eyebrow">Experiencia y liderazgo</p>
-      <h2>Conozca al equipo y a nuestros socios legales</h2>
-      <p class="muted">Atención personal y más de 20 años de experiencia con reclamos federales de RECA.</p>
-    </div>
-
-    <div class="people">
-      <div class="person">
-        <div class="avatar"><img src="/img/people/laura.jpg" width="112" height="112" alt="Laura Taylor Turner"></div>
-        <span class="role">Abogada asociada</span>
-        <h3>Ms. Laura Taylor Turner</h3>
-        <p class="muted">La Sra. Turner y su firma ayudan a solicitantes de RECA desde 2002 y han apoyado a miles de personas afectadas por la radiación.</p>
-      </div>
-
-      <div class="person">
-        <div class="avatar"><img src="/img/people/jaxon.jpg" width="112" height="112" alt="Jaxon Cummings"></div>
-        <span class="role">Cofundador</span>
-        <h3>Jaxon Cummings</h3>
-        <p class="muted">Con vínculos familiares con las áreas afectadas, Jaxon dirige las alianzas y el contacto con comunidades y familias.</p>
-      </div>
-
-      <div class="person">
-        <div class="avatar"><img src="/img/people/jonny.jpg" width="112" height="112" alt="Jonny Schmidt"></div>
-        <span class="role">Cofundador</span>
-        <h3>Jonny Schmidt</h3>
-        <p class="muted">Jonny coordina las operaciones, el ingreso de casos y los registros para preparar cada expediente para la revisión federal.</p>
-      </div>
-    </div>
-
-    <div style="text-align:center;margin-top:var(--sp2)">
-      <a class="btn btn--ghost" href="/es/about/">Conozca a los fundadores y nuestra misión &rarr;</a>
     </div>
   </div>
 </section>
@@ -291,9 +269,20 @@ permalink: /es/
       </div>
       <div class="way">
         <h3>Reserve en línea</h3>
-        <a class="big" href="#consultation">Solicitar una cita</a>
+        <a class="big" href="{{ site.discoveryBookingUrl or '/es/contact/#form' }}">Programe una llamada</a>
         <p class="muted">Elija una cita de 30 minutos por teléfono o Zoom que se ajuste a su horario.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- La misión queda justo antes del pie de página. La recomendación abre la sección de la llamada. -->
+<section class="mission-banner" id="mission">
+  <div class="wrap">
+    <div class="mission-box">
+      <span class="mission-tag">Nuestra misión</span>
+      <p class="mission-text">Nuestra misión es ayudar a 100,000 personas a obtener su compensación de $100,000.</p>
+      <p class="mission-referral">Si conoce a alguien cuya familia fue afectada o desea recomendar a alguien, <a href="#consultation">contáctenos aquí</a> o llame al <a href="tel:{{ site.phoneTel }}">{{ site.phoneDisplay }}</a>.</p>
     </div>
   </div>
 </section>

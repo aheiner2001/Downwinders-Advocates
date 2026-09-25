@@ -12,16 +12,11 @@ permalink: /
   <div class="wrap">
     <div class="hero-layout">
       <div class="hero-content">
-        <div class="badge-credibility">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <span>Filed over 3,000 claims with over 20 years of experience</span>
-        </div>
-        <h1 class="hero-headline">We help people file for all Radiation Compensation Acts available.</h1>
-        <p class="hero-subheadline">Includes Downwinders, Manhattan Transfer Waste, Uranium Workers, and On-Site Participants.</p>
-        <p class="lede">If your family lived downwind of nuclear test sites or worked in affected industries, federal compensation of up to $100,000 may be available to you or surviving family members.</p>
+        <h1 class="hero-headline">Get The Compensation You Deserve</h1>
+        <p class="lede">Most families affected by cancer don't realize they may qualify for federal compensation. Here at Downwinders Advocates we help families navigate the Radiation Exposure Compensation Act to secure up to $100,000 and finally receive the acknowledgment and relief they deserve.</p>
+        <p class="hero-close">Are you or your loved one a downwinder affected by cancer?</p>
         <div class="btns">
-          <a class="btn" href="/check/">Check Eligibility Now!</a>
-          <a class="btn btn--ghost" href="#consultation">File A Claim</a>
+          <a class="btn" href="{{ site.discoveryBookingUrl or '/contact/#form' }}">Schedule a Call</a>
         </div>
       </div>
       <div class="hero-visual">
@@ -33,35 +28,57 @@ permalink: /
   </div>
 </section>
 
-<!-- 2. Mission Goal Banner -->
-<section class="mission-banner">
-  <div class="wrap">
-    <div class="mission-box">
-      <span class="mission-tag">Our Core Mission</span>
-      <p class="mission-text">We’re on a mission to help 100,000 people obtain their $100,000 compensation.</p>
-      <p class="mission-referral">If you know someone whose family was affected, or have a referral for us, <a href="/become-an-affiliate/">please reach out here</a> or call <a href="tel:{{ site.phoneTel }}">{{ site.phoneDisplay }}</a>.</p>
+<!-- 2. Meet the Team, moved up for credibility -->
+<section class="sec" id="team">
+  <div class="wrap stack">
+    <div style="text-align:center;max-width:760px;margin:0 auto">
+      <p class="eyebrow">Experience &amp; Leadership</p>
+      <h2>Meet the Team &amp; Our Legal Partners</h2>
+      <p class="muted">Personal dedication combined with over 20 years of federal RECA advocacy.</p>
+    </div>
+
+    <div class="people">
+      <div class="person">
+        <div class="avatar"><img src="/img/people/laura.jpg" width="112" height="112" alt="Laura Taylor Turner"></div>
+        <span class="role">Partner Attorney</span>
+        <h3>Ms. Laura Taylor Turner</h3>
+        <p class="muted">Advocating for RECA claimants since 2002. Ms. Turner and her firm have helped thousands of downwinders and radiation exposure victims receive federal compensation.</p>
+      </div>
+
+      <div class="person">
+        <div class="avatar"><img src="/img/people/jaxon.jpg" width="112" height="112" alt="Jaxon Cummings"></div>
+        <span class="role">Co-Founder</span>
+        <h3>Jaxon Cummings</h3>
+        <p class="muted">With deep family roots in the affected test areas, Jaxon leads partnerships and community outreach, meeting directly with families and community organizations.</p>
+      </div>
+
+      <div class="person">
+        <div class="avatar"><img src="/img/people/jonny.jpg" width="112" height="112" alt="Jonny Schmidt"></div>
+        <span class="role">Co-Founder</span>
+        <h3>Jonny Schmidt</h3>
+        <p class="muted">Jonny oversees operations, intake, and records coordination, ensuring every family's file is rigorously researched and prepared for federal review.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:var(--sp2)">
+      <a class="btn btn--ghost" href="/about/">Learn More About Our Founders &amp; Mission &rarr;</a>
     </div>
   </div>
 </section>
 
-<!-- 3. Have You Been Exposed + Book Appointment (example_1.png) -->
+<!-- 3. Book a call: schedule prompt only until the calendar link arrives -->
 <section class="consultation-section" id="consultation">
   <div class="wrap">
     <div class="exposed-intro">
       <h2>Have You Been Exposed?</h2>
       <p>Compensation for cancer from government-created radiation exposure</p>
-      <a class="btn" href="/check/">File A Claim</a>
     </div>
     <div class="consultation-card">
       <h3>Book A 30-Minute Appointment</h3>
       <p>Talk through your family’s situation with a specialist. We can explain the next steps, answer your questions, and help you decide whether to begin a claim.</p>
       <div class="btns" style="justify-content:center">
-        <a class="btn" href="{{ site.discoveryBookingUrl or '/contact/#form' }}">Make Appointment</a>
-        <a class="btn btn--white-ghost" href="tel:{{ site.phoneTel }}">Call Us Now: {{ site.phoneDisplay }}</a>
+        <a class="btn" href="{{ site.discoveryBookingUrl or '/contact/#form' }}">Schedule a Call</a>
       </div>
-      {% if not site.discoveryBookingUrl %}
-      <p class="legal">Online scheduling is coming soon. You can send your details or call us now.</p>
-      {% endif %}
     </div>
   </div>
 </section>
@@ -140,9 +157,8 @@ permalink: /
 <section class="sec" id="process">
   <div class="wrap stack">
     <div style="text-align:center;max-width:760px;margin:0 auto">
-      <p class="eyebrow">Clear, Honest Process</p>
-      <h2>How We Work Together</h2>
-      <p class="muted">Gathering decades of historical records can feel overwhelming. We handle the heavy lifting while keeping you informed every step of the way.</p>
+      <h2>What to Expect Working With Us</h2>
+      <p class="lede">You don't need to have your paperwork figured out, and you don't need to know whether you qualify. We want to talk it through with you either way. Here's what happens after you reach out.</p>
     </div>
 
     <div class="steps" style="max-width:880px;margin:0 auto">
@@ -150,28 +166,28 @@ permalink: /
         <div class="step-n"></div>
         <div class="stack-sm">
           <h3>1. Discovery Consultation</h3>
-          <p>A friendly 15-to-30 minute consultation with an experienced specialist. We learn where your family lived, their employment history, and documented medical conditions.</p>
+          <p>A relaxed call with someone who does this every day. We'll talk through a few simple questions, like who was affected, where they lived, and what their diagnosis was. Most people are surprised how much we can figure out from one conversation.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-n"></div>
         <div class="stack-sm">
           <h3>2. Immediate Honest Evaluation</h3>
-          <p>We review covered counties, diagnosis dates, and statutory requirements. If we do not believe a claim qualifies, we give you a fast, direct answer rather than dragging things out.</p>
+          <p>We tell you right away where things stand. If your story qualifies for the Downwinders program, we say so and explain why. If not, we tell you that too, so you have clear answers either way.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-n"></div>
         <div class="stack-sm">
-          <h3>3. Thorough Records Hunt &amp; File Assembly</h3>
-          <p>We locate and compile vital historical documents: county residency records, historical census and school records, employment rosters, pathology reports, and certified death certificates.</p>
+          <h3>3. Getting Your Claim Ready</h3>
+          <p>You'll have a dedicated account manager who walks you through exactly what's needed, step by step. Together you'll cover all the required documents, and for any you need help tracking down, we step in and handle it.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-n"></div>
         <div class="stack-sm">
           <h3>4. Claim Filing &amp; DOJ Tracking</h3>
-          <p>We assemble and submit a complete, airtight claim package to the Department of Justice before the statutory deadline, monitoring progress until payment is issued.</p>
+          <p>Once your claim is ready, we review every document, then submit it on your behalf so it's done right the first time. From there, we handle all DOJ communication for you and know exactly who to reach if anything needs adjusting.</p>
         </div>
       </div>
     </div>
@@ -193,44 +209,6 @@ permalink: /
         <a class="btn" href="/pricing/">Read Pricing Information</a>
         <a class="btn btn--ghost" href="/check/">Check Your Eligibility</a>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- 7. Meet the Team & Partners -->
-<section class="sec" id="team">
-  <div class="wrap stack">
-    <div style="text-align:center;max-width:760px;margin:0 auto">
-      <p class="eyebrow">Experience &amp; Leadership</p>
-      <h2>Meet the Team &amp; Our Legal Partners</h2>
-      <p class="muted">Personal dedication combined with over 20 years of federal RECA advocacy.</p>
-    </div>
-
-    <div class="people">
-      <div class="person">
-        <div class="avatar"><img src="/img/people/laura.jpg" width="112" height="112" alt="Laura Taylor Turner"></div>
-        <span class="role">Partner Attorney</span>
-        <h3>Ms. Laura Taylor Turner</h3>
-        <p class="muted">Advocating for RECA claimants since 2002. Ms. Turner and her firm have helped thousands of downwinders and radiation exposure victims receive federal compensation.</p>
-      </div>
-
-      <div class="person">
-        <div class="avatar"><img src="/img/people/jaxon.jpg" width="112" height="112" alt="Jaxon Cummings"></div>
-        <span class="role">Co-Founder</span>
-        <h3>Jaxon Cummings</h3>
-        <p class="muted">With deep family roots in the affected test areas, Jaxon leads partnerships and community outreach, meeting directly with families and community organizations.</p>
-      </div>
-
-      <div class="person">
-        <div class="avatar"><img src="/img/people/jonny.jpg" width="112" height="112" alt="Jonny Schmidt"></div>
-        <span class="role">Co-Founder</span>
-        <h3>Jonny Schmidt</h3>
-        <p class="muted">Jonny oversees operations, intake, and records coordination, ensuring every family's file is rigorously researched and prepared for federal review.</p>
-      </div>
-    </div>
-
-    <div style="text-align:center;margin-top:var(--sp2)">
-      <a class="btn btn--ghost" href="/about/">Learn More About Our Founders &amp; Mission &rarr;</a>
     </div>
   </div>
 </section>
@@ -291,9 +269,20 @@ permalink: /
       </div>
       <div class="way">
         <h3>Schedule Online</h3>
-        <a class="big" href="#consultation">Make Appointment</a>
+        <a class="big" href="{{ site.discoveryBookingUrl or '/contact/#form' }}">Schedule a Call</a>
         <p class="muted">Pick a 30-minute phone or Zoom window that fits your schedule.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core mission sits immediately above the footer. Referral goes to book-a-call. -->
+<section class="mission-banner" id="mission">
+  <div class="wrap">
+    <div class="mission-box">
+      <span class="mission-tag">Our Core Mission</span>
+      <p class="mission-text">We’re on a mission to help 100,000 people obtain their $100,000 compensation.</p>
+      <p class="mission-referral">If you know someone whose family was affected, or have a referral for us, <a href="#consultation">please reach out here</a> or call <a href="tel:{{ site.phoneTel }}">{{ site.phoneDisplay }}</a>.</p>
     </div>
   </div>
 </section>

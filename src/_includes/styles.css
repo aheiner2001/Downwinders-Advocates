@@ -1902,7 +1902,15 @@ th {
   line-height: 1.45;
 }
 .badge-credibility svg { flex: none; color: #9b6a1b; }
-.hero-headline { max-width: 19ch; }
+.hero-headline { max-width: 14em; }
+.hero-close {
+  margin: 0;
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: clamp(20px, 2.4vw, 28px);
+  line-height: 1.25;
+  color: var(--ink);
+}
 .hero-subheadline { max-width: 48ch; color: #405874; }
 .hero-content .lede { max-width: 56ch; }
 .hero-visual {
