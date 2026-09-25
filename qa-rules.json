@@ -18,13 +18,14 @@
   "home": {
     "sectionIds": [
       "top",
+      "team",
       "consultation",
       "programs",
       "process",
       "pricing",
-      "team",
       "subscribe",
-      "contact"
+      "contact",
+      "mission"
     ]
   },
   "fees": {
