@@ -26,9 +26,9 @@ test('pricing renders the approved disclosed fees', async ({ page }) => {
 
 test('private eligibility preview produces on-page guidance', async ({ page }) => {
   await page.goto('/check/');
-  await page.locator('input[name="place"][value="state"]').check();
-  await page.locator('input[name="years"][value="ok"]').check();
-  await page.locator('input[name="who"][value="self"]').check();
+  await page.locator('select[name="place"]').selectOption('state');
+  await page.locator('select[name="years"]').selectOption('ok');
+  await page.locator('select[name="who"]').selectOption('self');
   await page.getByRole('button', { name: /See Initial Guidance/ }).click();
   await expect(page.locator('#out')).not.toBeEmpty();
   await expect(page).toHaveURL(/\/check\/$/);

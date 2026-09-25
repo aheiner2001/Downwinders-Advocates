@@ -25,35 +25,39 @@ extraScripts: '<script src="/js/screener.js" defer></script>'
       <h2 style="font-size:24px;color:var(--navy)">Guía inicial de elegibilidad</h2>
       <p class="muted">No necesita dar su nombre, teléfono ni correo para esta consulta privada. Después del resultado, puede solicitar una llamada para que un especialista revise su caso.</p>
       <form id="screener" class="stack" data-locale="es">
-        <fieldset>
-          <legend>¿Dónde vivió o trabajó el familiar afectado?</legend>
-          <label class="opt"><input type="radio" name="place" value="state" required><span><strong>Utah, Nuevo México o Idaho:</strong> Vivió en cualquier parte del estado</span></label>
-          <label class="opt"><input type="radio" name="place" value="az"><span><strong>Arizona:</strong> Coconino, Yavapai, Navajo, Apache, Gila, or Mohave County</span></label>
-          <label class="opt"><input type="radio" name="place" value="nv"><span><strong>Nevada:</strong> Eureka, Lander, Lincoln, Nye, White Pine, or designated Clark County</span></label>
-          <label class="opt"><input type="radio" name="place" value="uranium"><span><strong>Industria del uranio:</strong> Extrajo, procesó o transportó mineral de uranio</span></label>
-          <label class="opt"><input type="radio" name="place" value="onsite"><span><strong>Participante en el sitio:</strong> Presente en pruebas nucleares atmosféricas o sitios de prueba</span></label>
-          <label class="opt"><input type="radio" name="place" value="mpw"><span><strong>Residuos del Proyecto Manhattan:</strong> Comunidades elegibles en Misuri, Tennessee, Kentucky o Alaska</span></label>
-          <label class="opt"><input type="radio" name="place" value="dunno"><span>No sé con certeza el condado / necesito ayuda para averiguarlo</span></label>
-        </fieldset>
-
-        <fieldset>
-          <legend>Período aproximado de residencia o trabajo:</legend>
-          <label class="opt"><input type="radio" name="years" value="ok" required><span>Al menos un año entre <strong>enero de 1951 y noviembre de 1962</strong></span></label>
-          <label class="opt"><input type="radio" name="years" value="oknm"><span><strong>Nuevo México:</strong> Al menos un año entre septiembre de 1944 y noviembre de 1962</span></label>
-          <label class="opt"><input type="radio" name="years" value="okjuly"><span>Presente durante <strong>todo el mes de julio de 1962</strong></span></label>
-          <label class="opt"><input type="radio" name="years" value="uranium"><span>Trabajó con uranio entre 1942 y 1971</span></label>
-          <label class="opt"><input type="radio" name="years" value="dunno"><span>No sé las fechas exactas</span></label>
-        </fieldset>
-
-        <fieldset>
-          <legend>¿Quién presenta el reclamo?</legend>
-          <label class="opt"><input type="radio" name="who" value="self" required><span><strong>La persona expuesta</strong> (presento mi propio reclamo)</span></label>
-          <label class="opt"><input type="radio" name="who" value="survivor"><span><strong>Familiar sobreviviente:</strong> Cónyuge, hijo, nieto o padre de la persona fallecida</span></label>
-        </fieldset>
+        <div class="field">
+          <label for="place">¿Dónde vivió o trabajó el familiar afectado?</label>
+          <select id="place" name="place" required>
+            <option value="">Seleccione una respuesta</option>
+            <option value="state">Utah, Nuevo México o Idaho: Vivió en cualquier parte del estado</option>
+            <option value="az">Arizona: Condados de Coconino, Yavapai, Navajo, Apache, Gila o Mohave</option>
+            <option value="nv">Nevada: Eureka, Lander, Lincoln, Nye, White Pine o el área designada del condado de Clark</option>
+            <option value="uranium">Industria del uranio: Extrajo, procesó o transportó mineral de uranio</option>
+            <option value="onsite">Participante en el sitio: Presente en pruebas nucleares atmosféricas o sitios de prueba</option>
+            <option value="mpw">Residuos del Proyecto Manhattan: Comunidades elegibles en Misuri, Tennessee, Kentucky o Alaska</option>
+            <option value="dunno">No sé con certeza el condado / necesito ayuda para averiguarlo</option>
+          </select>
+        </div>
 
         <div class="field">
-          <label for="notes">Describa brevemente la enfermedad, el diagnóstico u otros datos familiares (opcional):</label>
-          <textarea id="notes" name="notes" rows="3" placeholder="Por ejemplo: A mi padre le diagnosticaron cáncer de pulmón en 1988 después de vivir en el condado de Washington, Utah..."></textarea>
+          <label for="years">Período aproximado de residencia o trabajo:</label>
+          <select id="years" name="years" required>
+            <option value="">Seleccione una respuesta</option>
+            <option value="ok">Al menos un año entre enero de 1951 y noviembre de 1962</option>
+            <option value="oknm">Nuevo México: Al menos un año entre septiembre de 1944 y noviembre de 1962</option>
+            <option value="okjuly">Presente durante todo el mes de julio de 1962</option>
+            <option value="uranium">Trabajó con uranio entre 1942 y 1971</option>
+            <option value="dunno">No sé las fechas exactas</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="who">¿Quién presenta el reclamo?</label>
+          <select id="who" name="who" required>
+            <option value="">Seleccione una respuesta</option>
+            <option value="self">La persona expuesta (presento mi propio reclamo)</option>
+            <option value="survivor">Familiar sobreviviente: Cónyuge, hijo, nieto o padre de la persona fallecida</option>
+          </select>
         </div>
 
         <button class="btn" type="submit" style="align-self:flex-start;font-size:18px;padding:16px 36px">Ver orientación inicial &rarr;</button>

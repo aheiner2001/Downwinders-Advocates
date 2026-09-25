@@ -66,19 +66,28 @@ permalink: /es/
   </div>
 </section>
 
-<!-- 3. Programe una llamada -->
+<!-- 3. ¿Ha estado expuesto? -->
 <section class="consultation-section" id="consultation">
   <div class="wrap">
     <div class="exposed-intro">
-      <h2>¿Estuvo expuesto a la radiación?</h2>
-      <p>Compensación por cáncer relacionado con exposición a radiación generada por el gobierno</p>
+      <div class="brand-badge" aria-hidden="true">
+        <svg class="shield" viewBox="0 0 60 72">
+          <path d="M30 2 56 12v28c0 16-11 25-26 30C15 65 4 56 4 40V12z" fill="#08244A"/>
+          <path d="M30 22a9 9 0 0 1 9 9H21a9 9 0 0 1 9-9z" fill="#DEA244"/>
+          <path d="M14 40c8-4 12 2 18 0s10-4 14-1" stroke="#FFFFFF" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+          <path d="M14 49c8-4 12 2 18 0s10-4 14-1" stroke="#FFFFFF" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h2>¿Ha estado expuesto?</h2>
+      <p>No pierda su oportunidad de recibir compensación</p>
     </div>
     <div class="consultation-card">
-      <h3>Reserve una cita de 30 minutos</h3>
-      <p>Converse con un especialista sobre la situación de su familia. Le explicaremos los siguientes pasos y responderemos sus preguntas para ayudarle a decidir si desea iniciar un reclamo.</p>
-      <div class="btns" style="justify-content:center">
-        <a class="btn" href="{{ site.discoveryBookingUrl or '/es/contact/#form' }}">Programe una llamada</a>
-      </div>
+      <h3>Averigüe si su familia califica</h3>
+      <p>Una llamada. Nada que preparar. Si la respuesta es no, lo sabrá en esa llamada.</p>
+      <a class="btn" href="/es/check/">Vea si mi familia califica</a>
+      <p class="consultation-cost">No tiene costo. Nada que pagar por adelantado.</p>
+      <p class="consultation-deadline">El programa cierra el 31 de diciembre de 2027.</p>
+      <p class="consultation-call">O simplemente llámenos al <a href="tel:{{ site.phoneTel }}">{{ site.phoneDisplay }}</a></p>
     </div>
   </div>
 </section>
@@ -205,9 +214,8 @@ permalink: /es/
 
       {% include "partials/fee-terms.njk" %}
 
-      <div class="btns" style="justify-content:center;margin-top:var(--sp2)">
-        <a class="btn" href="/es/pricing/">Vea la información de precios</a>
-        <a class="btn btn--ghost" href="/es/check/">Verifique su elegibilidad</a>
+      <div class="btns" style="margin-top:var(--sp2)">
+        <a class="btn" href="/es/check/">Verifique su elegibilidad</a>
       </div>
     </div>
   </div>

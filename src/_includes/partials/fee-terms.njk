@@ -12,7 +12,6 @@
   <li>
     <strong>{{ 'Cargos administrativos:' if L == 'es' else 'Administrative Fees:' }}</strong>
     <ul class="fees-sublist">
-      <li>{% if L == 'es' %}Se cobra por adelantado un cargo no reembolsable de <strong>$200 por revisión del expediente</strong>. Esto cubre servicios administrativos como correo, llamadas y apoyo para tramitar el reclamo.{% else %}A non-refundable <strong>$200 file review fee</strong> is charged upfront. This covers administrative services such as postage, phone calls, and claim processing support.{% endif %}</li>
       <li>{% if L == 'es' %}Se cobra un <strong>cargo de $400 por solicitante para la tramitación administrativa</strong> para ayudar a cubrir los costos incurridos durante el proceso del reclamo. Este cargo se paga al finalizar el reclamo.{% else %}A <strong>$400 per claimant administrative processing fee</strong> is charged to help cover costs incurred throughout the claims process. This fee is paid upon completion of the claim.{% endif %}</li>
     </ul>
   </li>

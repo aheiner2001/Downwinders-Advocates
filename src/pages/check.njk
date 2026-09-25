@@ -25,35 +25,39 @@ extraScripts: '<script src="/js/screener.js" defer></script>'
       <h2 style="font-size:24px;color:var(--navy)">Initial Eligibility Guide</h2>
       <p class="muted">No name, phone number, or email is needed for this private preview. To have a specialist review your case, request a callback after the result.</p>
       <form id="screener" class="stack">
-        <fieldset>
-          <legend>Where did the affected family member live or work?</legend>
-          <label class="opt"><input type="radio" name="place" value="state" required><span><strong>Utah, New Mexico, or Idaho:</strong> Lived anywhere in the state</span></label>
-          <label class="opt"><input type="radio" name="place" value="az"><span><strong>Arizona:</strong> Coconino, Yavapai, Navajo, Apache, Gila, or Mohave County</span></label>
-          <label class="opt"><input type="radio" name="place" value="nv"><span><strong>Nevada:</strong> Eureka, Lander, Lincoln, Nye, White Pine, or designated Clark County</span></label>
-          <label class="opt"><input type="radio" name="place" value="uranium"><span><strong>Uranium Industry:</strong> Mined, milled, or transported uranium ore</span></label>
-          <label class="opt"><input type="radio" name="place" value="onsite"><span><strong>On-Site Participant:</strong> Present at atmospheric nuclear tests or test sites</span></label>
-          <label class="opt"><input type="radio" name="place" value="mpw"><span><strong>Manhattan Project Waste:</strong> Qualifying communities in MO, TN, KY, or AK</span></label>
-          <label class="opt"><input type="radio" name="place" value="dunno"><span>I am not sure of the exact county / need help checking</span></label>
-        </fieldset>
-
-        <fieldset>
-          <legend>Estimated timeframe of residency or employment:</legend>
-          <label class="opt"><input type="radio" name="years" value="ok" required><span>At least one year between <strong>January 1951 and November 1962</strong></span></label>
-          <label class="opt"><input type="radio" name="years" value="oknm"><span><strong>New Mexico:</strong> At least one year between September 1944 and November 1962</span></label>
-          <label class="opt"><input type="radio" name="years" value="okjuly"><span>Present for the <strong>entire month of July 1962</strong></span></label>
-          <label class="opt"><input type="radio" name="years" value="uranium"><span>Uranium employment between 1942 and 1971</span></label>
-          <label class="opt"><input type="radio" name="years" value="dunno"><span>I am not sure of the exact dates</span></label>
-        </fieldset>
-
-        <fieldset>
-          <legend>Who is filing this claim?</legend>
-          <label class="opt"><input type="radio" name="who" value="self" required><span><strong>The person who was exposed</strong> (filing for myself)</span></label>
-          <label class="opt"><input type="radio" name="who" value="survivor"><span><strong>Surviving family member:</strong> Spouse, child, grandchild, or parent of deceased</span></label>
-        </fieldset>
+        <div class="field">
+          <label for="place">Where did the affected family member live or work?</label>
+          <select id="place" name="place" required>
+            <option value="">Select an answer</option>
+            <option value="state">Utah, New Mexico, or Idaho: Lived anywhere in the state</option>
+            <option value="az">Arizona: Coconino, Yavapai, Navajo, Apache, Gila, or Mohave County</option>
+            <option value="nv">Nevada: Eureka, Lander, Lincoln, Nye, White Pine, or designated Clark County</option>
+            <option value="uranium">Uranium Industry: Mined, milled, or transported uranium ore</option>
+            <option value="onsite">On-Site Participant: Present at atmospheric nuclear tests or test sites</option>
+            <option value="mpw">Manhattan Project Waste: Qualifying communities in MO, TN, KY, or AK</option>
+            <option value="dunno">I am not sure of the exact county / need help checking</option>
+          </select>
+        </div>
 
         <div class="field">
-          <label for="notes">Briefly describe the illness / diagnosis or family notes (Optional):</label>
-          <textarea id="notes" name="notes" rows="3" placeholder="E.g., My father was diagnosed with lung cancer in 1988 after living in Washington County, UT..."></textarea>
+          <label for="years">Estimated timeframe of residency or employment:</label>
+          <select id="years" name="years" required>
+            <option value="">Select an answer</option>
+            <option value="ok">At least one year between January 1951 and November 1962</option>
+            <option value="oknm">New Mexico: At least one year between September 1944 and November 1962</option>
+            <option value="okjuly">Present for the entire month of July 1962</option>
+            <option value="uranium">Uranium employment between 1942 and 1971</option>
+            <option value="dunno">I am not sure of the exact dates</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="who">Who is filing this claim?</label>
+          <select id="who" name="who" required>
+            <option value="">Select an answer</option>
+            <option value="self">The person who was exposed (filing for myself)</option>
+            <option value="survivor">Surviving family member: Spouse, child, grandchild, or parent of deceased</option>
+          </select>
         </div>
 
         <button class="btn" type="submit" style="align-self:flex-start;font-size:18px;padding:16px 36px">See Initial Guidance &rarr;</button>

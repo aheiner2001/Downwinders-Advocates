@@ -23,7 +23,7 @@ test('the approved fee terms occur on all English fee pages', () => {
   }
 });
 
-test('Spanish fee pages retain the approved amounts and upfront charge', () => {
+test('Spanish fee pages retain the approved amounts', () => {
   for (const route of rules.fees.spanishRoutes) {
     const text = visibleText(read(route));
     for (const phrase of rules.fees.spanishPhrases) {
