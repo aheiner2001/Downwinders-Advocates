@@ -25,7 +25,9 @@ module.exports = function (eleventyConfig) {
     const prefix = pathPrefix.replace(/\/$/, "");
     eleventyConfig.addTransform("prefixRootPaths", (content, outputPath) => {
       if (!outputPath || !outputPath.endsWith(".html")) return content;
-      return content.replace(/(href|src)="\/(?!\/)/g, `$1="${prefix}/`);
+      return content
+        .replace(/(href|src)="\/(?!\/)/g, `$1="${prefix}/`)
+        .replace(/url\(\s*(['"]?)\/(?!\/)/g, `url($1${prefix}/`);
     });
   }
 
