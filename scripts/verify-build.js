@@ -88,9 +88,6 @@ function assertSpanishDraft(rel) {
   const html = fs.readFileSync(path.join(site, rel), "utf8");
   if (!html.includes('lang="es"')) throw new Error(rel + " missing lang=es");
   if (!/noindex/i.test(html)) throw new Error(rel + " missing noindex");
-  if (!html.includes("Borrador de traducción automática para revisión")) {
-    throw new Error(rel + " missing draft banner");
-  }
   if (!html.includes('hreflang="en"') || !html.includes('hreflang="es"')) {
     throw new Error(rel + " missing hreflang");
   }

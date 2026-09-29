@@ -118,6 +118,10 @@ a { color: inherit; }
   max-width: 62ch;
   line-height: 1.55;
 }
+div[style*="text-align:center"] > .lede {
+  margin-left: auto;
+  margin-right: auto;
+}
 .sec--deep .lede { color: #CBD8E6; }
 
 .muted {
