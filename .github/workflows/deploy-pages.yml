@@ -32,9 +32,6 @@ jobs:
 
       - name: Build with Eleventy
         run: npm run build
-        env:
-          # Project Pages are served under /<repo>/ until a custom domain is attached
-          ELEVENTY_PATH_PREFIX: /${{ github.event.repository.name }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
