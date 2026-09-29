@@ -9,8 +9,8 @@ module.exports = {
   partnerAttorney: "Laura Taylor Turner",
   partnerLawFirm: "Law Offices of Laura J. Taylor, P.L.L.C.",
   partnerAddress: "325 West Gurley Street, Suite 201, Prescott, AZ 86301",
-  /** Andy: Lawmatics calendar / discovery-call URL. Empty = fall back to contact form. */
-  discoveryBookingUrl: "",
+  /** Lawmatics calendar. Schedule a Call goes here, not to another page on this site. */
+  discoveryBookingUrl: "https://app.lawmatics.com/forms/share/d12a7b83-a1a5-4b45-8e0a-19b34563dfc4",
   foundersInstagramReel: "https://www.instagram.com/reel/DdffHupNZsP/",
   socialFacebook: "",
   socialX: "",
