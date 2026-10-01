@@ -1426,7 +1426,7 @@ details p {
 
 /* Laura-style 4-Column Footer (image_4.png) */
 .site-footer {
-  background: var(--navy);
+  background: var(--midnight);
   color: #D2E0EE;
   padding: var(--sp6) 0 var(--sp4);
   font-size: 15px;
@@ -1826,12 +1826,22 @@ th {
   object-position: center center;
 }
 .consultation-section {
+  position: relative;
   background-color: #092c48;
   background-image: linear-gradient(160deg, rgba(7, 38, 60, .78), rgba(9, 49, 78, .86)), url('/img/medical-research-bg.jpg');
   color: #fff;
   min-height: 0;
-  padding: clamp(48px, 7vw, 88px) 0;
-  border-bottom: 1px solid rgba(255, 255, 255, .16);
+  clip-path: polygon(0 36px, 100% 0, 100% calc(100% - 36px), 0 100%);
+  margin-top: -36px;
+  margin-bottom: -36px;
+  padding: calc(clamp(48px, 7vw, 88px) + 36px) 0;
+  z-index: 2;
+}
+#programs.sec--band {
+  position: relative;
+  padding-top: calc(var(--sp6) + 40px);
+  padding-bottom: calc(var(--sp6) + 20px);
+  z-index: 1;
 }
 .exposed-intro {
   gap: 8px;
@@ -1892,11 +1902,21 @@ th {
   background: rgba(8, 36, 74, 0.06);
 }
 .cta-banner {
+  position: relative;
   min-height: 0;
   background-color: #143b53;
   background-image: linear-gradient(135deg, rgba(8, 42, 64, .74), rgba(11, 51, 75, .82)), url('/img/radiation-caution-fence.jpg');
   color: #fff;
-  padding: var(--sp5) 0;
+  clip-path: polygon(0 36px, 100% 0, 100% calc(100% - 36px), 0 100%);
+  margin-top: -36px;
+  margin-bottom: -36px;
+  padding: calc(var(--sp5) + 36px) 0;
+  z-index: 2;
+}
+#contact.sec {
+  position: relative;
+  padding-top: calc(var(--sp6) + 40px);
+  z-index: 1;
 }
 .cta-banner h2,
 .cta-banner p {
