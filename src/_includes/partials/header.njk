@@ -3,7 +3,7 @@
 {% set homeHref = '/es/' if L == 'es' else '/' %}
 {% set prefix = '/es' if L == 'es' else '' %}
 <a class="skip" href="#main">{{ t.skip }}</a>
-<header class="site-header">
+<header class="site-header{% if page.url == '/' or page.url == '/es/' %} site-header--home{% endif %}">
   <div class="bar">
     <a class="brand" href="{{ homeHref }}">
       <div class="brand-badge" aria-hidden="true">
@@ -80,5 +80,11 @@
   window.addEventListener("resize", function () {
     if (window.matchMedia("(min-width: 1261px)").matches) setOpen(false);
   });
+  function checkScroll() {
+    var scrolled = window.scrollY > 40;
+    header.classList.toggle("is-scrolled", scrolled);
+  }
+  window.addEventListener("scroll", checkScroll, { passive: true });
+  checkScroll();
 })();
 </script>

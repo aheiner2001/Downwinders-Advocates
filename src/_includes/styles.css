@@ -145,14 +145,25 @@ div[style*="text-align:center"] > .lede {
 }
 
 /* Header & Navigation */
-header {
+header.site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--deep);
+  background: #153e70;
   color: var(--on-deep);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+header.site-header.is-scrolled {
+  background: #1c5294;
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 6px 24px rgba(4, 22, 58, 0.28);
+}
+
+header.site-header.is-open {
+  background: #11345f !important;
 }
 
 .bar {
@@ -167,6 +178,11 @@ header {
   padding: 16px var(--sp3) 14px;
   max-width: 1240px;
   margin: 0 auto;
+  transition: padding 0.25s ease;
+}
+
+header.site-header.is-scrolled .bar {
+  padding: 8px var(--sp3) 6px;
 }
 
 .header-claim,
